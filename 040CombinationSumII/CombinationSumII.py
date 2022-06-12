@@ -4,6 +4,14 @@ class CombinationSumII:
     def combinationSum2(self, candidates: "list[int]", target: "int") -> "list[list[int]]":
         ans = []
         self.combSum2_(ans, candidates, [], target, 0)
+        ans = self.rmDup(ans)
+        return ans
+
+    def combinationSum2b(self, candidates: "list[int]", target: "int") -> "list[list[int]]":
+        ans = []
+        candidates = sorted(candidates)
+        self.combSum2_(ans, candidates, [], target, 0)
+        # ans = self.rmDup(ans)
         return ans
 
     def combSum2_(self, ans: "list[list[int]]", candidates: "list[int]", current: "list[int]", remain: "int", start: "int"):
@@ -21,19 +29,22 @@ class CombinationSumII:
             l = sorted(alist[i])
             key = ''
             for j in range(len(l)):
-                key = key + l[j]
+                key = key + str(l[j])
                 if j != len(l) - 1:
                     key += ','
             ans[key] = ''
         list_ans = []
         for item in ans.keys():
             l = item.split(',')
-            temp = 
+            temp = []
             for num in l:
+                temp.append(int(num))
+            list_ans.append(temp[:])
+        return list_ans
 
 def main():
     test = CombinationSumII()
-    print(test.combinationSum2())
+    print(test.combinationSum2b([10, 1, 2, 7, 6, 1, 5], 8))
 
 if __name__ == "__main__":
     main()
