@@ -9,12 +9,21 @@ class CombinationSumII:
 
     def combinationSum2b(self, candidates: "list[int]", target: "int") -> "list[list[int]]":
         ans = []
-        candidates = sorted(candidates)
-        self.combSum2_(ans, candidates, [], target, 0)
+        candidates.sort()
+        self.combSum2b_(ans, candidates, [], target, 0)
         # ans = self.rmDup(ans)
         return ans
 
     def combSum2_(self, ans: "list[list[int]]", candidates: "list[int]", current: "list[int]", remain: "int", start: "int"):
+        if remain < 0: return
+        elif remain == 0: ans.append(current[:])
+        else:
+            for i in range(start + 1, len(candidates)):
+                current.append(candidates[i])
+                self.combSum2_(ans, candidates, current, remain - candidates[i], i)
+                current.pop()
+
+    def combSum2b_(self, ans: "list[list[int]]", candidates: "list[int]", current: "list[int]", remain: "int", start: "int"):
         if remain < 0: return
         elif remain == 0: ans.append(current[:])
         else:
