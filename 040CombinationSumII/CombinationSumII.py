@@ -27,9 +27,10 @@ class CombinationSumII:
         if remain < 0: return
         elif remain == 0: ans.append(current[:])
         else:
-            for i in range(start + 1, len(candidates)):
+            for i in range(start, len(candidates)):
+                if i > start and candidates[i] == candidates[i - 1]: continue
                 current.append(candidates[i])
-                self.combSum2_(ans, candidates, current, remain - candidates[i], i)
+                self.combSum2b_(ans, candidates, current, remain - candidates[i], i + 1)
                 current.pop()
     
     def rmDup(self, alist: "list[list[int]]") -> "list[list[int]]":
