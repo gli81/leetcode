@@ -30,5 +30,6 @@ public class ReverseIntegerJava {
         }
         // System.out.println(-125 / 10);
         // System.out.println(-125 % 10);
+        scan.close();
     }
 }

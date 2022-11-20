@@ -1,7 +1,5 @@
 
 
-import java.util.Arrays;
-
 public class RemoveDuplicatesfromSortedArrayJava {
     public static int removeDuplicates(int[] nums) {
         if (nums.length == 0) return 0;
