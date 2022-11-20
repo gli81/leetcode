@@ -1,5 +1,6 @@
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class NQueens {
     public static void main (String[] args) {
@@ -10,6 +11,10 @@ public class NQueens {
     }
 
     public List<List<String>> solveNQueens(int n){
+
+    }
+
+    private void backtrack(List<List<String>> ans, int n) {
 
     }
 }
