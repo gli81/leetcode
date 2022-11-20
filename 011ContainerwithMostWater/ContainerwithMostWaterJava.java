@@ -32,6 +32,7 @@ public class ContainerwithMostWaterJava {
             num = scan.nextInt();
             if (num < 0) break;
         }
+        scan.close();
     }
 
     public int maxArea2(int[] height) {

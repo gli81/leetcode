@@ -16,6 +16,7 @@ public class StringToIntegerJava {
             }
             System.out.println(new StringToIntegerJava().myAtoi(s) + "\n");
         }
+        scan.close();
     }
 
     public int myAtoi(String s) {
