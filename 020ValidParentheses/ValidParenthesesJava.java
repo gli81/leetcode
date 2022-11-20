@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class ValidParenthesesJava {
     public boolean isValid(String s) {
-        boolean ans;
         List<Character> container = new ArrayList<Character>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
