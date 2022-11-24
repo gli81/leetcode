@@ -7,8 +7,8 @@ public class NQueens {
     public static void main (String[] args) {
         NQueens test = new NQueens();
         System.out.println(test.solveNQueens(1));
-        // System.out.println(test.solveNQueens(3));
-        // System.out.println(test.solveNQueens(4));
+        System.out.println(test.solveNQueens(3));
+        System.out.println(test.solveNQueens(4));
         // System.out.println(test.solveNQueens(9));
         // System.out.println(test.is_valid(Arrays.asList(1, 3, null, null), 2, 0));
     }
@@ -47,14 +47,12 @@ public class NQueens {
 
     private boolean is_valid(List<Integer> pos, int x, int y) {
         // int n = pos.size();
-        // row
-        for (int i = 0; i < y; i++) if (pos.get(i) == x) return false;
-        // diagonal 
         for (int i = 0; i < y; i++) {
+            // row
+            if (pos.get(i) == x) return false;
+            // diagonal 
             if (pos.get(i) == x + y - i) return false; // need improve, some early cols don't need check
-        }
-        // reverse diagonal
-        for (int i = 0; i < y; i++) {
+            // reverse diagonal
             if (pos.get(i) == x - y + i) return false; // need improve, some early cols don't need check
         }
         return true;
