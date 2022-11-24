@@ -1,7 +1,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class NQueens {
     public static void main (String[] args) {
