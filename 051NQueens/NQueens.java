@@ -1,12 +1,12 @@
 
 import java.util.List;
 import java.util.ArrayList;
-// import java.util.Arrays;
+import java.util.Arrays;
 
 public class NQueens {
     public static void main (String[] args) {
         NQueens test = new NQueens();
-        // System.out.println(test.solveNQueens(1));
+        System.out.println(test.solveNQueens(1));
         System.out.println(test.solveNQueens(3));
         System.out.println(test.solveNQueens(9));
         // System.out.println(test.is_valid(Arrays.asList(1, 3, null, null), 2, 0));
@@ -22,8 +22,19 @@ public class NQueens {
         for (int i = 0; i < n; i++) {
             if (is_valid(pos, i, y)) {
                 pos.add(i);
-                System.out.println(pos);
-                if (pos.size() == n) return;
+                // System.out.println(pos);
+                if (pos.size() == n) {
+                    List<String> tmp_list = new ArrayList<>();
+                    for (int j = 0; j < n; j++) {
+                        char[] tmp = new char[n];
+                        Arrays.fill(tmp, '.');
+                        tmp[pos.get(j)] = 'Q';
+                        tmp_list.add(new String(tmp));
+                    }
+
+                    ans.add(tmp_list);
+                    return;
+                }
                 backtrack(pos, ans, y + 1, n);
             }
         }
