@@ -27,6 +27,7 @@ public class NQueens {
                 backtrack(pos, ans, y + 1, n);
             }
         }
+        if (y == 0) return;
         pos.remove(y - 1);
         return;
     }
