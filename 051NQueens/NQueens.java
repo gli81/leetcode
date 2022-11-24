@@ -7,8 +7,9 @@ public class NQueens {
     public static void main (String[] args) {
         NQueens test = new NQueens();
         System.out.println(test.solveNQueens(1));
-        System.out.println(test.solveNQueens(3));
-        System.out.println(test.solveNQueens(9));
+        // System.out.println(test.solveNQueens(3));
+        // System.out.println(test.solveNQueens(4));
+        // System.out.println(test.solveNQueens(9));
         // System.out.println(test.is_valid(Arrays.asList(1, 3, null, null), 2, 0));
     }
 
@@ -33,6 +34,8 @@ public class NQueens {
                     }
 
                     ans.add(tmp_list);
+                    pos.remove(n - 1);
+                    if (n > 1) pos.remove(n - 2);
                     return;
                 }
                 backtrack(pos, ans, y + 1, n);
