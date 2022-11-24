@@ -1,6 +1,6 @@
 
 
-public class MergeTwoSortedListsJava {
+public class GenerateParenthesesJava {
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2){
         ListNode h = new ListNode(0, null);
         ListNode ans = h;
