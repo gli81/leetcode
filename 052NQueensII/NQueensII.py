@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class NQueensII:
     def totalNQueens(self, n: "int") -> "int":
         pass
-    
+
     def __backtrack(self, ):
         pass
 
