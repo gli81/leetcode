@@ -7,7 +7,8 @@ class ListNode:
         return str(self.val)
 
 class AddTwoNum1:
-    def addTwoNum(self, l1 : ListNode, l2 : ListNode) -> ListNode:
+    def addTwoNum(self,
+                l1 : ListNode, l2 : ListNode) -> ListNode:
         p = l1
         q = l2
         rslt = ListNode()
@@ -38,5 +39,7 @@ ans = AddTwoNum1().addTwoNum(LN987, LN355)
 print("")
 print("" + str(ans))
 print("" + str(ans) + " " + str(ans.next))
-print("" + str(ans) + " " + str(ans.next) + " " + str(ans.next.next))
-print("" + str(ans) + " " + str(ans.next) + " " + str(ans.next.next) + " " + str(ans.next.next.next))
+print("" + str(ans) + " " + str(ans.next) + " "\
+        + str(ans.next.next))
+print("" + str(ans) + " " + str(ans.next) + " "\
+        + str(ans.next.next) + " " + str(ans.next.next.next))
