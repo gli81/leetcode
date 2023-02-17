@@ -1,6 +1,7 @@
 
 class TwoSum2:
-    def twoSum(self, nums : list[int], target : int) -> list[int]:
+    def twoSum(self, nums : list[int],
+                target : int) -> list[int]:
         mapp : dict[int, int] = {}
         # put everything in the map
         for i in range(len(nums)):

@@ -8,7 +8,9 @@ class NQueens():
         self.__backtrack([], ans, 0, n)
         return ans
 
-    def __backtrack(self, pos: "List[int]", ans: "List[List[str]]", y: "int", n: "int") -> "None":
+    def __backtrack(self, pos: "List[int]",
+                    ans: "List[List[str]]",
+                    y: "int", n: "int") -> "None":
         for row in range(n):
             if self.__is_valid(pos, row, y):
                 pos.append(row)
@@ -27,7 +29,8 @@ class NQueens():
         if y != 0: pos.pop()
         return
     
-    def __is_valid(self, pos: "List[int]", x: "int", y: "int") -> "bool":
+    def __is_valid(self, pos: "List[int]",
+                    x: "int", y: "int") -> "bool":
         for i in range(y):
             if pos[i] == x: return False
             if pos[i] == x + y - i: return False

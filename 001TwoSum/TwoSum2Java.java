@@ -26,6 +26,7 @@ public class TwoSum2Java {
         int target = 6;
         
         TwoSum2Java obj = new TwoSum2Java();
-        System.out.println(Arrays.toString(obj.twoSum(nums, target)));
+        System.out.println(Arrays.toString(
+            obj.twoSum(nums, target)));
     }
 }

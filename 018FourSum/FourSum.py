@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 class FourSum:
-    def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
+    def fourSum(self, nums: list[int],
+                target: int) -> list[list[int]]:
         nums.sort()
         ans = []
         for i in range(len(nums) - 3):
