@@ -19,7 +19,9 @@ public class NQueens {
         return ans;
     }
 
-    private void backtrack(List<Integer> pos, List<List<String>> ans, int y, int n) {
+    private void backtrack(List<Integer> pos,
+                            List<List<String>> ans,
+                            int y, int n) {
         for (int i = 0; i < n; i++) {
             if (is_valid(pos, i, y)) {
                 pos.add(i);
@@ -45,7 +47,8 @@ public class NQueens {
         return;
     }
 
-    private boolean is_valid(List<Integer> pos, int x, int y) {
+    private boolean is_valid(List<Integer> pos,
+                                int x, int y) {
         // int n = pos.size();
         for (int i = 0; i < y; i++) {
             // row
