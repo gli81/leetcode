@@ -14,7 +14,8 @@ public class NQueens {
     }
 
     public List<List<String>> solveNQueens(int n){
-        List<List<String>> ans = new ArrayList<List<String>>(n);
+        List<List<String>> ans =
+                            new ArrayList<List<String>>(n);
         backtrack(new ArrayList<Integer>(n), ans, 0, n);
         return ans;
     }
@@ -27,7 +28,8 @@ public class NQueens {
                 pos.add(i);
                 // System.out.println(pos);
                 if (pos.size() == n) {
-                    List<String> tmp_list = new ArrayList<>();
+                    List<String> tmp_list =
+                                        new ArrayList<>();
                     for (int j = 0; j < n; j++) {
                         char[] tmp = new char[n];
                         Arrays.fill(tmp, '.');
@@ -54,9 +56,11 @@ public class NQueens {
             // row
             if (pos.get(i) == x) return false;
             // diagonal 
-            if (pos.get(i) == x + y - i) return false; // need improve, some early cols don't need check
+            if (pos.get(i) == x + y - i)
+                return false; // need improve, some early cols don't need check
             // reverse diagonal
-            if (pos.get(i) == x - y + i) return false; // need improve, some early cols don't need check
+            if (pos.get(i) == x - y + i)
+                return false; // need improve, some early cols don't need check
         }
         return true;
     }
