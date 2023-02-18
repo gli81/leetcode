@@ -23,10 +23,6 @@ class MaxSubarray:
         return ans
     
     def maxSubArray2(self, nums: "List[int]") -> "int":
-        '''
-        over time limit, fuck
-        '''
-        # dp = [[-sys.maxsize - 1] * len(nums)] * len(nums)
         ans = -sys.maxsize - 1
         n: "int" = len(nums)
         dp = [[(-sys.maxsize - 1) for i in range(len(nums))]\
@@ -37,7 +33,6 @@ class MaxSubarray:
             for j in range(1, n - i):
                 dp[i][j] = dp[i][j - 1] + nums[j + i]
                 if dp[i][j] > ans: ans = dp[i][j]
-        # print(dp)
         return ans
 
 
