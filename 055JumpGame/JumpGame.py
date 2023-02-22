@@ -4,7 +4,12 @@ from typing import List
 
 class JumpGame:
     def canJump(self, nums: "List[int]") -> "bool":
-        pass
+        maxP = end = 0
+        for i in range(len(nums) - 1):
+            if i > end: return False
+            maxP = max(maxP, nums[i] + i)
+            if i == end: end = maxP
+        return maxP >= len(nums) - 1
 
 
 def main():
