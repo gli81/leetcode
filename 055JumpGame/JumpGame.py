@@ -9,6 +9,7 @@ class JumpGame:
             if i > end: return False
             maxP = max(maxP, nums[i] + i)
             if i == end: end = maxP
+        ## didn't figure out boundary
         return maxP >= len(nums) - 1
 
 
