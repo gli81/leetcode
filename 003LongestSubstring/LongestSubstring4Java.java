@@ -12,6 +12,8 @@ public class LongestSubstring4Java {
     }
     public static void main(String[] args) {
         String s = "abcdcca";
-        System.out.println(new LongestSubstring4Java().longestSubstring(s));
+        System.out.println(
+            new LongestSubstring4Java().longestSubstring(s)
+        );
     }
 }
