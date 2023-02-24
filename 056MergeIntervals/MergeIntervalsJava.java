@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
-import java.util.Comparator;
+// import java.util.Comparator;
 
 public class MergeIntervalsJava {
     public static void main(String[] args) {
@@ -44,6 +44,7 @@ public class MergeIntervalsJava {
                     ans.remove(ans.size()-1);
                     add_array(cur_left, intervals[i][1], ans);
                     cur_right = intervals[i][1];
+                } else {
                     
                 }
             }
