@@ -16,6 +16,11 @@ public class LongestCommonPrefixJava {
         return ans;
     }
     public static void main(String[] args) {
-        System.out.println(new LongestCommonPrefixJava().longestCommonPrefix(new String[]{"flower","flow","flight"}));
+        System.out.println(
+            new LongestCommonPrefixJava().
+                longestCommonPrefix(
+                    new String[]{"flower","flow","flight"}
+                )
+        );
     }
 }
