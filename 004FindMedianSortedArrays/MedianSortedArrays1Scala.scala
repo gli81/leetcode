@@ -1,7 +1,8 @@
 
 
 object MedianSortedArrays1Scala {
-    def findMedianSortedArrays(nums1 : Array[Int], nums2 : Array[Int]) : Double = {
+    def findMedianSortedArrays(nums1 : Array[Int],
+                            nums2 : Array[Int]) : Double = {
         val m : Int = nums1.length
         val n : Int = nums2.length
         var ct : Int = 0
@@ -9,8 +10,10 @@ object MedianSortedArrays1Scala {
         var j : Int = 0
         val arr : Array[Int] = new Array[Int](m + n)
         // one array is empty
-        if (m == 0) return if (n % 2 != 0) nums2(n / 2) else (nums2(n / 2 - 1) + nums2(n / 2)) / 2.0 
-        if (n == 0) return if (m % 2 != 0) nums1(m / 2) else (nums1(m / 2 - 1) + nums1(m / 2)) / 2.0 
+        if (m == 0) return if (n % 2 != 0) nums2(n / 2)
+                else (nums2(n / 2 - 1) + nums2(n / 2)) / 2.0 
+        if (n == 0) return if (m % 2 != 0) nums1(m / 2)
+                else (nums1(m / 2 - 1) + nums1(m / 2)) / 2.0 
         // merging
         while (ct < (m + n)) {
             // one array has ended
@@ -41,7 +44,8 @@ object MedianSortedArrays1Scala {
                 }
             }
         }
-        return if(ct % 2 != 0) arr(ct / 2) else (arr(ct / 2 - 1) + arr(ct / 2)) / 2.0
+        return if(ct % 2 != 0) arr(ct / 2)
+                else (arr(ct / 2 - 1) + arr(ct / 2)) / 2.0
     }
     def main(args : Array[String]) : Unit = {
         val arr1 : Array[Int] = Array(1, 23)

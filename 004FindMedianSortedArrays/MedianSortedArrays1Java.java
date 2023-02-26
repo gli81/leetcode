@@ -1,20 +1,23 @@
 
 
 public class MedianSortedArrays1Java {
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    public double findMedianSortedArrays(int[] nums1,
+                                        int[] nums2) {
         int m = nums1.length, n = nums2.length;
         int[] ansArray = new int[(m + n)];
         // if one array is empty
         if (m == 0) {
             if (n % 2 == 0) {
-                return (nums2[n / 2 - 1] + nums2[n / 2]) / 2.0; 
+                return (nums2[n / 2 - 1] + nums2[n / 2])
+                                    / 2.0; 
             } else {
                 return nums2[n / 2];
             }
         }
         if (n == 0) {
             if (m % 2 == 0) {
-                return (nums1[m / 2 - 1] + nums1[m / 2]) / 2.0; 
+                return (nums1[m / 2 - 1] + nums1[m / 2])
+                                    / 2.0; 
             } else {
                 return nums1[m / 2];
             }
@@ -43,13 +46,15 @@ public class MedianSortedArrays1Java {
             }
         }
         if (ct % 2 == 0) {
-            return (ansArray[ct / 2 - 1] + ansArray[ct / 2]) / 2.0;
+            return (ansArray[ct / 2 - 1] + ansArray[ct / 2])
+                                    / 2.0;
         } else {
             return ansArray[ct / 2];
         }
     }
     public static void main(String[] args) {
         int[] arr1 = new int[]{1, 3}, arr2 = new int[]{2};
-        System.out.println(new MedianSortedArrays1Java().findMedianSortedArrays(arr1, arr2));
+        System.out.println(new MedianSortedArrays1Java().
+                        findMedianSortedArrays(arr1, arr2));
     }
 }

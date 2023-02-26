@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 class MedianSortedArrays1:
-    ## solution 1: part of merge sort, merging two sorted sublist
-    def findMedianSortedArrays(self, nums1 : list[int], nums2 : list[int]) -> float:
+    ## solution 1: part of merge sort,
+    ## merging two sorted sublist
+    def findMedianSortedArrays(self, nums1 : list[int],
+                                nums2 : list[int]) -> float:
         '''
         params: two SORTED lists
         '''
@@ -11,9 +13,11 @@ class MedianSortedArrays1:
         ansList = []
         ## if one list is empty
         if m == 0:
-            return nums2[n // 2] if n % 2 != 0 else (nums2[n // 2 - 1] + nums2[n // 2]) / 2
+            return nums2[n // 2] if n % 2 != 0 \
+                else (nums2[n // 2 - 1] + nums2[n // 2]) / 2
         if n == 0:
-            return nums1[m // 2] if m % 2 != 0 else (nums1[m // 2 - 1] + nums1[m // 2]) / 2
+            return nums1[m // 2] if m % 2 != 0\
+                else (nums1[m // 2 - 1] + nums1[m // 2]) / 2
         
         ## merging part
         ct = i = j = 0
@@ -42,12 +46,14 @@ class MedianSortedArrays1:
                     ct += 1
                     j += 1
             
-        return ansList[ct // 2] if ct % 2 != 0 else (ansList[ct // 2 - 1] + ansList[ct // 2]) / 2
+        return ansList[ct // 2] if ct % 2 != 0 \
+            else (ansList[ct // 2 - 1] + ansList[ct // 2]) / 2
 
 def main():
     l1 = [1, 3]
     l2 = [2]
-    print(MedianSortedArrays1().findMedianSortedArrays(l1, l2))
+    print(MedianSortedArrays1().
+          findMedianSortedArrays(l1, l2))
 
 if __name__=='__main__':
     main()
