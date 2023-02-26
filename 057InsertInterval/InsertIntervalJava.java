@@ -7,16 +7,19 @@ import java.util.Arrays;
 public class InsertIntervalJava{
     public static void main(String[] args) {
         InsertIntervalJava test = new InsertIntervalJava();
-        System.out.println(
-            test.insert(new int[][]{{1, 3}, {6, 9}},
-                        new int[]{2, 5})
-        );
-        System.out.println(
-            test.insert(new int[][]{{1, 2}, {3, 5},
-                                {6, 7}, {8, 10}, {12, 16}},
-                        new int[]{4, 8})
-        );
-
+        for ( int[] arr : test.insert(
+            new int[][]{{1, 3}, {6, 9}}, new int[]{2, 5})
+        ) {
+            System.out.println(Arrays.toString(arr));
+        };
+        System.out.println("=====================");
+        for ( int[] arr : test.insert(
+            new int[][]{{1, 2}, {3, 5},
+                    {6, 7}, {8, 10}, {12, 16}},
+                    new int[]{4, 8})
+        ) {
+            System.out.println(Arrays.toString(arr));
+        };
     }
 
     public int[][] insert(int[][] intervals,
@@ -57,7 +60,7 @@ public class InsertIntervalJava{
         if (end == -1) end = new_end;
         ans.add(new int[]{start, end});
         while (index < intervals.length) {
-            ans.add(intervals[index]);
+            ans.add(intervals[index++]);
         }
         return ans.toArray(new int[0][]);
     }
