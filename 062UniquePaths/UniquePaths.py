@@ -3,19 +3,20 @@
 import math
 
 class UniquePaths:
-    def uniquePaths3(self, m: "int", n: "int") -> "int":
-        # return int(int(math.factorial(m+n-2)) / int(math.factorial(n-1)) / int(math.factorial(m-1)))
-        upper = math.factorial(m + n - 2)
-        lower = math.factorial(m - 1) * math.factorial(n - 1)
-        print(upper, lower)
-        return upper/lower
     
-    def uniquePaths1(self, m: "int", n: "int") -> "int":
+    def uniquePaths(self, m: "int", n: "int") -> "int":
         # return int(int(math.factorial(m+n-2)) / int(math.factorial(n-1)) / int(math.factorial(m-1)))
-        upper = math.factorial(m + n - 2)
-        lower = math.factorial(m - 1) * math.factorial(n - 1)
-        print(upper, lower)
-        return upper/lower
+        # upper = math.factorial(m + n - 2)
+        # lower = math.factorial(m - 1) * math.factorial(n - 1)
+        # print(upper, lower)
+        # return upper/lower
+        n_ = n + m - 2
+        k = m - 1
+        res = 1
+        for i in range(1, k+1):
+            res = res * (n_ - k + i) // i
+        return res
+        
 
 
 def main():
