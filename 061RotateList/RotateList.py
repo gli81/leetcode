@@ -5,7 +5,29 @@ from typing import Optional
 class RotateList:
     def rotateRight(self, head: "Optional[ListNode]",
                     k: "int") -> "Optional[ListNode]":
-        pass
+        if head == None: return head
+        ## TODO find new start
+        len_list = 1
+        current = head
+        while None != current.next:
+            len_list += 1
+            current = current.next
+        # print(len_list)
+        real_move = k % len_list
+        # print(f"real move: {real_move}")
+        if real_move == 0: return head
+        find_it = len_list - real_move
+        # print(find_it)
+        new_start = head
+        for i in range(find_it - 1):
+            new_start = new_start.next
+        # print(new_start)
+        new_start_ = new_start.next
+        ## TODO set new tail's next: None
+        new_start.next = None
+        ## TODO set old tail's next: old head
+        current.next = head
+        return new_start_
 
 
 def main():
