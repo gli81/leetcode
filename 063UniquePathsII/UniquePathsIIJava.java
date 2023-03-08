@@ -7,12 +7,24 @@ public class UniquePathsIIJava {
 
         return 0;
     }
-    public static void main(String[] args) {
-        UniquePathsIIJava test = new UniquePathsIIJava();
-        
+
+    private int get_ans(int x, int y, int m, int n,
+                        Map<String, Integer> visited) {
+        return 0 + get_ans();
     }
 
-    private int get_ans() {
-        return 0 + get_ans();
+    public static void main(String[] args) {
+        int[][] test1 = new int[][]{{0, 0, 0},
+                                    {0, 1, 0},
+                                    {0, 0, 0}};
+        int[][] test2 = new int[][]{{0, 1},
+                                    {0, 0}};
+        UniquePathsIIJava test = new UniquePathsIIJava();
+        System.out.println(
+            test.uniquePathsWithObstacles(test1)
+        );
+        System.out.println(
+            test.uniquePathsWithObstacles(test2)
+        ); 
     }
 }
