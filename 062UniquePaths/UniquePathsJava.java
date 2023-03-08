@@ -28,16 +28,42 @@ public class UniquePathsJava {
         // return (int)(res / factorial(small - 1));
     }
 
-    private long factorial(int n) {
-        if (n <= 1) return 1;
-        else return n * factorial(n - 1);
+    // private long factorial(int n) {
+    //     if (n <= 1) return 1;
+    //     else return n * factorial(n - 1);
+    // }
+
+    // over time limit
+    public int uniquePaths2(int m, int n) {
+        return get_ans(0, 0, m - 1, n - 1, 0);
     }
+
+    private int get_ans(int x, int y, int m, int n, int num) {
+        if (x == m && y == n) return 1;
+        int n1, n2;
+        n1 = n2 = 0;
+        // right
+        if (x + 1 <= m) {
+            n1 = get_ans(x + 1, y, m, n, num);
+        }
+        // down
+        if (y + 1 <= n) {
+            n2 = get_ans(x, y + 1, m, n, num);
+        }
+        return n1 + n2;
+    }
+
+    public int uniquePaths3(int m, int n) {
+
+    }
+
+    private int get_ans
 
     public static void main(String[] args) {
         UniquePathsJava test = new UniquePathsJava();
-        System.out.println(test.uniquePaths(3, 7));
-        System.out.println(test.uniquePaths(3, 2));
-        System.out.println(test.uniquePaths(10, 10));
-        System.out.println(test.uniquePaths(57, 2));
+        System.out.println(test.uniquePaths2(3, 7));
+        System.out.println(test.uniquePaths2(3, 2));
+        System.out.println(test.uniquePaths2(10, 10));
+        System.out.println(test.uniquePaths2(57, 2));
     }
 }
