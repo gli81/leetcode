@@ -65,14 +65,33 @@ public class UniquePathsJava {
     private int get_ans(int x, int y, int m, int n, int num,
                         Map<String, Integer> visited) {
         if (x == m && y == n) return 1;
-        return 0;
+        int n1, n2;
+        n1 = n2 = 0;
+        // right
+        String key = x + 1 + "@" + y;
+        if (!visited.containsKey(key)) {
+            if (x + 1 <= m){
+                n1 = get_ans(x + 1, y, m, n, num, visited);
+            }
+        } else n1 = visited.get(key);
+        // down
+        key = x + "@" + (y + 1);
+        if (!visited.containsKey(key)) {
+            if (y + 1 <= n) {
+                n2 = get_ans(x, y + 1, m, n, num, visited);
+            }
+        } else n2 = visited.get(key);
+        // put current point into the Map
+        key = x + "@" + y;
+        visited.put(key, n1 + n2);
+        return n1 + n2;
     }
 
     public static void main(String[] args) {
         UniquePathsJava test = new UniquePathsJava();
-        System.out.println(test.uniquePaths2(3, 7));
-        System.out.println(test.uniquePaths2(3, 2));
-        System.out.println(test.uniquePaths2(10, 10));
-        System.out.println(test.uniquePaths2(57, 2));
+        System.out.println(test.uniquePaths3(3, 7));
+        System.out.println(test.uniquePaths3(3, 2));
+        System.out.println(test.uniquePaths3(10, 10));
+        System.out.println(test.uniquePaths3(57, 2));
     }
 }
