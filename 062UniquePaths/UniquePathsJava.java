@@ -1,5 +1,8 @@
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class UniquePathsJava {
     public int uniquePaths(int m, int n) {
         // C( (m + n - 2), (m - 1) )
@@ -54,10 +57,16 @@ public class UniquePathsJava {
     }
 
     public int uniquePaths3(int m, int n) {
-
+        Map<String, Integer> visited = new HashMap<>();
+        return get_ans(0, 0,
+                        m - 1, n - 1, 0, visited);
     }
 
-    private int get_ans
+    private int get_ans(int x, int y, int m, int n, int num,
+                        Map<String, Integer> visited) {
+        if (x == m && y == n) return 1;
+        return 0;
+    }
 
     public static void main(String[] args) {
         UniquePathsJava test = new UniquePathsJava();
