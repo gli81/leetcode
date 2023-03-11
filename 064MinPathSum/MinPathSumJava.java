@@ -47,14 +47,37 @@ public class MinPathSumJava {
         return Math.min(n1, n2) + grid[x][y];
     }
 
+    public int minPathSum2(int[][] grid) {
+        // initialize
+        int m = grid.length;
+        int n = grid[0].length;
+        // last column
+        for (int i = m - 2; i > -1; i--) {
+            grid[i][n - 1] += grid[i + 1][n - 1];
+        }
+        // last row
+        for (int i = n - 2; i > -1; i--) {
+            grid[m - 1][i] += grid[m - 1][i + 1];
+        }
+        // update
+        for (int i = n - 2; i > -1; i--) {
+            for (int j = m - 2; j > -1; j--) {
+                grid[j][i] += Math.min(grid[j + 1][i],
+                                        grid[j][i + 1]);
+            }
+        }
+        return grid[0][0];
+    }
+
+
     public static void main(String[] args) {
         MinPathSumJava test = new MinPathSumJava();
-        System.out.println(test.minPathSum(new int[][]{
+        System.out.println(test.minPathSum2(new int[][]{
             {1, 3, 1},
             {1, 5, 1},
             {4, 2, 1}
         }));
-        System.out.println(test.minPathSum(new int[][]{
+        System.out.println(test.minPathSum2(new int[][]{
             {1, 2, 3},
             {4, 5, 6}
         }));
