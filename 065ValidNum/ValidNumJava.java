@@ -9,13 +9,13 @@ public class ValidNumJava {
         boolean numberAfterE = true;
 
         for (int i = 0; i < s.length(); i++) {
-            if ('0' <= s.charAt(i) && s.charAt(i) <= 9) {
+            if ('0' <= s.charAt(i) && s.charAt(i) <= '9') {
                 numberSeen = true;
                 numberAfterE = true;
             } else if (s.charAt(i)== '.') {
                 if (eSeen || pointSeen) return false;
                 pointSeen = true;
-            } else if (s.charAt(i) == 'e') {
+            } else if (s.charAt(i) == 'e' || s.charAt(i) == 'E') {
                 // no ee
                 // no e3
                 if (eSeen || !numberSeen) return false;
