@@ -50,11 +50,39 @@ public class AddBinaryJava {
         return ans.toString();
     }
 
+    public String addBinary3(String a, String b) {
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        char[] charA = a.toCharArray();
+        char[] charB = b.toCharArray();
+        char[] sum = new char[Math.max(i, j) + 2];
+        int num1, num2, sum_, carry = 0, index = sum.length;
+        while (i >= 0 || j >= 0) {
+            num1 = i >= 0 ? charA[i] - '0' : 0;
+            num2 = j >= 0 ? charB[j] - '0' : 0;
+            sum_ = num1 + num2 + carry;
+            carry = 0;
+            if (sum_ >= 2) {
+                carry = 1;
+                sum_ = sum_ % 2;
+            }
+            sum[--index] = (char) (sum_ + '0');
+            i--; j--;
+        }
+        if (carry == 1) sum[0] = (char)(1 + '0'); 
+        // return new String(sum) won't work in lower JDK
+        // Think the String consturctor doesn't
+        // ignore leading 0s in the char array
+        // some how jdk17's String() does
+        return carry == 1 ? new String(sum) : 
+            new String(sum, 1, sum.length - 1);
+    }
 
     public static void main(String[] args) {
         AddBinaryJava test = new AddBinaryJava();
-        System.out.println(test.addBinary2("11", "1"));
-        System.out.println(test.addBinary2("1010", "1011"));
+        System.out.println(test.addBinary3("11", "1"));
+        System.out.println(test.addBinary3("1010", "1011"));
         // System.out.println(test.bin2Dec("1011"));
+        System.out.println(test.addBinary3("0", "0"));
     }
 }
