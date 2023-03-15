@@ -36,7 +36,7 @@ public class AddBinaryJava {
         int sum, num1, num2;
         while (i >= 0 || j >= 0) {
             num1 = i >= 0 ? a.charAt(i) - '0' : 0;
-            num2 = j >= 0 ? a.charAt(j) - '0' : 0;
+            num2 = j >= 0 ? b.charAt(j) - '0' : 0;
             sum = num1 + num2 + carry;
             carry = 0;
             if (sum >= 2) { // 2 or 3
