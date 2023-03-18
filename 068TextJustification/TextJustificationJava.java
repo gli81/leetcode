@@ -2,7 +2,6 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 
 public class TextJustificationJava {
     public List<String> fullyJustify(String[] words,
