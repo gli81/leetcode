@@ -11,19 +11,23 @@ public class TextJustification {
         // current row length
         int curLen = 0;
         List<String> row = new ArrayList<>();
+        // cutting the array
         int i = 0;
         while (i < words.length) {
-            if (curLen + words[i].length() <= maxWidth) {
+            if (curLen > 0 && 
+                    curLen + 1 + words[i].length() <= maxWidth
+                || curLen == 0 &&
+                    words[i].length() <= maxWidth) {
                 row.add(words[i]);
+                if (curLen != 0) curLen += 1;
                 curLen += words[i].length();
-                curLen += 1;
+                i++;
             }
             else {
                 ans.add(String.join(" ", row));
                 row.clear();
                 curLen = 0;
             }
-            i++;
         }
         
         ans.add(String.join(" ", row));
