@@ -1,5 +1,5 @@
 
-public class AddTwoNum1Java {
+public class AddTwoNumJava {
     public ListNode addTwoNum(ListNode l1, ListNode l2) {
         ListNode p = l1;
         ListNode q = l2;
@@ -10,7 +10,8 @@ public class AddTwoNum1Java {
         int sum = 0;
         ListNode current = rslt;
         while(p != null || q != null) {
-            sum = (p == null ? 0 : p.val) + (q == null ? 0 : q.val) + up;
+            sum = (p == null ? 0 : p.val) +
+                    (q == null ? 0 : q.val) + up;
             up = sum / 10;
             cur = sum % 10;
             current.next = new ListNode(cur);
@@ -24,15 +25,23 @@ public class AddTwoNum1Java {
         return rslt.next;
     }
     public static void main(String[] args) {
-        ListNode LN987 = new ListNode(7, new ListNode(8, new ListNode(9, null)));
+        ListNode LN987 = new ListNode(7,
+                                    new ListNode(8,
+                                    new ListNode(9,
+                                                null)));
         // System.out.println(a);
         // System.out.println(a.next);
         // System.out.println(a.next.next);
-        ListNode LN355 = new ListNode(5, new ListNode(5, new ListNode(3, null)));
+        ListNode LN355 = new ListNode(5,
+                                    new ListNode(5,
+                                    new ListNode(3,
+                                            null)));
 
-        AddTwoNum1Java obj = new AddTwoNum1Java();
+        AddTwoNumJava obj = new AddTwoNumJava();
         ListNode ans = obj.addTwoNum(LN987, LN355);
-        System.out.println("" + ans + " " + ans.next + " " + ans.next.next + " " + ans.next.next.next);
+        System.out.println("" + ans + " " + ans.next +
+                            " " + ans.next.next + " " +
+                            ans.next.next.next);
     }
 }
 

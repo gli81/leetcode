@@ -6,7 +6,7 @@ class ListNode:
     def __str__(self):
         return str(self.val)
 
-class AddTwoNum1:
+class AddTwoNum:
     def addTwoNum(self,
                 l1 : ListNode, l2 : ListNode) -> ListNode:
         p = l1
@@ -35,7 +35,7 @@ print(LN987.next)
 print(LN987.next.next)
 LN355 = ListNode(5, ListNode(5, ListNode(3, None)))
 
-ans = AddTwoNum1().addTwoNum(LN987, LN355)
+ans = AddTwoNum().addTwoNum(LN987, LN355)
 print("")
 print("" + str(ans))
 print("" + str(ans) + " " + str(ans.next))
