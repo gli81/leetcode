@@ -1,6 +1,11 @@
 
-class TwoSum2:
-    def twoSum(self, nums : list[int],
+class TwoSum:
+    def twoSum1(self, nums: list[int], target: int):
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+    def twoSum2(self, nums : list[int],
                 target : int) -> list[int]:
         mapp : dict[int, int] = {}
         # put everything in the map
@@ -13,8 +18,11 @@ class TwoSum2:
                 return [i, mapp[sub]]
         return [0, 0]
 
+nums = [3, 26, 87, 2341, 4876, 23]
+target = 2367
+
+print(TwoSum().twoSum2(nums, target))
 
 nums = [2, 5, 8, 2, 7, 87]
 target = 10
-print(TwoSum2().twoSum(nums, target))
-
+print(TwoSum().twoSum1(nums, target))
