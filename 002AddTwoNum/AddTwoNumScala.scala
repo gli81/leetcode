@@ -1,5 +1,5 @@
 
-object AddTwoNum1Scala {
+object AddTwoNumScala {
     def addTwoNum(l1 : ListNode, l2 : ListNode) : ListNode = {
         var p : ListNode = l1
         var q : ListNode = l2
