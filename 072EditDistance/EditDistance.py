@@ -4,7 +4,15 @@ from typing import Dict
 
 class EditDistance:
     def minDistance1(self, word1: "str", word2: "str") -> "int":
-        pass
+        ## over time limit
+        if len(word1) == 0 and len(word2) == 0: return 0
+        if len(word1) == 0: return len(word2)
+        if len(word2) == 0: return len(word1)
+        x = self.minDistance1(word1, word2[:-1]) + 1
+        y = self.minDistance1(word1[:-1], word2) + 1
+        z = self.minDistance1(word1[:-1], word2[:-1])
+        if word1[-1] != word2[-1]: z += 1
+        return min(x, y, z)
 
     def minDistance2(self, word1: "str", word2: "str") -> "int":
         return self.__helper(word1, word2)
