@@ -5,7 +5,7 @@ from typing import List
 class Combinations:
     def combine1(self, n: "int", k: "int"):
         ans = []
-        self.__get_ans(n, k, ans, [], 1)
+        self.__get_ans2(n, k, ans, [], 1)
         return ans
 
     def __get_ans(self, n: "int", k: "int",
