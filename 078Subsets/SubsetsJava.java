@@ -12,7 +12,12 @@ public class SubsetsJava {
 
     private void get_ans(int[] nums, List<List<Integer>> ans,
                         List<Integer> cur, int start) {
-
+        ans.add(new ArrayList<Integer>(cur));
+        for (int i = start; i < nums.length; i++) {
+            cur.add(nums[i]);
+            get_ans(nums, ans, cur, i + 1);
+            cur.remove(cur.size() - 1);
+        }
     }
 
     public static void main(String[] args) {
