@@ -2,7 +2,17 @@
 
 public class WordSearchJava {
     public boolean exist(char[][] board, String word) {
-        return false;
+        int rows = board.length;
+        if (rows == 0) return false;
+        int cols = board[0].length;
+        boolean[][] visited = new boolean[rows][cols];
+        
+    }
+
+    private boolean exist_(char[][] board, int row, int col,
+                            String word, int index,
+                            boolean[][] visited) {
+        
     }
 
     public static void main(String[] args) {
