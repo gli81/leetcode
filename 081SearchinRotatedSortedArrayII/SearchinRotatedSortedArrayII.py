@@ -9,4 +9,8 @@ class SearchinRotatedSortedArrayII:
 
 def main():
     test = SearchinRotatedSortedArrayII()
-    print(test.search())
+    print(test.search([2,5,6,0,0,1,2], 0))
+    print(test.search([2,5,6,0,0,1,2], 3))
+
+if __name__ == "__main__":
+    main()
