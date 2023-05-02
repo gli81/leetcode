@@ -3,10 +3,12 @@
 from typing import Optional
 
 class RemoveDuplicatesfromSortedListII:
-    def deleteDuplicates(self, head: "ListNode") -> "Optional[ListNode]":
-        print(f"head: {head}")
+    def deleteDuplicates(self, head: "ListNode") \
+                            -> "Optional[ListNode]":
+        # print(f"head: {head}")
         cur = head
         pre = ListNode(0, head)
+        ans = pre
         while cur and cur.next:
             eq = False
             while cur.next and cur.val == cur.next.val:
@@ -14,13 +16,16 @@ class RemoveDuplicatesfromSortedListII:
                 eq = True
             if eq:
                 ## a series of duplicates
-                ## pre.next = cur.next
+                ## set pre.next = cur.next
                 pre.next = cur.next
             else:
+                ## push pre forward to the element before
+                ## next series of duplicates
                 pre = cur
+            ## traversing
             cur = cur.next
             # print(head)
-        return pre.next
+        return ans.next
 
         
 
