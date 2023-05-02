@@ -3,27 +3,19 @@
 public class RemoveDuplicatesfromSortedListJava {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode cur = head;
-        ListNode pre = new ListNode(0, head);
-        ListNode ans = pre;
         while (cur != null && cur.next != null) {
-            boolean eq = false;
-            while (cur.next != null && cur.next.val == cur.val) {
-                eq = true;
+            if (cur.next.val == cur.val){
+                cur.next = cur.next.next;
+            } else {
                 cur = cur.next;
             }
-            if (eq) {
-                pre.next = cur.next;
-            } else {
-                pre = cur;
-            }
-            cur = cur.next;
         }
-        return ans.next;
+        return head;
     }
 
     public static void main(String[] args) {
-        RemoveDuplicatesfromSortedListIIJava test = 
-            new RemoveDuplicatesfromSortedListIIJava();
+        RemoveDuplicatesfromSortedListJava test = 
+            new RemoveDuplicatesfromSortedListJava();
         System.out.println(test.deleteDuplicates(new ListNode(1,
                                 new ListNode(2,
                                 new ListNode(3,
