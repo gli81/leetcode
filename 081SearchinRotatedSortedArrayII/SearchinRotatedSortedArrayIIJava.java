@@ -9,9 +9,16 @@ public class SearchinRotatedSortedArrayIIJava {
             mid = (start + end) / 2;
             if (target == nums[mid]) return true;
             if (nums[start] < nums[mid]) {
+                // left half sorted
+                // check whether the target is here
                 if (target >= nums[start] && target < nums[mid]) {
+                    // if target in left half
+                    // focus on left only
                     end = mid - 1;
                 } else {
+                    // if target not in left half
+                    // target in the unsorted right half
+                    // focus on the right half
                     start = mid + 1;
                 }
             } else if (nums[start] == nums[mid]) {
