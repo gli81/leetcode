@@ -29,11 +29,9 @@ class LargestRectangleinHistogram:
     def largestRectangleArea2(self,
                               heights: "List[int]") -> "int":
         """
-        
+        stack maybe?
         """
         pass
-
-
 
 
 def main():
