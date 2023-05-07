@@ -23,6 +23,7 @@ class LargestRectangleinHistogram:
                     width = 0
             ## in the case 最后一个元素走了if分支没走else分支
             max_width = max(max_width, width)
+            ##
             max_area = max(max_area, height * max_width)
         return max_area
     
