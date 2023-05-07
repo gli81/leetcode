@@ -8,12 +8,12 @@ public class LargestRectangleinHistogramJava {
          * brute force solution
          * over time limit
          */
-        HashSet<Integer> heightsSet = new HashSet<>();
+        HashSet<Integer> heights_set = new HashSet<>();
         for (int i = 0; i < heights.length; i++) {
-            heightsSet.add(heights[i]);
+            heights_set.add(heights[i]);
         }
         int max_area = 0;
-        for (int h : heightsSet) {
+        for (int h : heights_set) {
             int width = 0;
             int max_width = 1;
             for (int i = 0; i < heights.length; i++) {
