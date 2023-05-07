@@ -4,6 +4,10 @@ import java.util.HashSet;
 
 public class LargestRectangleinHistogramJava {
     public int largestRectangleArea1(int[] heights) {
+        /**
+         * brute force solution
+         * over time limit
+         */
         HashSet<Integer> heightsSet = new HashSet<>();
         for (int i = 0; i < heights.length; i++) {
             heightsSet.add(heights[i]);
@@ -24,6 +28,11 @@ public class LargestRectangleinHistogramJava {
             max_area = Math.max(max_area, h * max_width);
         }
         return max_area;
+    }
+
+
+    public int largestRectangleArea2(int[] heights) {
+        return 0;
     }
     
     public static void main(String[] args) {

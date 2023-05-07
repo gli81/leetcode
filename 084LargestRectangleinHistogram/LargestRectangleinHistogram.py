@@ -6,8 +6,13 @@ class LargestRectangleinHistogram:
     def largestRectangleArea1(self, heights: "List[int]") -> "int":
         """
         brute force solution
+        over time limit
         """
-        pass
+        heights_set = set(heights)
+        max_area = 0
+        for ele in heights_set:
+            print(ele)
+            
 
 
 def main():
