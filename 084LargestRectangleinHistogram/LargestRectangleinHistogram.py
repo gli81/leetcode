@@ -3,14 +3,17 @@
 from typing import List
 
 class LargestRectangleinHistogram:
-    def largestRectangleArea(self, heights: "List[int]") -> "int":
+    def largestRectangleArea1(self, heights: "List[int]") -> "int":
+        """
+        brute force solution
+        """
         pass
 
 
 def main():
     test = LargestRectangleinHistogram()
-    print(test.largestRectangleArea([2, 1, 5, 6, 2, 3]))
-    print(test.largestRectangleArea([2, 4]))
+    print(test.largestRectangleArea1([2, 1, 5, 6, 2, 3]))
+    print(test.largestRectangleArea1([2, 4]))
 
 if __name__ == "__main__":
     main()
