@@ -69,6 +69,10 @@ class LargestRectangleinHistogram:
             max_area = max(area, max_area)
         return max_area
 
+    def largetRectangleArea5(self,
+                             heights: "List[int]") -> "int":
+        pass
+
 
 def main():
     test = LargestRectangleinHistogram()
