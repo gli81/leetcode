@@ -27,18 +27,30 @@ class LargestRectangleinHistogram:
             max_area = max(max_area, height * max_width)
         return max_area
     
-    def largestRectangleArea2(self,
+    def largestRectangleArea4(self,
                               heights: "List[int]") -> "int":
         """
-        stack maybe?
+        find left less than current
+        find right less than current
+        (right index - left index - 1) * cur height
         """
-        pass
+        right_min = [-1] * len(heights)
+        left_min = [-1] * len(heights)
+        ## TODO left min
+
+        ## TODO right min
+
+        max_area = 0
+        for h in heights:
+            area = (right_min - left_min - 1) * h
+            max_area = max(area, max_area)
+        return max_area
 
 
 def main():
     test = LargestRectangleinHistogram()
-    print(test.largestRectangleArea2([2, 1, 5, 6, 2, 3]))
-    print(test.largestRectangleArea2([2, 4]))
+    print(test.largestRectangleArea4([2, 1, 5, 6, 2, 3]))
+    print(test.largestRectangleArea4([2, 4]))
 
 if __name__ == "__main__":
     main()

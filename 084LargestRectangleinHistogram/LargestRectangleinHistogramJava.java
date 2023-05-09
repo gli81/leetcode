@@ -31,16 +31,16 @@ public class LargestRectangleinHistogramJava {
     }
 
 
-    public int largestRectangleArea2(int[] heights) {
+    public int largestRectangleArea4(int[] heights) {
         return 0;
     }
     
     public static void main(String[] args) {
         LargestRectangleinHistogramJava test =
             new LargestRectangleinHistogramJava();
-        System.out.println(test.largestRectangleArea1(
+        System.out.println(test.largestRectangleArea4(
             new int[]{2, 1, 5, 6, 2, 3}));
-        System.out.println(test.largestRectangleArea1(
+        System.out.println(test.largestRectangleArea4(
             new int[]{2, 4}));
     }
 }
