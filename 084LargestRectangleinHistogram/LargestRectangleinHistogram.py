@@ -34,15 +34,23 @@ class LargestRectangleinHistogram:
         find right less than current
         (right index - left index - 1) * cur height
         """
-        right_min = [-1] * len(heights)
-        left_min = [-1] * len(heights)
+        len_ = len(heights)
+        ## right_min[i]存heights中heights[i]右边
+        ## 第一个比heights[i]小的
+        right_min = [-1] * len_
+        left_min = [-1] * len_
         ## TODO left min
+        for i in range(1, len_):
+            p = i - 1
+            while p >= 0 and heights[p] >= heights[i]:
+                p -= 1
+            left_min[i] = p
 
         ## TODO right min
 
         max_area = 0
-        for h in heights:
-            area = (right_min - left_min - 1) * h
+        for i in range(len_):
+            area = (right_min[i] - left_min[i] - 1) * heights[i]
             max_area = max(area, max_area)
         return max_area
 
