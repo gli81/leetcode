@@ -76,6 +76,13 @@ public class LargestRectangleinHistogramJava {
         }
         return max_area;
     }
+
+    public int largestRectangleArea5(int[] heights) {
+        /*
+         * stack
+         */
+        return 0;
+    }
     
     public static void main(String[] args) {
         LargestRectangleinHistogramJava test =
