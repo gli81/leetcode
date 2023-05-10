@@ -69,15 +69,52 @@ class LargestRectangleinHistogram:
             max_area = max(area, max_area)
         return max_area
 
-    def largetRectangleArea5(self,
+    def largestRectangleArea5(self,
                              heights: "List[int]") -> "int":
-        pass
+        """
+        stack
+        """
+        stack = []
+        max_area = 0
+        area = 0
+        p = 0
+        while p < len(heights):
+            if not stack:
+                ## empty stack, push
+                stack.append(p)
+                p += 1
+            else:
+                ## non empty
+                if heights[p] >= heights[stack[-1]]:
+                    ## if larger than current stack top, push
+                    stack.append(p)
+                    p += 1
+                else:
+                    ## pop current top, compute area
+                    h = heights[stack.pop()]
+                    ## left border the new top
+                    left = stack[-1] if stack else -1
+                    ## right border current p
+                    area = (p - left - 1) * h
+                    max_area = max(max_area, area)
+                    ## no p++
+        ## something left in the stack
+        ## no more shorter hists
+        ## one short hists will pop
+        ## everything taller than it in the stack
+        while stack:
+            h = heights[stack.pop()]
+            left = stack[-1] if stack else -1
+            area = h * (len(heights) - left - 1)
+            max_area = max(max_area, area)
+        return max_area
+
 
 
 def main():
     test = LargestRectangleinHistogram()
-    print(test.largestRectangleArea4([2, 1, 5, 6, 2, 3]))
-    print(test.largestRectangleArea4([2, 4]))
+    print(test.largestRectangleArea5([2, 1, 5, 6, 2, 3]))
+    print(test.largestRectangleArea5([2, 4]))
 
 if __name__ == "__main__":
     main()
