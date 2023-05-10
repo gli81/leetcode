@@ -44,6 +44,7 @@ class ListNode:
         ans += ']'
         return ans
 
+
 def main():
     test = RemoveDuplicatesfromSortedListII()
     print(test.deleteDuplicates(ListNode(1,
