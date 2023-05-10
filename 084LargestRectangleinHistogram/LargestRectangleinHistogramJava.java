@@ -2,6 +2,7 @@
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Stack;
 
 public class LargestRectangleinHistogramJava {
     public int largestRectangleArea1(int[] heights) {
@@ -81,7 +82,29 @@ public class LargestRectangleinHistogramJava {
         /*
          * stack
          */
-        return 0;
+        Stack<Integer> stack = new Stack<>();
+        int max_area = 0;
+        int p = 0;
+        while (p < heights.length) {
+            if (stack.isEmpty()) {
+                stack.push(p);
+                p++;
+            } else {
+                int top = stack.peek();
+                if (heights[p] >= heights[top]) {
+                    stack.push(p);
+                    p++;
+                } else {
+                    int height = heights[stack.pop()];
+                    int left_less_min = stack.isEmpty() ? -1 : stack.peek();
+                    int right_less_min = p;
+                    int area = (right_less_min - left_less_min - 1) * height;
+                    max_area = Math.max(area, max_area);
+                }
+            }
+        }
+
+        return max_area;
     }
     
     public static void main(String[] args) {
