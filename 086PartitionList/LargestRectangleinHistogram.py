@@ -110,6 +110,7 @@ class LargestRectangleinHistogram:
         return max_area
 
 
+
 def main():
     test = LargestRectangleinHistogram()
     print(test.largestRectangleArea5([2, 1, 5, 6, 2, 3]))
