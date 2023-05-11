@@ -25,7 +25,6 @@ class MaximalRectangle:
             max_area = max(area, max_area)
         return max_area
 
-
     def largestRectangleinHistogram4(self,
                                      heights: "List[int]") -> "int":
         len_ = len(heights)
