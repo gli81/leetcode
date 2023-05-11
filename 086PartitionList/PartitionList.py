@@ -2,7 +2,23 @@
 
 class PartitionList:
     def partition(self, head: "ListNode", x: "int") -> "ListNode":
-        pass
+        min_head: "ListNode" = ListNode(0)
+        min_: "ListNode" = min_head
+        max_head: "ListNode" = ListNode(0)
+        max_: "ListNode" = max_head
+
+        ## traverse the linked list
+        while head != None:
+            if head.val < x:
+                min_.next = head
+                min_ = min_.next
+            else:
+                max_.next = head
+                max_ = max_.next
+            head = head.next
+        max_.next = None
+        min_.next = max_head.next
+        return min_head.next
 
 
 class ListNode:
@@ -23,8 +39,14 @@ class ListNode:
 
 def main():
     test = PartitionList()
-    print(test.partition())
-    print(test.partition())
+    print(test.partition(ListNode(1,
+                            ListNode(4,
+                            ListNode(3,
+                            ListNode(2,
+                            ListNode(5,
+                            ListNode(2)))))), 3)
+    )
+    # print(test.partition())
 
 if __name__ == "__main__":
     main()
