@@ -8,7 +8,7 @@ class PartitionList:
         max_: "ListNode" = max_head
 
         ## traverse the linked list
-        while head != None:
+        while head:
             if head.val < x:
                 min_.next = head
                 min_ = min_.next

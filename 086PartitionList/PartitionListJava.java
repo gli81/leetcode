@@ -2,7 +2,15 @@
 
 public class PartitionListJava {
     public ListNode partition(ListNode head, int x) {
-        return null;
+        ListNode min_head, max_head, min_, max_;
+        min_head = new ListNode(0);
+        min_ = min_head;
+        max_head = new ListNode(0);
+        max_ = max_head;
+        // traverse the thing
+        while (head != null) {
+            
+        }
     }
     
     public static void main(String[] args) {
