@@ -9,8 +9,19 @@ public class PartitionListJava {
         max_ = max_head;
         // traverse the thing
         while (head != null) {
-            
+            if (head.val < x) {
+                min_.next = head;
+                min_ = min_.next;
+            } else {
+                max_.next = head;
+                max_ = max_.next;
+            }
+            head = head.next;
         }
+        // put together
+        min_.next = max_head.next;
+        max_.next = null;
+        return min_head.next;
     }
     
     public static void main(String[] args) {
