@@ -48,36 +48,57 @@ public class ScrambleStringJava {
 
     private boolean scramble_helper(String s1, String s2,
                             HashMap<String, Integer> map) {
+        // check map
+        int in_the_map = map.getOrDefault(s1 + "&" + s2, -1);
+        if (in_the_map == 1) return true;
+        else if (in_the_map == 0) return false;
         // special cases; exiting conditions
-        if (s1.length() != s2.length()) return false;
-        if (s1.equals(s2)) return true;
+        if (s1.length() != s2.length()) {
+            map.put(s1 + "&" + s2, 0);
+            return false;
+        }
+        if (s1.equals(s2)) {
+            map.put(s1 + "&" + s2, 1);
+            return true;
+        }
         int [] letters = new int[26];
         for (int i = 0; i < s1.length(); i++) {
             letters[s1.charAt(i) - 'a']++;
             letters[s2.charAt(i) - 'a']--;
         }
         for (int i = 0; i < letters.length; i++) {
-            if (letters[i] != 0) return false;
+            if (letters[i] != 0) {
+                map.put(s1 + "&" + s2, 0);
+                return false;
+            }
         }
 
         // real stuff, smaller problem
         for (int i = 1; i < s1.length(); i++) {
             // cut, next
             if (
-                isScramble1(
+                scramble_helper(
                     s1.substring(0, i),
-                    s2.substring(0, i)
+                    s2.substring(0, i), map
                 ) &&
-                isScramble1(s1.substring(i), s2.substring(i))
-            ) return true;
+                scramble_helper(s1.substring(i),
+                                s2.substring(i), map)
+            ) {
+                map.put(s1 + "&" + s2, 1);
+                return true;
+            }
             // cut, switch, next
             if (
-                isScramble1(s1.substring(0, i),
-                           s2.substring(s2.length() - i)) &&
-                isScramble1(s1.substring(i),
-                           s2.substring(0, s2.length() - i))
-            ) return true;
+                scramble_helper(s1.substring(0, i),
+                        s2.substring(s2.length() - i), map) &&
+                scramble_helper(s1.substring(i),
+                    s2.substring(0, s2.length() - i),
+                    map)
+            ) {
+                map.put(s1 + "&" + s2, 1);
+                return true;}
         }
+        map.put(s1 + "&" + s2, 0);
         return false;
     }
 
