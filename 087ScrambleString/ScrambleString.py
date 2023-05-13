@@ -35,7 +35,7 @@ class ScrambleString:
                 map_[key] = 0
                 return False
         ## smaller problem
-        for i in range(len(s1)):
+        for i in range(1, len(s1)):
             ## cut, next
             if self.__scramble_helper(s1[:i], s2[:i], map_) and\
                self.__scramble_helper(s1[i:], s2[i:], map_):
