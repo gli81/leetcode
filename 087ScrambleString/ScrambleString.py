@@ -8,7 +8,7 @@ sys.setrecursionlimit(5000)
 class ScrambleString:
     def isScramble2(self, s1: "str", s2: "str") -> "bool":
         """
-        exceed time limit
+        exceed memory limit
         """
         return self.__scramble_helper(s1, s2, {})
 
