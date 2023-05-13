@@ -1,9 +1,6 @@
 # -*- coding: utf -8-*-
 
 from typing import Dict, List
-import sys
-
-sys.setrecursionlimit(5000)
 
 class ScrambleString:
     def isScramble2(self, s1: "str", s2: "str") -> "bool":
