@@ -13,7 +13,21 @@ public class MergeSortedArrayJava {
         /*
          * a step of merge sort
          */
-
+        // move nums1 backward
+        for (int i = nums1.length - 1; i > n - 1; i--) {
+            nums1[i] = nums1[i - n];
+        }
+        for (int i = n - 1; i > -1; i--) nums1[i] = 0;
+        int total, i1, i2;
+        total = i2 = 0;
+        i1 = n;
+        while (i1 < nums1.length && i2 < nums2.length) {
+            if (nums1[i1] >= nums2[i2]) {
+                nums1[total++] = nums2[i2++];
+            } else nums1[total++] = nums1[i1++];
+        }
+        // if anything left in nums2 not dealt with
+        while (i2 < nums2.length) nums1[total++] = nums2[i2++];
     }
     
 
