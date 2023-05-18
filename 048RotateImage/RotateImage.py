@@ -7,12 +7,16 @@ class RotateImage():
         ## diagonal swap, aka transpose
         for i in range(len(matrix)):
             for j in range(i):
-                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+                matrix[i][j], matrix[j][i] =\
+                    matrix[j][i], matrix[i][j]
         # print(matrix)
         ## horizontal swap
         for i in range(len(matrix[0]) // 2):
             for j in range(len(matrix)):
-                matrix[j][i], matrix[j][len(matrix[0]) - i - 1] = matrix[j][len(matrix[0]) - i - 1], matrix[j][i]
+                matrix[j][i],\
+                    matrix[j][len(matrix[0]) - i - 1] =\
+                        matrix[j][len(matrix[0]) - i - 1],\
+                            matrix[j][i]
         # print(matrix)
 
 
