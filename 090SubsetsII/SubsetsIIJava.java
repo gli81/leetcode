@@ -8,14 +8,22 @@ public class SubsetsIIJava {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         Arrays.sort(nums);
-        subsets_helper(nums, new ArrayList<Integer>(), ans);
+        subsets_helper(nums, 0, new ArrayList<Integer>(), ans);
         return ans;
     }
 
     private void subsets_helper(int[] nums,
+                                int start,
                                 List<Integer> cur,
                                 List<List<Integer>> ans) {
-        
+        ans.add(new ArrayList<>(cur));
+        for (int i = start; i < nums.length; i++) {
+            // if same as the one before
+            if (i > start && nums[i] == nums[i - 1]) continue;
+            cur.add(nums[i]);
+            subsets_helper(nums, i + 1, cur, ans);
+            cur.remove(cur.size() - 1);
+        }
     }
     
 

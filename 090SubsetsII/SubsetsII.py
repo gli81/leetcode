@@ -19,6 +19,7 @@ class SubsetsII:
         for i in range(start, len(nums)):
             ## if current element same as the last one
             ## skip it
+            # if i > 0 and nums[i] == nums[i - 1]:
             if i > start and nums[i] == nums[i - 1]:
                 continue
             cur.append(nums[i])
