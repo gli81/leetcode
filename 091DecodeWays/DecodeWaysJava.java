@@ -69,10 +69,16 @@ public class DecodeWaysJava {
         int len = s.length();
         if (len == 1) return s.charAt(0) == '0' ? 0 : 1;
         // access here, s.length() at least 2 (non empty string)
-        int[] dp = new int[len + 1];
-        dp[len] = 1;
-        if (s.charAt(len - 1) != '0') dp[len - 1] = 1;
-        for (int i = len - 2; i >= 0; i--) {
+        int[] dp = new int[len];
+        dp[len - 1] = s.charAt(len - 1) == '0' ? 0 : 1;
+        if (s.charAt(len - 2) != '0') {
+            int ten1 = (s.charAt(len - 2) - '0') * 10;
+            int one1 = s.charAt(len - 1) - '0';
+            dp[len - 2] = 
+                ten1 + one1 <= 26 ?
+                            1 + dp[len - 1] : dp[len - 1];
+        }
+        for (int i = len - 3; i >= 0; i--) {
             if (s.charAt(i) == '0') continue;
             int ans2 = 0;
             int ten = (s.charAt(i) - '0') * 10;
@@ -89,5 +95,12 @@ public class DecodeWaysJava {
         System.out.println(test.numDecodings3("226"));
         System.out.println(test.numDecodings3("06"));
         System.out.println(test.numDecodings3("30"));
+        System.out.println(test.numDecodings3("306"));
+        System.out.println("===============================");
+        System.out.println(test.numDecodings2("12"));
+        System.out.println(test.numDecodings2("226"));
+        System.out.println(test.numDecodings2("06"));
+        System.out.println(test.numDecodings2("30"));
+        System.out.println(test.numDecodings2("306"));
     }
 }
