@@ -21,17 +21,17 @@ class RestoreIPAddresses:
         if start == len(s):
             if ct == 4:
                 ans.append(cur[:-1]) ## ignore the ending dot
-                print(cur, end='\t')
-                print("yes")
+                # print(cur, end='\t')
+                # print("yes")
                 return
             else:
-                print(cur, end='\t')
-                print("no")
+                # print(cur, end='\t')
+                # print("no")
                 return
         ## still number left, already got 4 parts
         if start < len(s) and ct == 4:
-            print(cur, end='\t')
-            print("no")
+            # print(cur, end='\t')
+            # print("no")
             return
         temp = cur
         ## add one digit
