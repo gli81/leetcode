@@ -16,6 +16,7 @@ class RestoreIPAddresses:
                   ct: "int") -> "None":
         ## length > 12 not valid
         if len(s) > 12: return
+        if len(s) - start > 3 * (4 - ct): return
         ## get to the end, and have four parts
         if start == len(s):
             if ct == 4:
@@ -41,7 +42,7 @@ class RestoreIPAddresses:
         ## 要开始加多个字符了
         ## 比如要添加一个两位的，如果首位是0，就等到下一轮
         ## 就等到下一轮，按照添加一位的算
-        if s[start] == 0: return
+        if s[start] == '0': return
         ## add two digits
         if start + 2 <= len(s):
             cur = temp
