@@ -5,7 +5,16 @@ import java.util.ArrayList;
 
 public class BinaryTreeInorderTraversalJava {
     public List<Integer> inorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> ans = new ArrayList<>();
+        get_ans(root, ans);
+        return ans;
+    }
+
+    private void get_ans(TreeNode node, List<Integer> ans) {
+        if (node == null) return;
+        get_ans(node.left, ans);
+        ans.add(node.val);
+        get_ans(node.right, ans);
     }
 
 
