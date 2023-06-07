@@ -5,7 +5,16 @@ from typing import Optional, List
 class BinaryTreeInorderTraversal:
     def inorderTraversal(self, root: "Optional[TreeNode]")\
                         -> "List[int]":
-        pass
+        ans = []
+        self.__get_ans(root, ans)
+        return ans
+    
+    def __get_ans(self, node: "Optional[TreeNode]",
+                  ans: "List[int]") -> "None":
+        if node == None: return
+        self.__get_ans(node.left, ans)
+        ans.append(node.val)
+        self.__get_ans(node.right, ans)
 
 
 class TreeNode:
