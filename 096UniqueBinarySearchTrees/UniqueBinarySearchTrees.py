@@ -50,9 +50,9 @@ class UniqueBinarySearchTrees:
 
 def main():
     test = UniqueBinarySearchTrees()
-    print(test.numTrees(3))
-    print(test.numTrees(20))
-    print(test.numTrees(5))
+    print(test.numTrees2(3))
+    print(test.numTrees2(20))
+    print(test.numTrees2(5))
 
 if __name__ == "__main__":
     main()
