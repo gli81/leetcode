@@ -50,7 +50,7 @@ class ValidateBinarySearchTree:
                     root = root.right
 
     def isValidBST0(self,
-                    root: "Optional[TreeNode") -> "bool":
+                    root: "Optional[TreeNode]") -> "bool":
         ans = []
         self.__inorder_traversal(root, ans)
         print(ans)
@@ -60,7 +60,7 @@ class ValidateBinarySearchTree:
         return True
 
     def __inorder_traversal(self,
-                            root: "Optional[TreeNode",
+                            root: "Optional[TreeNode]",
                             ans: "List[int]") -> "None":
         if not root: return
         self.__inorder_traversal(root.left, ans)
