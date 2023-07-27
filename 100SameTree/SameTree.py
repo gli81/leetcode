@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 
+from typing import Optional
+
 class SameTree:
     def isSameTree(self, p: "Optional[TreeNode]",
                    q: "Optional[TreeNode]") -> "bool":
