@@ -43,7 +43,7 @@ class RecoverBinarySearchTree:
                                  pre)
 
     def recoverTree(self,
-                    root: "Optional[TreeNode]")/
+                    root: "Optional[TreeNode]")\
                     -> "None":
         if not root: return
         first = None
