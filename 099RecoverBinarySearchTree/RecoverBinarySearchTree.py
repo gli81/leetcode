@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from typing import Optional
+from typing import Optional, Tuple
 
 class RecoverBinarySearchTree:
     def recoverTree(self,
