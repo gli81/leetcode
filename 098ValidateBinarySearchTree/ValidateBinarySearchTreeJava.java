@@ -23,7 +23,34 @@ public class ValidateBinarySearchTreeJava {
         return;
     }
 
-    public void inorder_traversal_stack(TreeNode root) {
+    public boolean isValidBST1(TreeNode root) {
+        Stack<TreeNode> stk = new Stack<>();
+        if (null == root) return true;
+        stk.push(root);
+        TreeNode pre = null;
+        while (stk.size() > 0) {
+            if (null != root.left) {
+                stk.push(root.left);
+                root = root.left;
+            } else {
+                root = stk.pop();
+                if (pre != null && pre.val >= root.val) return false;
+                pre = root;
+                while (null == root.right && stk.size() != 0) {
+                    root = stk.pop();
+                    if (pre.val >= root.val) return false;
+                    pre = root;
+                }
+                if (null != root.right) {
+                    stk.push(root.right);
+                    root = root.right;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void inorder_traversal_stack(TreeNode root) {
         Stack<TreeNode> stk = new Stack<>();
         if (null == root) return;
         stk.push(root);
@@ -68,7 +95,7 @@ public class ValidateBinarySearchTreeJava {
                                             new TreeNode(6,
                                         new TreeNode(5), null)),
                                                 null);
-        test.inorder_traversal_stack(test1);
+        System.out.println(test.isValidBST1(test1));
     }
 }
 
