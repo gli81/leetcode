@@ -6,7 +6,6 @@ public class BestTimetoBuyandSellStockJava {
      */
     public int maxProfit1(int[] prices) {
         int ans = 0;
-        // brute force
         for (int i = 0; i < prices.length; i++) {
             for (int j = i + 1; j < prices.length; j++) {
                 if (prices[j] - prices[i] > ans) {
@@ -19,12 +18,12 @@ public class BestTimetoBuyandSellStockJava {
 
     public int maxProfit2(int[] prices) {
         int ans = 0;
-        // brute force
+        int j = 0;
         for (int i = 0; i < prices.length; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                if (prices[j] - prices[i] > ans) {
-                    ans = prices[j] - prices[i];
-                }
+            if (prices[i] - prices[j] > ans) {
+                ans = prices[i] - prices[j];
+            }else if (prices[i] - prices[j] < 0) {
+                j = i;
             }
         }
         return ans;
