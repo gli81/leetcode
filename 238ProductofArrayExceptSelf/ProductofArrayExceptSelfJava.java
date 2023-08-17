@@ -10,7 +10,8 @@ public class ProductofArrayExceptSelfJava {
         right[len - 1] = 1;
         for (int i = 1; i < len; i++) {
             left[i] = left[i - 1] * nums[i - 1];
-            right[len - i - 1] = right[len - i]  * nums[len - i];
+            right[len - i - 1] = right[len - i] *
+                nums[len - i];
         }
         // System.out.println(Arrays.toString(left));
         // System.out.println(Arrays.toString(right));
@@ -23,15 +24,20 @@ public class ProductofArrayExceptSelfJava {
 
     
     public static void main(String[] args) {
-        ProductofArrayExceptSelfJava test = new ProductofArrayExceptSelfJava();
+        ProductofArrayExceptSelfJava test = 
+            new ProductofArrayExceptSelfJava();
         System.out.println(
             Arrays.toString(
-                test.productExceptSelf(new int[]{1, 2, 3, 4})
+                test.productExceptSelf(
+                    new int[]{1, 2, 3, 4}
+                )
             )
         );
         System.out.println(
             Arrays.toString(
-                test.productExceptSelf(new int[]{-1, 1, 0, -3, 3})
+                test.productExceptSelf(
+                    new int[]{-1, 1, 0, -3, 3}
+                )
             )
         );
     }

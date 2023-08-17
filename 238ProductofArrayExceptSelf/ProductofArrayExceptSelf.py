@@ -3,13 +3,17 @@
 from typing import List
 
 class ProductofArrayExceptSelf:
-    def productExceptSelf(self, nums: "List[int]") -> "List[int]":
+    def productExceptSelf(self,
+                          nums: "List[int]")\
+                          -> "List[int]":
         left = [1 for _ in range(len(nums))]
         right = [1] * len(nums)
         ans = [1] * len(nums)
         for i in range(1, len(nums)):
             left[i] = left[i - 1] * nums[i - 1]
-            right[len(nums) - i - 1] = right[len(nums) - i] * nums[len(nums) - i]
+            right[len(nums) - i - 1] =\
+                right[len(nums) - i] *\
+                    nums[len(nums) - i]
         for i in range(len(nums)):
             ans[i] = left[i] * right[i]
         return ans
