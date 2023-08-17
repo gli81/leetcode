@@ -24,17 +24,31 @@ class ThreeSum:
                 hi = len(nums) - 1
                 lo = i + 1
                 looking = -nums[i]
-                ## try to find two nums that add up to 0 - nums[i]
+                ## try to find two nums
+                ## that add up to 0 - nums[i]
                 while lo < hi:
                     if nums[hi] + nums[lo] == looking:
                         ## find that combination
-                        ans.append([nums[i], nums[lo], nums[hi]])
-                        while lo < hi and nums[lo] == nums[lo + 1]: lo += 1
-                        while lo < hi and nums[hi] == nums[hi - 1]: hi -= 1
-                        ## moving lo and hi to the next different num, to avoid same triplet appearing in result
+                        ans.append(
+                            [nums[i],
+                             nums[lo],
+                             nums[hi]]
+                        )
+                        while lo < hi and\
+                            nums[lo] == nums[lo + 1]:
+                            lo += 1
+                        while lo < hi and\
+                            nums[hi] == nums[hi - 1]:
+                            hi -= 1
+                        ## moving lo and hi
+                        ## to the next different num,
+                        ## to avoid same triplet
+                        ## appearing in result
                         lo += 1
                         hi -= 1
-                        ## when nums[lo] != nums[lo + 1], nums[lo] is the last same num of last check
+                        ## when nums[lo] != nums[lo + 1],
+                        ## nums[lo] is the last same
+                        ## num of last check
                     elif nums[hi] + nums[lo] < looking:
                         lo += 1
                     else:
@@ -42,10 +56,8 @@ class ThreeSum:
         return ans
 
 
-
 def main():
     print(ThreeSum().threeSum([-1,0,1,2,-1,-4]))
-    
 
 if __name__ == "__main__":
     main()
