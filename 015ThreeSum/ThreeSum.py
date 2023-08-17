@@ -1,16 +1,26 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class ThreeSum:
-    def threeSum(self, nums: list[int])-> list[list[int]]:
+    def threeSum(self, nums: "List[int]") ->\
+                 "List[List[int]]":
         ## sort first
         nums.sort()
         ans = []
         for i in range(len(nums) - 2):
-            ## find three num, so the last one you should check is the last but three num
-            ## check if it add the last two nums equals to zero
-            if (i == 0 or (i > 0 and nums[i] != nums[i - 1])):
-            ## no equal nums so if num already in the triplet, don't check another num
-            ## sorted list, so if a num equals the num before, it is a replicated num
+            ## find three num,
+            ## so the last one you should check is
+            ## the last but three num
+            ## check if it add the last two nums
+            ## equals to zero
+            if (i == 0 or (i > 0 and\
+                           nums[i] != nums[i - 1])):
+            ## no equal nums so if num
+            ## already in the triplet,
+            ## don't check another num
+            ## sorted list, so if a num equals
+            ## the num before, it is a replicated num
                 hi = len(nums) - 1
                 lo = i + 1
                 looking = -nums[i]
