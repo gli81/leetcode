@@ -18,17 +18,18 @@ class SortColors:
                 one_ct -= 1
             else: nums[i] = 2
     
-        
     def sortColors2(self, nums: "List[int]") -> "None":
         zero_pos = 0
         two_pos = len(nums) - 1
         i = 0
         while i <= two_pos:
             if nums[i] == 0:
-                nums[i], nums[zero_pos] = nums[zero_pos], nums[i]
+                nums[i], nums[zero_pos]\
+                    = nums[zero_pos], nums[i]
                 zero_pos += 1
             elif nums[i] == 2:
-                nums[two_pos], nums[i] = nums[i], nums[two_pos]
+                nums[two_pos], nums[i]\
+                    = nums[i], nums[two_pos]
                 two_pos -= 1
                 i -= 1
             i += 1
