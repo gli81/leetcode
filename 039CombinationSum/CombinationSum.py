@@ -5,10 +5,10 @@ class CombinationSum:
                        target: "int")\
                         -> "list[list[int]]":
         ans = []
-        self.combSum_(ans, candidates, [], target, 0)
+        self.__combSum_(ans, candidates, [], target, 0)
         return ans
     
-    def combSum_(self, ans: "list[list[int]]",
+    def __combSum_(self, ans: "list[list[int]]",
                  candidates: "list[int]",
                  current: "list[int]",
                  remain: "int",
@@ -18,7 +18,13 @@ class CombinationSum:
         else:
             for i in range(start, len(candidates)):
                 current.append(candidates[i])
-                self.combSum_(ans, candidates, current, remain - candidates[i], i)
+                self.combSum_(
+                    ans,
+                    candidates,
+                    current,
+                    remain - candidates[i],
+                    i
+                )
                 current.pop()
 
 
