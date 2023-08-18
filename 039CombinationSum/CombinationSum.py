@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class CombinationSum:
-    def combinationSum(self, candidates: "list[int]",
+    def combinationSum(self, candidates: "List[int]",
                        target: "int")\
-                        -> "list[list[int]]":
+                        -> "List[List[int]]":
         ans = []
         self.__combSum_(ans, candidates, [], target, 0)
         return ans
     
-    def __combSum_(self, ans: "list[list[int]]",
-                 candidates: "list[int]",
-                 current: "list[int]",
-                 remain: "int",
-                 start: "int") -> "None":
+    def __combSum_(self,
+                   ans: "List[List[int]]",
+                   candidates: "List[int]",
+                   current: "List[int]",
+                   remain: "int",
+                   start: "int") -> "None":
         if remain < 0: return
         elif remain == 0: ans.append(current[:])
         else:

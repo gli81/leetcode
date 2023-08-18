@@ -24,7 +24,8 @@ public class CombinationSumJava {
         return ans;
     }
 
-    private void combSum_(List<List<Integer>> ans,
+    private void combSum_(
+        List<List<Integer>> ans,
         List<Integer> current,
         int[] candidates,
         int remain,
