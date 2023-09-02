@@ -1,5 +1,5 @@
-object LongestSubstring4Scala {
-    def longestSubstring(s : String) : Int = {
+object LongestSubstringwithoutRepeatingCharactersScala {
+    def lengthOfLongestSubstring(s : String) : Int = {
         val index : Array[Int] = new Array(128)
         var ans : Int = 0
         val n : Int = s.length
@@ -11,7 +11,9 @@ object LongestSubstring4Scala {
         }
         ans
     }
+
+    
     def main(args : Array[String]) : Unit = {
-        print(longestSubstring("abcabcbb"))
+        print(lengthOfLongestSubstring("abcabcbb"))
     }
 }

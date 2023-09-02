@@ -1,6 +1,7 @@
 
-public class LongestSubstring4Java {
-    public int longestSubstring(String s) {
+public class LongestSubstringwithoutRepeatingCharactersJava
+{
+    public int lengthOfLongestSubstring4(String s) {
         int[] index = new int[128];
         int ans = 0, n = s.length();
         for (int i = 0, j = 0; j < n; j++) {
@@ -10,10 +11,13 @@ public class LongestSubstring4Java {
         }
         return ans;
     }
+
+
     public static void main(String[] args) {
-        String s = "abcdcca";
+        LongestSubstringwithoutRepeatingCharactersJava test = 
+            new LongestSubstringwithoutRepeatingCharactersJava();
         System.out.println(
-            new LongestSubstring4Java().longestSubstring(s)
+            test.lengthOfLongestSubstring4("abcdcca")
         );
     }
 }
