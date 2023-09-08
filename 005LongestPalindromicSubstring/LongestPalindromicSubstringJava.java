@@ -1,6 +1,6 @@
 
 
-public class LongestPalindromicSubstring4Java {
+public class LongestPalindromicSubstringJava {
     public String longestPalindrome(String s) {
         int len1 = 0, len2 = 0, len = 0;
         int start = 0, end = 0;
@@ -15,6 +15,7 @@ public class LongestPalindromicSubstring4Java {
         }
         return s.substring(start, end + 1);
     }
+
     private int palindromeCenteredAt(String s, int leftIndex, int rightIndex) {
         int left = leftIndex;
         int right = rightIndex;
@@ -24,8 +25,12 @@ public class LongestPalindromicSubstring4Java {
         }
         return right - left - 2 + 1;
     }
+
+
     public static void main(String[] args) {
         String s = "liguangzhenghaoshuaiiauhs";
-        System.out.println(new LongestPalindromicSubstring4Java().longestPalindrome(s));
+        LongestPalindromicSubstringJava test =
+            new LongestPalindromicSubstringJava();
+        System.out.println(test.longestPalindrome(s));
     }
 }

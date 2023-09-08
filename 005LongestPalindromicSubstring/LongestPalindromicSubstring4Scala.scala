@@ -1,16 +1,7 @@
 
 
-object LongestPalindromicSubstring4Scala {
+object LongestPalindromicSubstringScala {
     def longestPalindromSubstring(s : String) : String = {
-        def palindromeCenteredAt(s : String, leftIndex : Int, rightIndex : Int) : Int = {
-            var left : Int = leftIndex
-            var right : Int = rightIndex
-            while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-                left -= 1
-                right += 1
-            }
-            right - left + 1 - 2
-        }
         /**
          * traverse the String, make every letter (or two letters) the center of a palindrome word
          * see if the letters before the center and after the center are the same
@@ -29,6 +20,17 @@ object LongestPalindromicSubstring4Scala {
         }
         s.substring(start, endd + 1)
     }
+    
+    def palindromeCenteredAt(s : String, leftIndex : Int, rightIndex : Int) : Int = {
+        var left : Int = leftIndex
+        var right : Int = rightIndex
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left -= 1
+            right += 1
+        }
+        right - left + 1 - 2
+    }
+
 
     def main(args : Array[String]) : Unit = {
         val s = "liguanggnailga"
