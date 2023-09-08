@@ -1,7 +1,7 @@
 
 
 public class LongestPalindromicSubstringJava {
-    public String longestPalindrome(String s) {
+    public String longestPalindrome4(String s) {
         int len1 = 0, len2 = 0, len = 0;
         int start = 0, end = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -31,6 +31,6 @@ public class LongestPalindromicSubstringJava {
         String s = "liguangzhenghaoshuaiiauhs";
         LongestPalindromicSubstringJava test =
             new LongestPalindromicSubstringJava();
-        System.out.println(test.longestPalindrome(s));
+        System.out.println(test.longestPalindrome4(s));
     }
 }
