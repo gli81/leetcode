@@ -29,22 +29,17 @@ class AddTwoNum:
             current.next = ListNode(1)
         return rslt.next
 
+LN987 = ListNode(7, ListNode(8, ListNode(9, None)))
+print(LN987)
+print(LN987.next)
+print(LN987.next.next)
+LN355 = ListNode(5, ListNode(5, ListNode(3, None)))
 
-def main():
-    LN987 = ListNode(7, ListNode(8, ListNode(9, None)))
-    print(LN987)
-    print(LN987.next)
-    print(LN987.next.next)
-    LN355 = ListNode(5, ListNode(5, ListNode(3, None)))
-
-    ans = AddTwoNum().addTwoNum(LN987, LN355)
-    print("")
-    print("" + str(ans))
-    print("" + str(ans) + " " + str(ans.next))
-    print("" + str(ans) + " " + str(ans.next) + " "\
-            + str(ans.next.next))
-    print("" + str(ans) + " " + str(ans.next) + " "\
-            + str(ans.next.next) + " " + str(ans.next.next.next))
-
-if __name__ == "__main__":
-    main()
+ans = AddTwoNum().addTwoNum(LN987, LN355)
+print("")
+print("" + str(ans))
+print("" + str(ans) + " " + str(ans.next))
+print("" + str(ans) + " " + str(ans.next) + " "\
+        + str(ans.next.next))
+print("" + str(ans) + " " + str(ans.next) + " "\
+        + str(ans.next.next) + " " + str(ans.next.next.next))
