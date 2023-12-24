@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
-class MedianSortedArrays1:
+from typing import List
+
+class MedianofTwoSortedArrays:
     ## solution 1: part of merge sort,
     ## merging two sorted sublist
-    def findMedianSortedArrays(self, nums1 : list[int],
-                                nums2 : list[int]) -> float:
+    def findMedianSortedArrays1(self, nums1 : "List[int]",
+                                nums2 : "List[int]") -> "float":
         '''
         params: two SORTED lists
         '''
@@ -52,8 +54,8 @@ class MedianSortedArrays1:
 def main():
     l1 = [1, 3]
     l2 = [2]
-    print(MedianSortedArrays1().
-          findMedianSortedArrays(l1, l2))
+    print(MedianofTwoSortedArrays().
+          findMedianSortedArrays1(l1, l2))
 
-if __name__=='__main__':
+if __name__ == "__main__":
     main()

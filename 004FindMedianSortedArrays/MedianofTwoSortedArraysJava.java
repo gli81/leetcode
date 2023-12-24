@@ -1,6 +1,6 @@
 
 
-public class MedianSortedArrays1Java {
+public class MedianofTwoSortedArraysJava {
     public double findMedianSortedArrays(int[] nums1,
                                         int[] nums2) {
         int m = nums1.length, n = nums2.length;
@@ -54,7 +54,7 @@ public class MedianSortedArrays1Java {
     }
     public static void main(String[] args) {
         int[] arr1 = new int[]{1, 3}, arr2 = new int[]{2};
-        System.out.println(new MedianSortedArrays1Java().
+        System.out.println(new MedianofTwoSortedArraysJava().
                         findMedianSortedArrays(arr1, arr2));
     }
 }

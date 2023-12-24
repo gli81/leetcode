@@ -1,6 +1,6 @@
 
 
-object MedianSortedArrays1Scala {
+object MedianofTwoSortedArraysScala {
     def findMedianSortedArrays(nums1 : Array[Int],
                             nums2 : Array[Int]) : Double = {
         val m : Int = nums1.length
@@ -47,6 +47,8 @@ object MedianSortedArrays1Scala {
         return if(ct % 2 != 0) arr(ct / 2)
                 else (arr(ct / 2 - 1) + arr(ct / 2)) / 2.0
     }
+
+    
     def main(args : Array[String]) : Unit = {
         val arr1 : Array[Int] = Array(1, 23)
         val arr2 : Array[Int] = Array(2)
