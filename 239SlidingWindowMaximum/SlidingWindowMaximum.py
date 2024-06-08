@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from typing import List
+from collections import deque
 
 class SlidingWindowMaximum:
-    def maxSlidingWindow(self, nums: "List[int]",
-                         k: "int") -> "List[int]":
+    def maxSlidingWindow(
+        self, nums: "List[int]", k: "int"
+    ) -> "List[int]":
         """
         queue
         """
@@ -35,11 +37,40 @@ class SlidingWindowMaximum:
                     maxx = max(q)
             ans[i - k + 1] = maxx
         return ans
+    
+    def maxSlidingWindow2(
+        self, nums: "List[int]", k: "int"
+    ) -> "List[int]":
+        """
+        deque
+        """
+        n = len(nums)
+        ans = [0] * (n - k + 1)
+        dq = deque() ## index
+        ## deal with first window
+        for i in range(k):
+            if len(dq) == 0:
+                dq.append(i)
+            else:
+                while len(dq) != 0 \
+                and nums[dq[-1]] < nums[i]:
+                    dq.pop()
+                dq.append(i)
+        ans[0] = nums[dq[0]]
+        l = 1
+        for i in range(k, n):
+            while len(dq) != 0 and nums[dq[-1]] < nums[i]:
+                dq.pop()
+            dq.append(i)
+            if l > dq[0]: dq.popleft()
+            ans[l] = nums[dq[0]]
+            l += 1
+        return ans
 
 
 def main():
     test = SlidingWindowMaximum()
-    print(test.maxSlidingWindow(
+    print(test.maxSlidingWindow2(
             [1, 3, -1, -3, 5, 3, 6, 7], 3
         ))
 
