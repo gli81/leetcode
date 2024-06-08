@@ -1,49 +1,29 @@
-
+import java.util.List;
+import java.util.ArrayList;
 
 public class GenerateParenthesesJava {
-    public ListNode mergeTwoLists1(ListNode l1, ListNode l2){
-        ListNode h = new ListNode(0, null);
-        ListNode ans = h;
-        while(l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
-                h.next = l1;
-                l1 = l1.next;
-                h = h.next;
-            } else {
-                h.next = l2;
-                l2 = l2.next;
-                h = h.next;
-            }
+    public List<String> generateParenthesis2 (int n) {
+        List<String> ans = new ArrayList<>();
+        backtrack(ans, 0, 0, "", n);
+        return ans;
+    }
+
+    private void backtrack(
+        List<String> ans, int l, int r,
+        String cur, int n
+    ) {
+        if (cur.length() == n * 2) {
+            ans.add(cur);
+            return;
         }
-        if (l2 == null) {
-            h.next = l1;
-        }
-        if (l1 == null) {
-            h.next = l2;
-        }
-        return ans.next;
+        if (l < n) backtrack(ans, l + 1, r, cur + "(", n);
+        if (r < l) backtrack(ans, l, r + 1, cur + ")", n);
     }
 
     public static void main(String[] args) {
-        System.out.println("懒子从来不写测试");
-    }
-
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) {this.val = val;}
-        ListNode(int val, ListNode next) {this.val = val; this.next = next;}
-        @Override
-        public String toString(){
-            String value = this.val + "";
-            ListNode tmp = this;
-            while (tmp.next != null) {
-                value = value + ", ";
-                tmp = tmp.next;
-                value = value + tmp.val;
-            }
-            return value;
-        }
+        GenerateParenthesesJava test =
+            new GenerateParenthesesJava();
+        System.out.println(test.generateParenthesis2(3));
+        System.out.println(test.generateParenthesis2(7));
     }
 }
