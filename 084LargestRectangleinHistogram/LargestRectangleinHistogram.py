@@ -3,8 +3,10 @@
 from typing import List
 
 class LargestRectangleinHistogram:
-    def largestRectangleArea1(self,
-                              heights: "List[int]") -> "int":
+    def largestRectangleArea1(
+        self,
+        heights: "List[int]"
+    ) -> "int":
         """
         brute force solution
         over time limit
@@ -27,8 +29,10 @@ class LargestRectangleinHistogram:
             max_area = max(max_area, height * max_width)
         return max_area
     
-    def largestRectangleArea4(self,
-                              heights: "List[int]") -> "int":
+    def largestRectangleArea4(
+        self,
+        heights: "List[int]"
+    ) -> "int":
         """
         find left less than current
         find right less than current
@@ -69,8 +73,10 @@ class LargestRectangleinHistogram:
             max_area = max(area, max_area)
         return max_area
 
-    def largestRectangleArea5(self,
-                             heights: "List[int]") -> "int":
+    def largestRectangleArea5(
+        self,
+        heights: "List[int]"
+    ) -> "int":
         """
         stack
         """
