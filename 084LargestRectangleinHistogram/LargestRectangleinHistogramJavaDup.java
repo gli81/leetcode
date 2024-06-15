@@ -83,22 +83,21 @@ public class LargestRectangleinHistogramJavaDup {
          */
         Stack<Integer> stk = new Stack<>();
         int max_area = 0;
-        int i = 0;
-        while (i < heights.length) {
-            if (stk.isEmpty()) {
-                // empty stack, push
-                stk.push(i);
-                p++;
-            } else {
-                // non empty
-                while (
-                    !stk.isEmpty() && 
-                    heights[i] < heights[stk.peek()]
-                ) {
-                    int ind = stk.pop();
-                    int h = heights[ind];
-                }
+        for (int i = 0; i < heights.length; ++i) {
+            // non empty
+            while (
+                !stk.isEmpty() && 
+                heights[i] < heights[stk.peek()]
+            ) {
+                int ind = stk.pop();
+                int h = heights[ind];
+                int l = stk.isEmpty() ? -1 : stk.peek();
+                max_area = Math.max(
+                    max_area, (i - l - 1) * h
+                );
             }
+            stk.push(i);
+
         }
         // everything through the stack
         // if stack not empty
