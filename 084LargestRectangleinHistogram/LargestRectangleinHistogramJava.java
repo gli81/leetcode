@@ -123,15 +123,56 @@ public class LargestRectangleinHistogramJava {
         }
         return max_area;
     }
+
+    /**
+     * Modified stk solution
+     * when working on neetcode Jun 2024
+     * @param heights an array of histogram heights
+     * @return the area of largest rectangle that 
+     * can be found in the histogram 
+     */
+    public int largestRectangleArea6(int[] heights) {
+        Stack<Integer> stk = new Stack<>();
+        int ans = 0;
+        for (int i = 0; i < heights.length; ++i) {
+            while (
+                !stk.isEmpty() && // non empty
+                heights[i] < heights[stk.peek()]
+            ) {
+                int ind = stk.pop();
+                int h = heights[ind];
+                int l = stk.isEmpty() ? -1 : stk.peek();
+                ans = Math.max(
+                    ans, (i - l - 1) * h
+                );
+            }
+            stk.push(i);
+        }
+        // every element been to the stack
+        // if stack not empty
+        // compute for those still in the stack
+        while (!stk.isEmpty()) {
+            // pop current top, and record its height
+            int h = heights[stk.pop()];
+            int left = stk.isEmpty() ? -1 : stk.peek();
+            // no shorter ones left to the right
+            // if there were any
+            // it would pop everything taller than it
+            // so right border is right most
+            int area = h * (heights.length - left - 1);
+            ans = Math.max(ans, area);
+        }
+        return ans;
+    }
     
     public static void main(String[] args) {
         LargestRectangleinHistogramJava test =
             new LargestRectangleinHistogramJava();
-        System.out.println(test.largestRectangleArea5(
+        System.out.println(test.largestRectangleArea6(
             new int[]{2, 1, 5, 6, 2, 3}));
-        System.out.println(test.largestRectangleArea5(
+        System.out.println(test.largestRectangleArea6(
             new int[]{2, 4}));
-        System.out.println(test.largestRectangleArea5(
+        System.out.println(test.largestRectangleArea6(
             new int[]{2, 3, 1}));
     }
 }
