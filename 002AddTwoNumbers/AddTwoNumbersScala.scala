@@ -1,5 +1,6 @@
 
-object AddTwoNumScala {
+
+object AddTwoNumbersScala {
     def addTwoNum(l1 : ListNode, l2 : ListNode) : ListNode = {
         var p : ListNode = l1
         var q : ListNode = l2
@@ -23,6 +24,7 @@ object AddTwoNumScala {
         if (up == 1) current.next = new ListNode(1)
         result.next
     }
+
 
     def main(args : Array[String]) : Unit = {
         val LN987 = new ListNode(7, new ListNode(8, new ListNode(9, null)))

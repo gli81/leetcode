@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from typing import Optional
+import sys
+import os
+sys.path.append(os.path.abspath(".."))
+from node_structure.ListNode import ListNode
 
 class ReverseLinkedList:
     def reverseList(
@@ -14,12 +18,6 @@ class ReverseLinkedList:
             prev = cur
             cur = tmp
         return prev
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
 
 def main():
