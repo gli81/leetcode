@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from typing import List, Optional, Dict
+import sys
+import os
+sys.path.insert(0, os.path.abspath('..'))
+from node_structure.TreeNode import TreeNode
 
 class ConstructBinaryTreefromPreorderandInorderTraversal:
     def buildTree(
@@ -43,18 +47,6 @@ class ConstructBinaryTreefromPreorderandInorderTraversal:
             idx_map
         )
         return root
-
-
-class TreeNode:
-    def __init__(
-        self, 
-        val = 0, 
-        left = None, 
-        right = None
-    ):
-        self.val = val
-        self.left = left
-        self.right = right
 
 
 def main():

@@ -2,3 +2,4 @@
 *.class
 .DS_Store
 .DS_Stor*
+__pycache__

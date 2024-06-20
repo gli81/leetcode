@@ -1,4 +1,4 @@
-
+import node_structure.TreeNode;
 
 public class MaximumDepthofBinaryTreeJava {
     public int maxDepth(TreeNode root) {
@@ -6,22 +6,5 @@ public class MaximumDepthofBinaryTreeJava {
         return Math.max(
             maxDepth(root.left), maxDepth(root.right)
         ) + 1;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-
-    TreeNode(){};
-
-    TreeNode(int val) {this.val = val;}
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

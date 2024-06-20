@@ -2,6 +2,7 @@
 
 import java.util.Map;
 import java.util.HashMap;
+import node_structure.TreeNode;
 
 public class ConstructBinaryTreefromPreorderandInorderTraversalJava {
     public TreeNode buildTree(
@@ -69,27 +70,5 @@ public class ConstructBinaryTreefromPreorderandInorderTraversalJava {
         ConstructBinaryTreefromPreorderandInorderTraversalJava test = 
             new ConstructBinaryTreefromPreorderandInorderTraversalJava();
         System.out.println("No test");
-    }
-}
-
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-
-    TreeNode(){}
-
-    TreeNode(int val) {this.val = val;}
-
-    TreeNode(
-        int val,
-        TreeNode left,
-        TreeNode right
-    ) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
