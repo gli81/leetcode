@@ -1,5 +1,7 @@
 
 
+import node_structure.TreeNode;
+
 public class SameTreeJava {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         return inorder_traversal(p, q);
@@ -19,17 +21,17 @@ public class SameTreeJava {
 }
 
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+// class TreeNode {
+//     int val;
+//     TreeNode left;
+//     TreeNode right;
 
 
-    TreeNode() {}
-    TreeNode(int val) {this.val = val;}
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+//     TreeNode() {}
+//     TreeNode(int val) {this.val = val;}
+//     TreeNode(int val, TreeNode left, TreeNode right) {
+//         this.val = val;
+//         this.left = left;
+//         this.right = right;
+//     }
+// }
