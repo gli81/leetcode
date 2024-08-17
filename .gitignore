@@ -3,3 +3,6 @@
 .DS_Store
 .DS_Stor*
 __pycache__
+
+go.mod
+go.sum
