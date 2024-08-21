@@ -6,3 +6,6 @@ __pycache__
 
 go.mod
 go.sum
+
+**/*/*.exe
+*.o
