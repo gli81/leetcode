@@ -1,5 +1,7 @@
 
 
+import node_structure.ListNode;
+
 public class MergeTwoSortedListsJava {
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2){
         ListNode h = new ListNode(0, null);
@@ -26,24 +28,5 @@ public class MergeTwoSortedListsJava {
 
     public static void main(String[] args) {
         System.out.println("懒子从来不写测试");
-    }
-
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) {this.val = val;}
-        ListNode(int val, ListNode next) {this.val = val; this.next = next;}
-        @Override
-        public String toString(){
-            String value = this.val + "";
-            ListNode tmp = this;
-            while (tmp.next != null) {
-                value = value + ", ";
-                tmp = tmp.next;
-                value = value + tmp.val;
-            }
-            return value;
-        }
     }
 }

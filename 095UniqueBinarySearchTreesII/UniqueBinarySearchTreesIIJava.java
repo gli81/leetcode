@@ -2,6 +2,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import node_structure.TreeNode;
 
 public class UniqueBinarySearchTreesIIJava {
     public List<TreeNode> generateTrees(int n) {
@@ -74,21 +75,5 @@ public class UniqueBinarySearchTreesIIJava {
         UniqueBinarySearchTreesIIJava test = 
             new UniqueBinarySearchTreesIIJava();
         test.generateTrees4(3);
-    }
-}
-
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-
-    TreeNode() {}
-    TreeNode(int val) {this.val = val;}
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

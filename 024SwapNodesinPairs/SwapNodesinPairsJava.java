@@ -1,4 +1,6 @@
-import node_structure.*;
+
+
+import node_structure.ListNode;
 
 public class SwapNodesinPairsJava {
     public ListNode swapNodes1(ListNode head){
@@ -22,23 +24,4 @@ public class SwapNodesinPairsJava {
             new ListNode(3,
             new ListNode(4, null))))));
     }
-
-    // static class ListNode {
-    //     int val;
-    //     ListNode next;
-    //     ListNode() {}
-    //     ListNode(int val) {this.val = val;}
-    //     ListNode(int val, ListNode next) {this.val = val; this.next = next;}
-    //     @Override
-    //     public String toString(){
-    //         String value = this.val + "";
-    //         ListNode tmp = this;
-    //         while (tmp.next != null) {
-    //             value = value + ", ";
-    //             tmp = tmp.next;
-    //             value = value + tmp.val;
-    //         }
-    //         return value;
-    //     }
-    // }
 }

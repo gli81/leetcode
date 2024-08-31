@@ -1,5 +1,7 @@
 
 
+import node_structure.ListNode;
+
 public class RemoveNthNodeFromEndofListJava {
     public ListNode removeNthFromEnd2(ListNode head, int n) {
         ListNode left = head;
@@ -16,12 +18,5 @@ public class RemoveNthNodeFromEndofListJava {
     }
     public static void main(String[] args) {
         
-    }
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) {this.val = val;}
-        ListNode(int val, ListNode next) {this.val = val; this.next = next;}
     }
 }

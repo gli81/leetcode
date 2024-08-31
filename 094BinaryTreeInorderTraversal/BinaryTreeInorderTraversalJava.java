@@ -2,6 +2,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import node_structure.TreeNode;
 
 public class BinaryTreeInorderTraversalJava {
     public List<Integer> inorderTraversal(TreeNode root) {
@@ -26,21 +27,5 @@ public class BinaryTreeInorderTraversalJava {
                                                null,
                                                new TreeNode(2,
                                                             new TreeNode(3), null))));
-    }
-}
-
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-
-    TreeNode() {}
-    TreeNode(int val) {this.val = val;}
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

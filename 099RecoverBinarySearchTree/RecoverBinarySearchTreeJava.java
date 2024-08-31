@@ -1,6 +1,7 @@
 
 
 import java.util.Stack;
+import node_structure.TreeNode;
 
 public class RecoverBinarySearchTreeJava {
     public void recoverTree(TreeNode root) {
@@ -60,21 +61,5 @@ public class RecoverBinarySearchTreeJava {
 
     public static void main(String[] args) {
         System.out.println("SB");
-    }
-}
-
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-
-    TreeNode() {}
-    TreeNode(int val) {this.val = val;}
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

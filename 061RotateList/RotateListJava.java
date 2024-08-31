@@ -1,4 +1,7 @@
 
+
+import node_structure.ListNode;
+
 public class RotateListJava {
 
     public ListNode rotateRight(ListNode head, int k) {
@@ -41,29 +44,5 @@ public class RotateListJava {
         );
 
         // System.out.println(test1);
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {};
-    ListNode(int val) {this.val = val;}
-    ListNode(int val, ListNode next){
-        this.val = val;
-        this.next = next;
-    }
-
-    @Override
-    public String toString(){
-        String ans = "[" + this.val;
-        ListNode cur_next = this.next;
-        while (null != cur_next) {
-            ans = ans + ", ";
-            ans = ans + cur_next.val;
-            cur_next = cur_next.next;
-        }
-        ans = ans + "]";
-        return ans;
     }
 }

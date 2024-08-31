@@ -1,5 +1,7 @@
 
 
+import node_structure.ListNode;
+
 public class RemoveDuplicatesfromSortedListJava {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode cur = head;
@@ -23,32 +25,5 @@ public class RemoveDuplicatesfromSortedListJava {
                                 new ListNode(4,
                                 new ListNode(4,
                                 new ListNode(5)))))))));
-    }
-}
-
-
-class ListNode {
-    int val;
-    ListNode next;
-
-
-    ListNode() {}
-    ListNode(int val) {this.val = val;}
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-
-    @Override
-    public String toString() {
-        String ans = "[" + this.val;
-        ListNode cur = this;
-        while (cur != null && cur.next != null) {
-            ans = ans + ", " + cur.next.val;
-            cur = cur.next;
-        }
-        ans += "]";
-        return ans;
     }
 }

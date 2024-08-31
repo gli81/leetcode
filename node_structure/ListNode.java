@@ -13,4 +13,16 @@ public class ListNode {
         this.val = val;
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        String ans = "[" + this.val;
+        ListNode cur = this;
+        while (cur != null && cur.next != null) {
+            ans = ans + ", " + cur.next.val;
+            cur = cur.next;
+        }
+        ans += "]";
+        return ans;
+    }
 }
