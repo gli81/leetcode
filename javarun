@@ -1,0 +1,42 @@
+#!/bin/bash
+
+q="$1"
+
+## check input
+if [ -z "$q" ]; then
+    echo "No input"
+    exit 1
+fi
+
+## check if input is digit only
+if ! [[ "$q" =~ ^[0-9]+$ ]]; then
+    echo "Not a Number"
+    exit 1
+fi
+
+## add leading zeros
+if [ "$q" -lt 100 ]; then
+    q=$(printf "%03d" "$q")
+fi
+
+## search for file
+found=false
+for d in "$q"*; do
+    if [ -d "$d" ] && [ "$found" = false ]; then
+        cd "$d" || exit 1
+        found=true
+        break
+    fi
+done
+
+if [ "$found" = false ]; then
+    echo "Question not found"
+    exit 1
+else
+    echo "$(pwd)"
+    namee=$(echo "$d" | sed "s/^[0-9]*//")
+    ## compile java files and run java
+    javac -d ../ -cp ../ ./*.java
+    cd ../ || exit 1
+    java "${namee}Java"
+fi
