@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-    def __str__(self):
-        value: str = f"{self.val}"
-        check: ListNode = self
-        while check.next != None:
-            value += str(f", {check.next.val}")
-            check = check.next
-        return value
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname("__file__"), "..")))
+from node_structure.ListNode import ListNode
 
 class RemoveNthNodeFromEndofList:
     def removeNthFromEnd2(self, head: ListNode, n: int) -> ListNode:
@@ -32,21 +25,15 @@ class RemoveNthNodeFromEndofList:
         # print(left, right)
         return head
 
+
 def main():
-    print(RemoveNthNodeFromEndofList().removeNthFromEnd2(
-        ListNode(0,
-        ListNode(1,
-        ListNode(2,
-        ListNode(3,
-        ListNode(4,
-        ListNode(5,
-        ListNode(6,
-        ListNode(7,
-        ListNode(8,
-        ListNode(9)))))))))), 2))
-    print(RemoveNthNodeFromEndofList().removeNthFromEnd2(
-        ListNode(0,
-        ListNode(2)), 2))
+    test = RemoveNthNodeFromEndofList()
+    print(test.removeNthFromEnd2(
+        ListNode.fromList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), 2
+    ))
+    print(test.removeNthFromEnd2(
+        ListNode.fromList([0, 2]), 2
+    ))
 
 if __name__ == "__main__":
     main()

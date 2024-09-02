@@ -16,6 +16,8 @@ public class RemoveNthNodeFromEndofListJava {
         left.next = left.next.next;
         return head;
     }
+
+    
     public static void main(String[] args) {
         
     }

@@ -25,4 +25,15 @@ public class ListNode {
         ans += "]";
         return ans;
     }
+
+    public static ListNode fromList(int[] lst) {
+        if (lst.length == 0) return null;
+        ListNode ans = new ListNode(lst[0]);
+        ListNode cur = ans;
+        for (int i = 1; i < lst.length; ++i) {
+            cur.next = new ListNode(lst[i]);
+            cur = cur.next;
+        }
+        return ans;
+    }
 }
