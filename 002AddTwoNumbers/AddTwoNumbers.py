@@ -2,13 +2,17 @@
 
 import sys
 import os
-sys.path.append(os.path.abspath(".."))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from node_structure.ListNode import ListNode
+from typing import Optional
 
-class AddTwoNum:
-    def addTwoNum(self,
-                  l1 : "ListNode",
-                  l2 : "ListNode") -> "ListNode":
+
+class AddTwoNumbers:
+    def addTwoNum1(
+        self,
+        l1 : "Optional[ListNode]",
+        l2 : "Optional[ListNode]"
+    ) -> "Optional[ListNode]":
         p = l1
         q = l2
         rslt = ListNode()
@@ -27,23 +31,50 @@ class AddTwoNum:
         if (up == 1):
             current.next = ListNode(1)
         return rslt.next
+    
+    def addTwoNum2(
+        self,
+        l1 : "Optional[ListNode]",
+        l2 : "Optional[ListNode]"
+    ) -> "Optional[ListNode]":
+        ans = ListNode()
+        cur = ans
+        one_more = 0
+        while l1 and l2:
+            cur.val = (l1.val + l2.val + one_more) % 10 
+            one_more = (l1.val + l2.val + one_more) // 10
+            if l1.next or l2.next:
+                cur.next = ListNode()
+                cur = cur.next
+            l1 = l1.next
+            l2 = l2.next
+        while l1: ## but l2 is null
+            cur.val = (l1.val + one_more) % 10
+            one_more = (l1.val + one_more) // 10
+            if l1.next:
+                cur.next = ListNode()
+                cur = cur.next
+            l1 = l1.next
+        while l2: ## but l1 is null
+            cur.val = (l2.val + one_more) % 10
+            one_more = (l2.val + one_more) // 10
+            if l2.next:
+                cur.next = ListNode()
+                cur = cur.next
+            l2 = l2.next
+        if one_more:
+            cur.next = ListNode(1, None)
+        return ans
 
 
 def main():
-    LN987 = ListNode(7, ListNode(8, ListNode(9, None)))
-    print(LN987)
-    print(LN987.next)
-    print(LN987.next.next)
-    LN355 = ListNode(5, ListNode(5, ListNode(3, None)))
-
-    ans = AddTwoNum().addTwoNum(LN987, LN355)
-    print("")
-    print("" + str(ans))
-    print("" + str(ans) + " " + str(ans.next))
-    print("" + str(ans) + " " + str(ans.next) + " "\
-            + str(ans.next.next))
-    print("" + str(ans) + " " + str(ans.next) + " "\
-            + str(ans.next.next) + " " + str(ans.next.next.next))
+    test = AddTwoNumbers()
+    test1 = ListNode.fromList([7, 8, 9])
+    test2 = ListNode.fromList([3, 3, 5])
+    print(test.addTwoNum2(test1, test2))
+    test3 = ListNode.fromList([2, 4, 9])
+    test4 = ListNode.fromList([5, 6, 4, 9])
+    print(test.addTwoNum2(test3, test4))
 
 if __name__ == "__main__":
     main()
