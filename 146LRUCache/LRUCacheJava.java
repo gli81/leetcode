@@ -3,12 +3,11 @@
 import java.util.Map;
 import java.util.HashMap;
 
-
 public class LRUCacheJava {
-    int cap;
-    Map<Integer, Node> cache;
-    Node l;
-    Node r;
+    private int cap;
+    private Map<Integer, Node> cache;
+    private Node l;
+    private Node r;
 
 
     public LRUCacheJava(int capacity) {
@@ -89,7 +88,7 @@ public class LRUCacheJava {
         test.put(3, 3);
         System.out.println(test.cache);
         test.printList();
-        System.out.println("LINE GET 1 ERROR");
+        // System.out.println("LINE GET 1 ERROR");
         test.get(1);
         System.out.println(test.cache);
         test.printList();
