@@ -17,3 +17,18 @@ func (node *ListNode) String() string {
 	ans += "]"
 	return ans
 }
+
+func FromList(lst []int) *ListNode {
+	if len(lst) == 0 {
+		return nil
+	}
+	ans := &ListNode{Val: lst[0], Next: nil}
+	cur := ans
+	for i, v := range lst {
+		if i != 0 {
+			cur.Next = &ListNode{Val: v, Next: nil}
+			cur = cur.Next
+		}
+	}
+	return ans
+}
