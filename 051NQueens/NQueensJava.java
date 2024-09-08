@@ -3,9 +3,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class NQueens {
+public class NQueensJava {
     public static void main (String[] args) {
-        NQueens test = new NQueens();
+        NQueensJava test = new NQueensJava();
         System.out.println(test.solveNQueens(1));
         System.out.println(test.solveNQueens(3));
         System.out.println(test.solveNQueens(4));
