@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class FirstMissingPositive():
-    def firstMissingPositive1(self, nums: "list[int]") -> "int":
+    def firstMissingPositive1(self, nums: "List[int]") -> "int":
         n = len(nums)
         for i in range(n):
             while nums[i] > 0 and nums[i] <= n and nums[i] != nums[nums[i] - 1]:
