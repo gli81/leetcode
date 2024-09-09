@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class Permutations():
-    def permute1(self, nums: "list[int]") -> "list[list[int]]":
+    def permute1(self, nums: "List[int]") -> "List[List[int]]":
         return self.__permute_end(nums, len(nums) - 1)
     
-    def __permute_end(self, nums: "list[int]", end: "int") -> "list[list[int]]":
+    def __permute_end(self, nums: "List[int]", end: "int") -> "List[List[int]]":
         ## only one number
         if end == 0:
             all_ = []
