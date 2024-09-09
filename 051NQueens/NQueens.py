@@ -37,6 +37,7 @@ class NQueens():
             if pos[i] == x - y + i: return False
         return True
 
+
 def main():
     test: "NQueens" = NQueens()
     print(test.solveNQueens(1))

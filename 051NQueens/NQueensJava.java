@@ -14,8 +14,7 @@ public class NQueensJava {
     }
 
     public List<List<String>> solveNQueens(int n){
-        List<List<String>> ans =
-                            new ArrayList<List<String>>(n);
+        List<List<String>> ans = new ArrayList<List<String>>(n);
         backtrack(new ArrayList<Integer>(n), ans, 0, n);
         return ans;
     }
@@ -28,15 +27,13 @@ public class NQueensJava {
                 pos.add(i);
                 // System.out.println(pos);
                 if (pos.size() == n) {
-                    List<String> tmp_list =
-                                        new ArrayList<>();
+                    List<String> tmp_list = new ArrayList<>();
                     for (int j = 0; j < n; j++) {
                         char[] tmp = new char[n];
                         Arrays.fill(tmp, '.');
                         tmp[pos.get(j)] = 'Q';
                         tmp_list.add(new String(tmp));
                     }
-
                     ans.add(tmp_list);
                     pos.remove(n - 1);
                     if (n > 1) pos.remove(n - 2);
@@ -52,6 +49,7 @@ public class NQueensJava {
     private boolean is_valid(List<Integer> pos,
                                 int x, int y) {
         // int n = pos.size();
+        // System.out.println(n);
         for (int i = 0; i < y; i++) {
             // row
             if (pos.get(i) == x) return false;
