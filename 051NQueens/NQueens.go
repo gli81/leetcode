@@ -22,20 +22,20 @@ func backtrack(pos *[]int, ans *[]*[]string, y int, n int) {
 			*pos = append(*pos, i)
 			if len(*pos) == n {
 				tmp_lst := []string{}
-				// fmt.Println(*pos)
+				fmt.Println(*pos)
 				for j := 0; j < n; j++ {
 					tmp := strings.Repeat(
 						".", (*pos)[j],
 					) + "Q" + strings.Repeat(
 						".", n-(*pos)[j]-1,
 					)
-					// fmt.Println(tmp)
+					fmt.Println(tmp)
 					tmp_lst = append(tmp_lst, tmp)
 				}
 				*ans = append(*ans, &tmp_lst)
 				*pos = (*pos)[:n-1]
 				if n > 1 {
-					*pos = (*pos)[:n-1]
+					*pos = (*pos)[:n-2]
 				}
 				return
 			}
@@ -66,4 +66,6 @@ func main() {
 	fmt.Println(solveNQueens(1))
 	fmt.Println(solveNQueens(3))
 	fmt.Println(solveNQueens(4))
+	fmt.Println(solveNQueens(6))
+	fmt.Println(solveNQueens(9))
 }
