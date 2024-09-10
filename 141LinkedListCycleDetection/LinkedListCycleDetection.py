@@ -10,7 +10,7 @@ class LinkedListCycleDetection:
         s = set()
         cur = head
         while cur:
-            if head in s:
+            if cur in s:
                 return True
             else:
                 s.add(cur)
