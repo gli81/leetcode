@@ -4,9 +4,12 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname("__file__"), "..")))
 from node_structure.ListNode import ListNode
+from typing import Optional
 
 class RemoveNthNodeFromEndofList:
-    def removeNthFromEnd2(self, head: ListNode, n: int) -> ListNode:
+    def removeNthFromEnd2(
+        self, head: "Optional[ListNode]", n: "int"
+    ) -> "Optional[ListNode]":
         left = right = head
         ## set distance between left and right to n
         ## remove the nth element from the end, need to change the n+1th element from the end
