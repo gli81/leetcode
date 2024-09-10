@@ -18,7 +18,7 @@ func (node *ListNode) String() string {
 	return ans
 }
 
-func FromList(lst []int) *ListNode {
+func ListNodeFromList(lst []int) *ListNode {
 	if len(lst) == 0 {
 		return nil
 	}
