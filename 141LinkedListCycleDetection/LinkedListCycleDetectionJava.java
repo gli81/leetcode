@@ -20,6 +20,7 @@ public class LinkedListCycleDetectionJava {
     }
 
     public boolean hasCycle2(ListNode head) {
+        if (null == head) return false;
         ListNode slow, fast;
         slow = fast = head;
         slow = slow.next;
@@ -30,8 +31,7 @@ public class LinkedListCycleDetectionJava {
             slow = slow.next;
             fast = fast.next.next;
         }
-        if (slow == fast) return true;
-        return false;
+        return slow == fast;
     }
 
 

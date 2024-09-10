@@ -21,6 +21,7 @@ class LinkedListCycleDetection:
         """
         two pointers
         """
+        if not head: return False
         slow = fast = head
         slow = slow.next
         fast = fast.next
@@ -29,8 +30,7 @@ class LinkedListCycleDetection:
         while slow and fast and fast.next and slow != fast:
             slow = slow.next
             fast = fast.next.next
-        if not fast or not fast.next: return False
-        return True
+        return slow == fast
 
 
 def main():

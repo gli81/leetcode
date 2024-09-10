@@ -8,10 +8,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func (node *TreeNode) String() string {
+// func (node *TreeNode) String() string {
 
-}
+// }
 
-func TreeNodeFromList(lst int[]) *TreeNode {
-	
-}
+// func TreeNodeFromList(lst []int) *TreeNode {
+
+// }
