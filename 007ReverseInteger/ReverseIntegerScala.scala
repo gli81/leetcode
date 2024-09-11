@@ -15,6 +15,8 @@ object ReverseIntegerScala {
         }
         ans
     }
+
+    
     def main(args : Array[String]) : Unit = {
         val scan : Scanner = new Scanner(System.in)
         try {
