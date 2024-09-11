@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sys
-
 class ReverseInteger():
     def reverseInteger(self, x : int) -> int:
         start = x
