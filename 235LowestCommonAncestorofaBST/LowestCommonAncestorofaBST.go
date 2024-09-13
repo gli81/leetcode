@@ -19,7 +19,6 @@ func lowestCommonAncestor2(
 			return root
 		}
 	}
-	return nil
 }
 
 func main() {
