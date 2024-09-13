@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class FourSum:
-    def fourSum(self, nums: list[int],
-                target: int) -> list[list[int]]:
+    def fourSum(
+        self,
+        nums: "List[int]",
+        target: "int"
+    ) -> "List[List[int]]":
         nums.sort()
         ans = []
         for i in range(len(nums) - 3):

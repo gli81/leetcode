@@ -1,7 +1,7 @@
 
 
 public class ImplementStrJava {
-    public static int strStr(String haystack, String needle) {
+    public int strStr(String haystack, String needle) {
         if (needle.length() == 0) return 0;
         int ans = -1;
         for (int i = 0; i < haystack.length() - needle.length() + 1; i++) {
@@ -13,9 +13,11 @@ public class ImplementStrJava {
         return ans;
     }
 
+
     public static void main(String[] args) {
-        System.out.println(strStr("hello", "ll"));
-        System.out.println(strStr("", "a"));
-        System.out.println(strStr("abc", "c"));
+        ImplementStrJava test = new ImplementStrJava();
+        System.out.println(test.strStr("hello", "ll"));
+        System.out.println(test.strStr("", "a"));
+        System.out.println(test.strStr("abc", "c"));
     }
 }

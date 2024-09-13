@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class RemoveElement:
-    def removeElement(self, nums: list[int], val: int) -> int:
+    def removeElement(self, nums: "List[int]", val: "int") -> "int":
         '''
         returns the length of list with val removed
         '''
@@ -13,9 +15,11 @@ class RemoveElement:
                 i += 1
         return i
 
+
 def main():
-    print(RemoveElement().removeElement([1, 1, 2], 1))
-    print(RemoveElement().removeElement([3, 2, 2, 3], 3))
+    test = RemoveElement()
+    print(test.removeElement([1, 1, 2], 1))
+    print(test.removeElement([3, 2, 2, 3], 3))
 
 if __name__ == "__main__":
     main()

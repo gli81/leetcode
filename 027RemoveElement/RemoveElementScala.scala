@@ -14,6 +14,6 @@ object RemoveElementScala {
                 i += 1
             }
         }
-    i
+        i
     }
 }

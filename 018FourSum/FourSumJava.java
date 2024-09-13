@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class FourSumJava {
+    /*
+     * doesn't AC on leetcode
+     */
     public List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
@@ -34,9 +37,11 @@ public class FourSumJava {
         return ans;
     }
 
+
     public static void main(String[] args) {
-        System.out.println(new FourSumJava().fourSum(new int[]{1,0,-1,0,-2,2}, 0));
-        System.out.println(new FourSumJava().fourSum(new int[]{2,2,2,2,2}, 8));
-        System.out.println(new FourSumJava().fourSum(new int[]{-2,-1,-1,1,1,2,2}, 0));
+        FourSumJava test = new FourSumJava();
+        System.out.println(test.fourSum(new int[]{1,0,-1,0,-2,2}, 0));
+        System.out.println(test.fourSum(new int[]{2,2,2,2,2}, 8));
+        System.out.println(test.fourSum(new int[]{-2,-1,-1,1,1,2,2}, 0));
     }
 }
