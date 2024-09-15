@@ -24,7 +24,7 @@ public class ValidateBinarySearchTreeJava {
         return;
     }
 
-    public boolean isValidBST1(TreeNode root) {
+    public boolean isValidBST4(TreeNode root) {
         Stack<TreeNode> stk = new Stack<>();
         if (null == root) return true;
         stk.push(root);
@@ -84,19 +84,53 @@ public class ValidateBinarySearchTreeJava {
         }
     }
 
+    public boolean isValidBST4b(TreeNode root) {
+        if (null == root) return true;
+        Stack<TreeNode> stk = new Stack<>();
+        stk.push(root);
+        TreeNode prev = null;
+        while (stk.size() != 0) {
+            while (null != root.left) {
+                stk.push(root.left);
+                root = root.left;
+            }
+            // compare when out of stack
+            root = stk.pop();
+            if (null != prev && prev.val >= root.val) return false;
+            prev = root;
+            while (null == root.right && stk.size() > 0) {
+                root = stk.pop();
+                // compare when pop
+                if (null != prev && prev.val >= root.val) return false;
+                prev = root;
+            }
+            if (null != root.right) {
+                stk.push(root.right);
+                root = root.right;
+            }
+        }
+        return true;
+    }
+
 
     public static void main(String[] args) {
         ValidateBinarySearchTreeJava test =
             new ValidateBinarySearchTreeJava();
-        TreeNode test1 = new TreeNode(7,
-                        new TreeNode(4,
-                    new TreeNode(3,
-                new TreeNode(1, null,
-                                    new TreeNode(2)), null),
-                                            new TreeNode(6,
-                                        new TreeNode(5), null)),
-                                                null);
-        System.out.println(test.isValidBST1(test1));
+        TreeNode test1 = TreeNode.fromList(
+            new Integer[]{
+                7,
+                4, null,
+                3, 6, null, null,
+                1, null, 5, null, null, null, null, null,
+                null, 2,
+            }
+        );
+        TreeNode test8 = TreeNode.fromList(
+            new Integer[] {
+                3, 1, 5, 0, 2, 4, 6, null, null, null, 3
+            }
+        );
+        System.out.println(test.isValidBST4b(test8));
     }
 }
 

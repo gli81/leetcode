@@ -53,7 +53,7 @@ class TreeNode:
         ans: "List[TreeNode]" = [None] * n
         ans[0] = TreeNode(lst[0]) if lst[0] else None
         for i in range(1, n):
-            if lst[i]:
+            if lst[i] != None:
                 if ans[(i - 1) // 2]:
                     ans[i] = TreeNode(lst[i])
                     if i % 2 == 1:
