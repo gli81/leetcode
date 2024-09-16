@@ -69,6 +69,7 @@ public class ConstructBinaryTreefromPreorderandInorderTraversalJava {
     public static void main(String[] args) {
         ConstructBinaryTreefromPreorderandInorderTraversalJava test = 
             new ConstructBinaryTreefromPreorderandInorderTraversalJava();
-        System.out.println("No test");
+        System.out.println(test.buildTree(
+            new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7}));
     }
 }
