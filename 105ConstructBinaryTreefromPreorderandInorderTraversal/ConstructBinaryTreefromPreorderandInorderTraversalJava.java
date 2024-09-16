@@ -27,31 +27,30 @@ public class ConstructBinaryTreefromPreorderandInorderTraversalJava {
         // 再根据[preorder or right child]和[inorder of right child]
         // 找到右子树的root
         return build_tree_helper(
-            inorder, preorder,
+            preorder, inorder,
             0, n - 1, 0, n - 1,
             idx_map
         );
     }
 
     private TreeNode build_tree_helper(
-        int[] inorder, int[] preorder,
-        int inorder_l, int inorder_r,
+        int[] preorder, int[] inorder,
         int preorder_l, int preorder_r,
+        int inorder_l, int inorder_r,
         Map<Integer, Integer> idx_map
     ) {
         // 结束条件
         if (preorder_r < preorder_l) return null;
         // 创建root
-        TreeNode root = new TreeNode(
-            preorder[preorder_l]
-        );
+        TreeNode root = new TreeNode(preorder[preorder_l]);
         // 找到root在inorder里的位置
         int root_in_inorder = idx_map.get(
             preorder[preorder_l]
         );
         // 还要找到左子树的长度
-        // 来决定preorder里左子树的结束为止
-        int left_end = preorder_l + root_in_inorder - inorder_l;
+        // 来决定preorder里左子树的结束位置
+        // root_in_inorder - inorder_l ==> left subtree length
+        int left_end = preorder_l + (root_in_inorder - inorder_l);
         root.left = build_tree_helper(
             inorder, preorder,
             inorder_l, root_in_inorder - 1,

@@ -12,6 +12,7 @@ class ConstructBinaryTreefromPreorderandInorderTraversal:
         preorder: "List[int]",
         inorder: "List[int]"
     ) -> "Optional[TreeNode]":
+        ## build a map to represent element's index in inorder
         idx_map = {}
         n = len(inorder)
         for i in range(n): idx_map[inorder[i]] = i
@@ -31,9 +32,12 @@ class ConstructBinaryTreefromPreorderandInorderTraversal:
         idx_map: "Dict[int, int]"
     ) -> "Optional[TreeNode]":
         if (pre_l > pre_r): return None
+        ## create root
         root = TreeNode(preorder[pre_l])
+        ## find root in inorder
         root_in_inorder = idx_map[preorder[pre_l]]
-        left_end = pre_l - in_l + root_in_inorder 
+        ## find left end position
+        left_end = pre_l + (root_in_inorder - in_l)
         root.left = self.__build_tree_helper(
             preorder, inorder,
             pre_l + 1, left_end,
