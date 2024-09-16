@@ -33,6 +33,7 @@ if [ "$found" = false ]; then
     echo "Question not found"
     exit 1
 else
+    echo $(pwd)
     namee=$(echo "$d" | sed "s/^[0-9]*//")
     ## compile java files and run java
     javac -d ../ -cp ../ ./*.java
