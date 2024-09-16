@@ -33,7 +33,7 @@ if '!found!'=='false' (
         set "namee=%%b"
     )
     :: echo !namee!
-    javac -d ..\ -cp ..\ .\*.java
+    javac -d ..\ -cp ..\ -encoding utf-8 .\*.java
     cd ..\
     java !namee!Java
 )
