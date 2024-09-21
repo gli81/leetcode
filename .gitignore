@@ -10,3 +10,4 @@ go.sum
 **/*/*.exe
 *.o
 .metals
+tmp/
