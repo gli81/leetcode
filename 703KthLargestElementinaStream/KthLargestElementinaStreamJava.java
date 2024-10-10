@@ -16,8 +16,18 @@ public class KthLargestElementinaStreamJava {
         }
     }
 
+
     public int add(int val) {
-        this.pq.peek();
+        if (
+            this.pq.size() > 0 && this.pq.peek() < val ||
+            this.pq.size() < this.k
+        ) {
+            this.pq.add(val);
+            if (this.pq.size() > this.k) {
+                this.pq.poll();
+            }
+        }
+        return this.pq.peek();
     }
 
 
