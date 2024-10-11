@@ -17,7 +17,9 @@ public class KthLargestElementinaStreamJava {
     }
 
     public int add(int val) {
-        this.pq.peek();
+        if (val < this.pq.peek()){
+            return this.pq.peek();
+        }
     }
 
 
