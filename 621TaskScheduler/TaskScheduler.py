@@ -14,10 +14,11 @@ class TaskScheduler:
         time = 0
         while len(pq) != 0 or len(q) != 0:
             if len(q) != 0 and q[0][1] <= time:
-                heapq.heappush(pq, -q.pop(0)[0])
+                heapq.heappush(pq, q.pop(0)[0])
             if len(pq) != 0:
                 cur = heapq.heappop(pq) + 1
-                q.append([cur, time + n + 1])
+                if cur != 0:
+                    q.append([cur, time + n + 1])
             time += 1
         return time
 
