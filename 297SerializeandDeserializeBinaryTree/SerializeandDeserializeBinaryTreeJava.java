@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class SerializeandDeserializeBinaryTreeJava {
-    public String serialize(TreeNode root) {
+    public String serialize1(TreeNode root) {
         // LinkedList allows null element, ArrayDeque doesn't
         if (null == root) return "";
         Queue<TreeNode> q = new LinkedList<TreeNode>();
@@ -46,7 +46,29 @@ public class SerializeandDeserializeBinaryTreeJava {
         return ans;
     }
 
-    public TreeNode deserialize(String data) {
+    public String serialize2(TreeNode root) {
+        if (null == root) return "";
+        // LinkedList allows null element, ArrayDeque doesn't
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        StringBuilder ans = new StringBuilder();
+        ans.append(root.val);
+        q.add(root.left);
+        q.add(root.right);
+        TreeNode cur = null;
+        while (!q.isEmpty()) {
+            cur = q.poll();
+            if (null == cur) {
+                ans.append("@null");
+            } else {
+                ans.append("@").append(cur.val);
+                q.add(cur.left);
+                q.add(cur.right);
+            }
+        }
+        return ans.toString();
+    }
+
+    public TreeNode deserialize1(String data) {
         /**
          * exceed time limit
          */
@@ -74,6 +96,36 @@ public class SerializeandDeserializeBinaryTreeJava {
         return ans[0];
     }
 
+    public TreeNode deserialize2(String data) {
+        if (data.equals("")) return null;
+        String[] lst = data.split("@");
+        TreeNode ans = new TreeNode(Integer.parseInt(lst[0]));
+        Queue<TreeNode> parents = new LinkedList<>();
+        TreeNode parent = ans;
+        TreeNode cur = null;
+        boolean isLeft = true;
+        for (int i = 1; i < lst.length; ++i) {
+            if (lst[i].equals("null")) {
+                cur = null;
+            } else {
+                cur = new TreeNode(Integer.parseInt(lst[i]));
+            }
+            if (isLeft) {
+                parent.left = cur;
+            } else {
+                parent.right = cur;
+            }
+            if (null != cur) {
+                parents.add(cur);
+            }
+            isLeft = !isLeft;
+            if (isLeft) {
+                parent = parents.poll();
+            }
+        }
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         SerializeandDeserializeBinaryTreeJava test =
@@ -81,9 +133,22 @@ public class SerializeandDeserializeBinaryTreeJava {
         TreeNode test1 = TreeNode.fromList(
             new Integer[]{1, 2, 3, null, null, 4, 5}
         );
-        String ser1 = test.serialize(test1);
+        String ser1 = test.serialize1(test1);
+        String ser11 = test.serialize2(test1);
         System.out.println(ser1);
+        System.out.println(ser11);
         System.out.println("=========");
-        System.out.println(test.deserialize(ser1));
+        System.out.println(test.deserialize1(ser1));
+        System.out.println(test.deserialize2(ser11));
+        TreeNode test2 = TreeNode.fromList(
+            new Integer[]{1, 2, 3, null, null, 4, 5, null, null, null, null,6, 7}
+            );
+        String ser2 = test.serialize1(test2);
+        String ser22 = test.serialize2(test2);
+        System.out.println(ser2);
+        System.out.println(ser22);
+        System.out.println("=========");
+        System.out.println(test.deserialize1(ser2));
+        System.out.println(test.deserialize2(ser22));
     }
 }

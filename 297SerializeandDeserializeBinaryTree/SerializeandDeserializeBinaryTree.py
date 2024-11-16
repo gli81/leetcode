@@ -7,7 +7,7 @@ from node_structure.TreeNode import TreeNode
 from typing import Optional, List
 
 class SerializeandDeserializeBinaryTree:
-    def serialize(
+    def serialize1(
         self,
         root: "Optional[TreeNode]"
     ) -> "str":
@@ -40,8 +40,27 @@ class SerializeandDeserializeBinaryTree:
                     q.append(None)
             cur_level += 1
         return ans
+    
+    def serialize2(
+        self,
+        root: "Optional[TreeNode]"
+    ) -> "str":
+        if not root: return ''
+        q = []
+        ans = str(root.val)
+        q.append(root.left)
+        q.append(root.right)
+        while q:
+            cur = q.pop(0)
+            if cur:
+                ans += "@" + str(cur.val)
+                q.append(cur.left)
+                q.append(cur.right)
+            else:
+                ans += "@None"
+        return ans
 
-    def deserialize(
+    def deserialize1(
         self,
         data: "str"
     ) -> "Optional[TreeNode]":
@@ -62,14 +81,44 @@ class SerializeandDeserializeBinaryTree:
                 else:
                     return None
         return ans[0]
+    
+    def deserialize2(
+        self,
+        data: "str"
+    ) -> "Optional[TreeNode]":
+        if not data: return None
+        lst = data.split('@')
+        ans = TreeNode(int(lst[0]))
+        parents = []
+        parent = ans
+        cur = None
+        isLeft = True
+        for i in range(1, len(lst)):
+            if lst[i] == "None":
+                cur = None
+            else:
+                cur = TreeNode(int(lst[i]))
+            if isLeft:
+                parent.left = cur
+            else:
+                parent.right = cur
+            isLeft = not isLeft
+            if cur:
+                parents.append(cur) ## only non None nodes are in here
+            if isLeft:
+                parent = parents.pop(0) if parents else None
+        return ans        
 
 
 def main():
     test = SerializeandDeserializeBinaryTree()
     test1 = TreeNode.fromList([1, 2, 3, None, None, 4, 5])
-    ser1 = test.serialize(test1)
+    ser1 = test.serialize1(test1)
     print(ser1)
-    print(test.deserialize(ser1))
+    print(test.deserialize1(ser1))
+    ser11 = test.serialize2(test1)
+    print(ser11)
+    print(test.deserialize2(ser11))
 
 if __name__ == "__main__":
     main()
