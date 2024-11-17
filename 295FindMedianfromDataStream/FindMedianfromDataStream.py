@@ -16,6 +16,11 @@ class FindMedianfromDataStream:
             heapq.heappush(self.largeHeap, -heapq.heappop(self.smallHeap))
         while len(self.largeHeap) > len(self.smallHeap):
             heapq.heappush(self.smallHeap, -heapq.heappop(self.largeHeap))
+        ## fail if push a large one to smallHeap, while length remains balanced
+        ## [1], [2]; insert 3 => [1, 3], [2] ❌
+        # heapq.heappush(self.smallHeap, -num)
+        # while len(self.smallHeap) > len(self.largeHeap) + 1:
+        #     heapq.heappush(self.largeHeap, -heapq.heappop(self.smallHeap))
 
     def findMedian(self) -> "float":
         return -self.smallHeap[0] if \
