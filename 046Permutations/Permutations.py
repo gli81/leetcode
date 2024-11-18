@@ -25,6 +25,27 @@ class Permutations():
         for i in range(current_size):
             all_end.pop(0)
         return  all_end
+    
+    def permute2(self, nums: "List[int]") -> "List[List[int]]":
+        ans = []
+        self.__perm2Helper(nums, ans, [])
+        return ans
+    
+    def __perm2Helper(
+        self,
+        nums: "List[int]",
+        ans: "List[List[int]]",
+        cur: "List[int]"
+    ) -> "None":
+        if len(nums) == len(cur):
+            ans.append(cur.copy())
+        else:
+            for i in range(len(nums)):
+                if nums[i] in cur:
+                    continue
+                cur.append(nums[i])
+                self.__perm2Helper(nums, ans, cur)
+                cur.pop()
         
 
 def main():
