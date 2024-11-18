@@ -12,10 +12,12 @@ public class SubsetsIIJava {
         return ans;
     }
 
-    private void subsets_helper(int[] nums,
-                                int start,
-                                List<Integer> cur,
-                                List<List<Integer>> ans) {
+    private void subsets_helper(
+        int[] nums,
+        int start,
+        List<Integer> cur,
+        List<List<Integer>> ans
+    ) {
         ans.add(new ArrayList<>(cur));
         for (int i = start; i < nums.length; i++) {
             // if same as the one before

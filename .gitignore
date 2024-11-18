@@ -11,3 +11,4 @@ go.sum
 *.o
 .metals
 tmp/
+.scala-build
