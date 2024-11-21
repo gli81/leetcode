@@ -19,16 +19,18 @@ public class PalindromePairsJava {
             if (len == 0) continue;
             for (int j = 0; j <= len; ++j) {
                 if (isPalindrome(words[i], j, len - 1)) {
-                    if (map.containsKey(words[i].substring(0, j))) {
+                    String k = words[i].substring(0, j);
+                    if (map.containsKey(k) && i != map.get(k)) {
                         ans.add(
-                            Arrays.asList(i, map.get(words[i].substring(0, j)))
-                        );
+                            Arrays.asList(i, map.get(k))
+                            );
+                        }
                     }
-                }
-                if (j != 0 && isPalindrome(words[i], 0, j - 1)) {
-                    if (map.containsKey(words[i].substring(j))) {
+                    if (j != 0 && isPalindrome(words[i], 0, j - 1)) {
+                    String k = words[i].substring(j);
+                    if (map.containsKey(k) && i != map.get(k)) {
                         ans.add(
-                            Arrays.asList(map.get(words[i].substring(j)), i)
+                            Arrays.asList(map.get(k), i)
                         );
                     }
                 }
