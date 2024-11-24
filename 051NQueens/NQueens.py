@@ -5,8 +5,9 @@ from typing import List
 class NQueens():
     def solveNQueens(self, n: "int") -> "List[List[str]]":
         ans = []
-        self.__backtrack2(n, ans, [])
+        # self.__backtrack2(n, ans, [])
         # self.__backtrack([], ans, 0, n)
+        self.__nQueensHelper(n, ans, [])
         return ans
 
     def __backtrack(
@@ -45,9 +46,9 @@ class NQueens():
             if pos[i] == x - y + i: return False
         return True
     
-    def __backtrack2(self, n, ans, cur):
+    def __backtrack2(self, n: "int", ans: "List[List[str]]", cur: "List[int]"):
         for i in range(n):
-            if self.__is_valid2(cur, i):
+            if self.__isValid(cur, i):
                 cur.append(i)
                 if len(cur) == n:
                     tmp_list = []
@@ -61,8 +62,26 @@ class NQueens():
                     return
                 self.__backtrack2(n, ans, cur)
         if cur: cur.pop()
+    
+    def __nQueensHelper(self, n, ans, cur):
+        for i in range(n):
+            if self.__isValid(cur, i):
+                cur.append(i)
+                if len(cur) == n:
+                    tmp_list = []
+                    for j in range(n):
+                        tmp = ['.'] * n
+                        tmp[cur[j]] = 'Q'
+                        tmp_list.append(''.join(tmp))
+                    ans.append(tmp_list[:])
+                    cur.pop()
+                    # if n > 1: cur.pop()
+                    return
+                self.__nQueensHelper(n, ans, cur)
+                cur.pop()
+        # if cur: cur.pop()
 
-    def __is_valid2(self, cur: "List[int]", x: "int"):
+    def __isValid(self, cur: "List[int]", x: "int"):
         n = len(cur)
         for i in range(n):
             ## check row
