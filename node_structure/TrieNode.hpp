@@ -15,10 +15,10 @@ public:
     }
 
     ~TrieNode() {
-        // for (size_t i = 0; i < 26; ++i) {
-        //     // recursively delete
-        //     delete this->children[i];
-        // }
+        for (size_t i = 0; i < 26; ++i) {
+            // recursively delete
+            delete this->children[i];
+        }
         delete[] this->children;
     }
 };
