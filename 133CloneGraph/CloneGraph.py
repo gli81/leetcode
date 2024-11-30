@@ -10,7 +10,7 @@ class CloneGraph:
     ) -> "Optional[Node]":
         visited = {}
         if not node: return None
-        q = deque(node)
+        q = deque([node])
         visited[node.val] = Node(node.val, [])
         while q:
             n = q.popleft()
@@ -26,7 +26,6 @@ class CloneGraph:
 
 def main():
     test = CloneGraph()
-
 
 
 class Node:

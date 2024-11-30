@@ -9,9 +9,7 @@ public class CloneGraphJava {
     public Node cloneGraph(Node node) {
         if (null == node) return null;
         HashMap<Integer, Node> visited = new HashMap<>();
-        visited.put(node.val, new Node(
-            node.val, new ArrayList<>()
-        ));
+        visited.put(node.val, new Node(node.val));
         LinkedList<Node> q = new LinkedList<Node>();
         q.add(node);
         // bfs
@@ -19,9 +17,7 @@ public class CloneGraphJava {
             Node n = q.remove();
             for (Node neighbor : n.neighbors) {
                 if (!visited.containsKey(neighbor.val)) {
-                    visited.put(neighbor.val, new Node(
-                        neighbor.val, new ArrayList<>()
-                    ));
+                    visited.put(neighbor.val, new Node(neighbor.val));
                     q.add(neighbor);
                 }
                 visited.get(n.val).neighbors.add(
