@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+
 class LongestPalindromicSubstring():
-    def longestPalindrome4(self,
-                           s : "str") -> "str":
+    def longestPalindrome4(self, s : "str") -> "str":
         end = start = 0
         for i in range(len(s)):
             len1 = self.__palindromeCenteredAt(s, i, i)
@@ -13,9 +13,11 @@ class LongestPalindromicSubstring():
                 end = i + length // 2
         return s[start:end + 1]
     
-    def __palindromeCenteredAt(s : "str",
-                               leftIndex : "int",
-                               rightIndex : "int") -> "int":
+    def __palindromeCenteredAt(
+        s : "str",
+        leftIndex : "int",
+        rightIndex : "int"
+    ) -> "int":
         '''
         returns the length of longest panlindrome around
         the one or two letter long substring of s from
