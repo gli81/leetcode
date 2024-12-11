@@ -21,7 +21,9 @@ class DesignAddandSearchWordsDataStructure:
     def search(self, word: "str") -> "bool":
         return self.__searchHelper(word, 0, self.root)
 
-    def __searchHelper(self, word: "str", idx: "int", root: "TrieNode") -> "bool":
+    def __searchHelper(
+        self, word: "str", idx: "int", root: "TrieNode"
+    ) -> "bool":
         cur = root
         for i in range(idx, len(word)):
             if word[i] == '.':

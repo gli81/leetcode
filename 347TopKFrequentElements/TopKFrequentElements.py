@@ -10,7 +10,7 @@ class TopKFrequentElements:
     ) -> "List[int]":
         ct = {}
         for num in nums:
-            if not num in ct:
+            if num not in ct:
                 ct[num] = 0
             ct[num] += 1
         nums.sort()

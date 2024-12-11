@@ -52,7 +52,9 @@ class TrappingRainWater():
         right_highest = [0] * arr_len
         for i in range(1, arr_len):
             left_highest[i] = max(left_highest[i - 1], height[i - 1])
-            right_highest[arr_len - i - 1] = max(right_highest[arr_len - i], height[arr_len - i])
+            right_highest[arr_len - i - 1] = max(
+                right_highest[arr_len - i], height[arr_len - i]
+            )
         for i in range(arr_len):
             limit = min(left_highest[i], right_highest[i])
             if height[i] < limit: rslt =  rslt + limit - height[i]

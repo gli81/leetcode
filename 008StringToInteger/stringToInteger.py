@@ -16,23 +16,25 @@ class StringToInteger:
                 continue
             if i == ' ':
                 break
-            if i == '-' and started == False:
+            if i == '-' and not started:
                 signFlag = -1
                 started = True
                 continue
-            if i == '+' and started == False:
+            if i == '+' and not started:
                 signFlag = 1
                 started = True
                 continue
             if not i.isdigit():
                 break
             if i.isdigit():
-                if started == False:
+                if not started:
                     started = True
                 diggy = int(i)
-                if ans * signFlag > MAX // 10 or (ans * signFlag == MAX // 10 and diggy > 7):
+                if ans * signFlag > MAX // 10\
+                or (ans * signFlag == MAX // 10 and diggy > 7):
                     return MAX
-                if ans * signFlag < MIN // 10 or (ans * signFlag == MIN // 10 + 1 and diggy > 8):
+                if ans * signFlag < MIN // 10\
+                or (ans * signFlag == MIN // 10 + 1 and diggy > 8):
                     return MIN
                 ans = ans * 10 + diggy
         return ans * signFlag
@@ -41,7 +43,9 @@ class StringToInteger:
 
 def main():
     # while(True):
-    #     s = input("Please enter a String to be parsed into a integer\nEnter \"stop\" to stop the program\nEnter: ")
+    #     print("Please enter a String to be parsed into a integer")
+    #     s = input(
+    #         "Enter \"stop\" to stop the program\nEnter: ")
     #     if s == "stop":
     #         break
     #     print(StringToInteger().myAtoi(s))

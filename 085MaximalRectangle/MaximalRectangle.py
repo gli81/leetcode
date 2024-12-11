@@ -43,8 +43,8 @@ class MaximalRectangle:
                 p = right_first_shorter[p]
             right_first_shorter[i] = p
         for i in range(len_):
-            area =\
-                (right_first_shorter[i] - left_first_shorter[i] - 1) * heights[i]
+            area = (right_first_shorter[i] - left_first_shorter[i] - 1)\
+                * heights[i]
             max_area = max(max_area, area)
         return max_area
 

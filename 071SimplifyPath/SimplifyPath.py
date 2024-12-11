@@ -5,7 +5,7 @@ class SimplifyPath:
         lst1 = path.split('/')
         lst2 = []
         for ele in lst1:
-            if not ele in ['.', '']: lst2.append(ele)
+            if ele not in ['.', '']: lst2.append(ele)
         ## deal with ..
         lst1 = []
         for i in range(len(lst2)):

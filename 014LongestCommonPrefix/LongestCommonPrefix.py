@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class LongestCommonPrefix:
-    def longestCommonPrefix(self, strs: list[str]) -> str :
+    def longestCommonPrefix(self, strs: "List[str]") -> "str" :
         ans = ""
-        if len(strs) == 0 or strs == None:
+        if len(strs) == 0 or strs is None:
             return ""
         ## traverse the first string,
         ## compare every letter to other strings' letter
@@ -24,6 +26,7 @@ class LongestCommonPrefix:
         ## no more same characters
         ##because no more characters in strs[0]
         return ans
+
 
 def main():
     print(LongestCommonPrefix().longestCommonPrefix(

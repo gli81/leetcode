@@ -2,7 +2,8 @@
 
 class ValidNum:
     def isNumber(self, s: "str") -> "bool":
-        if s in ["inf", "-inf", "+inf", "Infinity", "-Infinity", "+Infinity"]: return False
+        if s in ["inf", "-inf", "+inf", "Infinity", "-Infinity", "+Infinity"]:
+            return False
         try:
             float(s)
             return True

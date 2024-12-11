@@ -53,7 +53,10 @@ def main():
     ))
     print(test.isBalanced1(
         TreeNode.fromList(
-            [1, 2, 2, 3, None, None, 3, 4, None, None, None, None, None, None, 5]
+            [
+                1, 2, 2, 3, None, None, 3,
+                4, None, None, None, None, None, None, 5
+            ]
         )
     ))
 

@@ -3,21 +3,17 @@
 from typing import Dict
 
 class InterleavingString:
-    def isInterleave1(self, s1: "str",
-                     s2: "str",
-                     s3: "str") -> "bool":
+    def isInterleave1(
+        self, s1: "str", s2: "str", s3: "str") -> "bool":
         '''
         backtracking
         over time limit
         '''
         return self.__get_ans(s1, s2, s3, 0, 0, 0)
 
-    def __get_ans(self, s1: "str",
-                  s2: "str",
-                  s3: "str",
-                  i: "int",
-                  j: "int",
-                  k: "int") -> "bool":
+    def __get_ans(
+        self, s1: "str", s2: "str", s3: "str", i: "int", j: "int", k: "int"
+    ) -> "bool":
         ## ending conditions
         ## different length
         if len(s1) + len(s2) != len(s3): return False
@@ -51,9 +47,9 @@ class InterleavingString:
                 return True
         return False
 
-    def isInterleave2(self, s1: "str",
-                      s2: "str",
-                      s3: "str") -> "bool":
+    def isInterleave2(
+        self, s1: "str", s2: "str", s3: "str"
+    ) -> "bool":
         '''
         backtracking with memoization
         '''
@@ -65,13 +61,10 @@ class InterleavingString:
     https://segmentfault.com/a/1190000018949902
     """
 
-    def __get_ans2(self, s1: "str",
-                  s2: "str",
-                  s3: "str",
-                  i: "int",
-                  j: "int",
-                  k: "int",
-                  memo: "Dict[str, bool]"=None) -> "bool":
+    def __get_ans2(
+        self, s1: "str", s2: "str", s3: "str", i: "int",
+        j: "int", k: "int", memo: "Dict[str, bool]"=None
+    ) -> "bool":
         # print(memo)
         ## ending conditions
         ## different length
@@ -80,7 +73,7 @@ class InterleavingString:
         ## if i reaches s1 end &&
         ##    j reaches s2 end &&
         ##    k reaches s3 end
-        if memo == None: memo = {}
+        if memo is None: memo = {}
         key = str(i) + '@' + str(j)
         # print(key)
         if key in memo.keys(): return memo[key]
@@ -126,12 +119,12 @@ class InterleavingString:
 def main():
     test = InterleavingString()
     print(test.isInterleave2("aabcc", "dbbca", "aadbbbaccc"))
-    print(test.isInterleave2("", "", ""))
+    print(test.isInterleave2('', '', ''))
     print(test.isInterleave2(
         "bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa",
         "babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab",
         "babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab"
-        ))
+    ))
 
 if __name__ == "__main__":
     main()

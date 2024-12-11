@@ -18,7 +18,8 @@ class LongestPalindromicSubstring():
                                rightIndex : "int") -> "int":
         '''
         returns the length of longest panlindrome around
-        the one or two letter long substring of s from index leftIndex to rightIndex
+        the one or two letter long substring of s from
+        index leftIndex to rightIndex
         '''
         left = leftIndex
         right = rightIndex

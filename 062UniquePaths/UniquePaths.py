@@ -1,13 +1,15 @@
 # -*- coding:utf-8 -*-
 
-import math
+# from math import factorial
 
 class UniquePaths:
     
     def uniquePaths(self, m: "int", n: "int") -> "int":
-        # return int(int(math.factorial(m+n-2)) / int(math.factorial(n-1)) / int(math.factorial(m-1)))
-        # upper = math.factorial(m + n - 2)
-        # lower = math.factorial(m - 1) * math.factorial(n - 1)
+        # return int(
+        #     int(factorial(m+n-2)) / int(factorial(n-1)) / int(factorial(m-1))
+        # )
+        # upper = factorial(m + n - 2)
+        # lower = factorial(m - 1) * factorial(n - 1)
         # print(upper, lower)
         # return upper/lower
         n_ = n + m - 2

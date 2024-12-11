@@ -38,7 +38,11 @@ class MaximumProfitinJobScheduling:
             ## dp和jobs的indexing有些偏差😅
             dp[i] = max(
                 dp[i - 1],
-                dp[self.__binary_search(jobs, jobs[i - 1][0], i - 1)] + jobs[i - 1][2]
+                dp[
+                    self.__binary_search(
+                        jobs, jobs[i - 1][0], i - 1
+                    )
+                ] + jobs[i - 1][2]
             )
         # print(dp)
         return dp[n]

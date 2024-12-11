@@ -17,7 +17,7 @@ class LongestConsecutiveSequence:
         ## nums[i]开始找，尝试更新maxx
         for num in nums:
             tryit = num
-            if not tryit - 1 in record:
+            if tryit - 1 not in record:
                 count = 0
                 while tryit in record:
                     count += 1

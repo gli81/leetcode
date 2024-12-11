@@ -1,0 +1,25 @@
+[tool.ruff]
+line-length = 80
+lint.select = ['A', 'B', 'E', 'F', 'Q']
+# lint.extend-select=["Q004"]#,"Q005"]
+lint.ignore = [
+    "A002", ## name conflict with python builtin
+    "B006", ## mutable (dict, list) as default argument
+    "B007", ## loop variable unused
+    "E701", ## multiple statement in one line
+    # "E711", ## comparison to None
+    # "E712", ## comparison to False
+    # "E713", ## member not in (instead of not member in)
+    "E722", ## except with out specific Exception
+    "E741", ## ambiguous variable
+    # "E501", ## line too long
+    # "F401", ## module imported but unused
+    # "F811", ## same function name
+    "F841", ## variable assigned to but not used
+    "Q000", ## want double quote for string
+    "Q001", ## want double quote for multiline
+    "Q002", ## want double quote for docstring
+]
+#[tool.ruff.rules]
+#Q005 = {single-character = "single", multi-character = "double"}
+[tool.black]

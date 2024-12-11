@@ -6,7 +6,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from node_structure.ListNode import ListNode
 from typing import Optional
 
-
 class AddTwoNumbers:
     def addTwoNum1(
         self,
@@ -18,16 +17,16 @@ class AddTwoNumbers:
         rslt = ListNode()
         up = 0
         current = rslt
-        while(p != None or q != None):
-            x = 0 if p == None else p.val
-            y = 0 if q == None else q.val
+        while(p is not None or q is not None):
+            x = 0 if p is None else p.val
+            y = 0 if q is None else q.val
             summ = x + y + up
             up = summ // 10
             cur = summ % 10
             current.next = ListNode(cur)
             current = current.next
-            if p != None: p = p.next
-            if q != None: q = q.next
+            if p is not None: p = p.next
+            if q is not None: q = q.next
         if (up == 1):
             current.next = ListNode(1)
         return rslt.next

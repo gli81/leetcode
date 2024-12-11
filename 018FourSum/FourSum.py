@@ -19,7 +19,9 @@ class FourSum:
                         looking = target - nums[j] - nums[i]
                         while lo < hi:
                             if nums[lo] + nums[hi] == looking:
-                                ans.append([nums[i], nums[j], nums[lo], nums[hi]])
+                                ans.append(
+                                    [nums[i], nums[j], nums[lo], nums[hi]]
+                                )
                                 while lo < hi and nums[lo] == nums[lo + 1]:
                                     lo += 1
                                 while lo < hi and nums[hi] == nums[hi - 1]:

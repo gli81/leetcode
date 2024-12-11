@@ -47,10 +47,16 @@ class DiagonalTraverse:
 def main():
     test = DiagonalTraverse()
     print(test.findDiagonalOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
-    print(test.findDiagonalOrder([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]))
+    print(
+        test.findDiagonalOrder([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+    )
     print(test.findDiagonalOrder([[1, 2], [3, 4]]))
     print(test.findDiagonalOrder([[1, 2, 3, 4], [5, 6, 7, 8]]))
-    print(test.findDiagonalOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]))
+    print(
+        test.findDiagonalOrder(
+            [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+        )
+    )
 
 if __name__ == "__main__":
     main()

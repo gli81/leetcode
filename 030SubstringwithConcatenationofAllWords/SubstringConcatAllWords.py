@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 class SubstringwithConcatenationofAllWords:
-    def findSubstring2(self, s: str, words: list[str]) -> list[int]:
+    def findSubstring2(self, s: "str", words: "List[str]") -> "List[int]":
         '''
         由于Python的for循环range对象的机制, 不能在方法体里修改迭代变量
         '''
@@ -18,8 +20,10 @@ class SubstringwithConcatenationofAllWords:
         print("=" * 30)
         
         ## 从第一个单词的每一个字母都开始一次遍历, 每次跳字母长度
-        ## 比如三个字母的词, 从[0, 3, 6, 9, ...]开始子串, 从[1, 4, 7, 10, ...]开始子串,
-        ## 从[2, 5, 8, 11, ...]开始字串
+        ## 比如三个字母的词
+        ##      从[0, 3, 6, 9, ...]开始子串
+        ##      从[1, 4, 7, 10, ...]开始子串,
+        ##      从[2, 5, 8, 11, ...]开始字串
         ## for the first wordLen letters, starting traverse at each letter
         for i in range(wordLen):
             hasWords: dict[str] = {}
@@ -34,7 +38,10 @@ class SubstringwithConcatenationofAllWords:
                 print(j)
                 # hasRemoved = False
                 while wordCt < len(words):
-                    currentWord = s[j + wordCt * wordLen : j + (wordCt + 1) * wordLen]
+                    currentWord = s[
+                        j + wordCt * wordLen :
+                        j + (wordCt + 1) * wordLen
+                    ]
                     ## debug print
                     # print(currentWord)
                     if currentWord not in allWords:
@@ -50,14 +57,19 @@ class SubstringwithConcatenationofAllWords:
                         # wordCt += 1
                         if hasWords[currentWord] > allWords[currentWord]:
                             # hasRemoved = True
-                            ## remove words until only correct number of that word in the string
+                            ## remove words until
+                            ## only correct number of that word in the string
                             removed: int = 0
                             while hasWords[currentWord] > allWords[currentWord]:
-                                headWord = s[j + removed * wordLen:j + (removed + 1) * wordLen]
+                                headWord = s[
+                                    j + removed * wordLen :
+                                    j + (removed + 1) * wordLen
+                                ]
                                 hasWords[headWord] -= 1
                                 removed += 1
                             wordCt = wordCt - removed + 1
-                            ## move j to the starting letter of last removed word
+                            ## move j to
+                            ## the starting letter of last removed word
                             ## for loop will move j to the next word
                             j = j + (removed - 1) * wordLen
                             break
@@ -97,7 +109,10 @@ class SubstringwithConcatenationofAllWords:
             hasWords: dict[str] = {}
             wordCt = 0
             while wordCt < len(words):
-                currentWord = s[i + wordCt * wordLen : i + (wordCt + 1) * wordLen]
+                currentWord = s[
+                    i + wordCt * wordLen :
+                    i + (wordCt + 1) * wordLen
+                ]
                 if currentWord in allWords:
                     hasWords[currentWord] = hasWords.get(currentWord, 0) + 1
                     if (hasWords[currentWord] > allWords[currentWord]):
@@ -111,18 +126,19 @@ class SubstringwithConcatenationofAllWords:
         
 
 def main():
-    # print(SubstringwithConcatenationofAllWords().findSubstring2(
-    #                                                 "barfoothefoobarman",
-    #                                                 ["foo", "bar", "foo", "the"]))
-    # print(SubstringwithConcatenationofAllWords().findSubstring2(
-    #                                                 "barfoofoobarthefoobarman",
-    #                                                 ["bar", "foo", "the"]))
-    # print(SubstringwithConcatenationofAllWords().findSubstring1(
-    #                                                 "bcabbcaabbccacacbabccacaababcbb",
-    #                                                 ["c","b","a","c","a","a","a","b","c"]))
-    print(SubstringwithConcatenationofAllWords().findSubstring1(
-                                                    "wordgoodgoodgoodbestword",
-                                                    ["word","good","best","good"]))
+    test = SubstringwithConcatenationofAllWords()
+    print(test.findSubstring2(
+        "barfoothefoobarman", ["foo", "bar", "foo", "the"]
+    ))
+    print(test.findSubstring2(
+        "barfoofoobarthefoobarman", ["bar", "foo", "the"]
+    ))
+    print(test.findSubstring1(
+        "bcabbcaabbccacacbabccacaababcbb",["c","b","a","c","a","a","a","b","c"]
+    ))
+    print(test.findSubstring1(
+        "wordgoodgoodgoodbestword",["word","good","best","good"]
+    ))
                                                     
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname("__file__"), "..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from node_structure.ListNode import ListNode
 from typing import Optional
 
@@ -12,19 +12,19 @@ class RemoveNthNodeFromEndofList:
     ) -> "Optional[ListNode]":
         left = right = head
         ## set distance between left and right to n
-        ## remove the nth element from the end, need to change the n+1th element from the end
+        ## remove the nth element from the end
+        ## need to change the n+1th element from the end
         ## the node we change is n nodes before the last node
         for i in range(n):
             right = right.next
         ## move left and right together
-        if right == None:
+        if right is None:
             return head.next
-        while right.next != None:
+        while right.next is not None:
             left = left.next
             right = right.next
         ## right is at the end of the LinkNode now, let's change left.next
         left.next = left.next.next
-        
         # print(left, right)
         return head
 

@@ -69,7 +69,8 @@ class LargestRectangleinHistogram:
 
         max_area = 0
         for i in range(len_):
-            area = (right_first_shorter[i] - left_first_shorter[i] - 1) * heights[i]
+            area = (right_first_shorter[i] - left_first_shorter[i] - 1)\
+                * heights[i]
             max_area = max(area, max_area)
         return max_area
 

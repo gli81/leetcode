@@ -22,7 +22,8 @@ class SudokuSolver:
         m, n = x // 3, y // 3
         for i in range(3):
             for j in range(3):
-                if (m * 3 + i != x or n * 3 + j != y) and board[x][y] == board[m * 3 + i][n * 3 + j]:
+                if (m * 3 + i != x or n * 3 + j != y) \
+                and board[x][y] == board[m * 3 + i][n * 3 + j]:
                     return False
         return True
 

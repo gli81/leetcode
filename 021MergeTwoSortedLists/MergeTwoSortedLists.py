@@ -12,7 +12,7 @@ class MergeTwoSortedLists:
     ) -> "Optional[ListNode]":
         h = ListNode(0)
         ans = h
-        while l1 != None and l2 != None:
+        while l1 is not None and l2 is not None:
             if l1.val < l2.val:
                 h.next = l1
                 h = h.next
@@ -21,9 +21,9 @@ class MergeTwoSortedLists:
                 h.next = l2
                 h = h.next
                 l2 = l2.next
-        if l1 == None:
+        if l1 is None:
             h.next = l2
-        if l2 == None:
+        if l2 is None:
             h.next = l1
         return ans.next
 
