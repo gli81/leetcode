@@ -12,7 +12,7 @@ class SudokuSolver:
                         board[i][j] = '.'
                     return False
         return True
-    
+
     def check(self, board: "list[list[str]]", x: "int", y: "int") -> "bool":
         ## check row and column
         for i in range(9):
@@ -76,4 +76,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
+

@@ -26,7 +26,7 @@ class SubarraySumEqualsK:
                 if presum[j] - presum[i] == k:
                     ans += 1
         return ans
-    
+
     def subarrySum2(self,
                    nums: "List[int]",
                    k: "int") -> "int":

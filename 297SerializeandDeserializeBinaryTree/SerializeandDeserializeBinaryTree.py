@@ -40,7 +40,7 @@ class SerializeandDeserializeBinaryTree:
                     q.append(None)
             cur_level += 1
         return ans
-    
+
     def serialize2(
         self,
         root: "Optional[TreeNode]"
@@ -81,7 +81,7 @@ class SerializeandDeserializeBinaryTree:
                 else:
                     return None
         return ans[0]
-    
+
     def deserialize2(
         self,
         data: "str"
@@ -107,7 +107,7 @@ class SerializeandDeserializeBinaryTree:
                 parents.append(cur) ## only non None nodes are in here
             if isLeft:
                 parent = parents.pop(0) if parents else None
-        return ans        
+        return ans
 
 
 def main():

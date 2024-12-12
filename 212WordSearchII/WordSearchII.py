@@ -8,7 +8,7 @@ from typing import List
 
 class WordSearchII:
     root: "TrieNode"
-    
+
     def findWords1(
         self, board: "List[List[str]]", words: "List[str]"
     ) -> "List[str]":
@@ -28,7 +28,7 @@ class WordSearchII:
             for j in range(c):
                 self.__find2Helper(board, ans, '', self.root, i, j)
         return ans
-    
+
     def __addWord(self, word: "str") -> "None":
         cur = self.root
         for c in word:
@@ -36,7 +36,7 @@ class WordSearchII:
                 cur.children[ord(c) - ord('a')] = TrieNode()
             cur = cur.children[ord(c) - ord('a')]
         cur.end = True
-    
+
     def __find2Helper(
         self,
         board: "List[List[str]]",

@@ -21,7 +21,7 @@ class MaxSubarray:
                 if dp[i][j] > ans: ans = dp[i][j]
         # print(dp)
         return ans
-    
+
     def maxSubArray2(self, nums: "List[int]") -> "int":
         '''
         with just one array (*list)
@@ -37,7 +37,7 @@ class MaxSubarray:
                 dp[j] = dp[j - 1] + nums[j + i]
                 if dp[j] > ans: ans = dp[j]
         return ans
-    
+
     def maxSubArray3(self, nums: "List[int]") -> "int":
         '''
         AC

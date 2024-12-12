@@ -8,7 +8,7 @@ from node_structure.TrieNode import TrieNode
 class DesignAddandSearchWordsDataStructure:
     def __init__(self):
         self.root = TrieNode()
-    
+
 
     def addWord(self, word: "str") -> "None":
         cur = self.root
@@ -17,7 +17,7 @@ class DesignAddandSearchWordsDataStructure:
                 cur.children[ord(c) - ord('a')] = TrieNode()
             cur = cur.children[ord(c) - ord('a')]
         cur.end = True
-    
+
     def search(self, word: "str") -> "bool":
         return self.__searchHelper(word, 0, self.root)
 

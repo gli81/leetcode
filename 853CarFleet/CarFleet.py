@@ -21,7 +21,7 @@ class CarFleet:
                 cur_arrive = arrive
                 # cur = i
                 ans += 1
-            # print(cur_arrive, cur, ans) 
+            # print(cur_arrive, cur, ans)
         return ans
 
 

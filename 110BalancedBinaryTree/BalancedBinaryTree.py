@@ -18,7 +18,7 @@ class BalancedBinaryTree:
     #         self.__is_leaf_or_null(root.right):
     #         return True
     #     return self.isBalanced(root.left) and self.isBalanced(root.right)
-        
+
     # def __is_leaf_or_null(self, root: "TreeNode") -> "bool":
     #     return not root or (not root.left and not root.right)
     def isBalanced1(

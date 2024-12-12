@@ -8,13 +8,13 @@ class LetterCombinationsofaPhoneNumber:
     ]
     def letterCombinations1(self, digits: "str") -> "List[str]":
         pass
-    
+
     def letterCombinations3(self, digits: "str") -> "List[str]":
         if len(digits) == 0: return []
         ans = []
         self.__combHelper(digits, ans, '', 0)
         return ans
-    
+
     def __combHelper(
         self, digits: "str", ans: "List[str]", pre: "str", len_: "int"
     ) -> "None":

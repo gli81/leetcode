@@ -34,7 +34,7 @@ class NQueens():
                 self.__backtrack(pos, ans, y + 1, n)
         if y != 0: pos.pop()
         return
-    
+
     def __is_valid(
         self, pos: "List[int]",
         x: "int",
@@ -45,7 +45,7 @@ class NQueens():
             if pos[i] == x + y - i: return False
             if pos[i] == x - y + i: return False
         return True
-    
+
     def __backtrack2(self, n: "int", ans: "List[List[str]]", cur: "List[int]"):
         for i in range(n):
             if self.__isValid(cur, i):
@@ -62,7 +62,7 @@ class NQueens():
                     return
                 self.__backtrack2(n, ans, cur)
         if cur: cur.pop()
-    
+
     def __nQueensHelper(self, n, ans, cur):
         for i in range(n):
             if self.__isValid(cur, i):

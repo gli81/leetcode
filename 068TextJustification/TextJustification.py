@@ -50,7 +50,7 @@ class TextJustification:
                     n -= 1
                     if n == 0: break
             return original
-        
+
 
 def main():
     test = TextJustification()

@@ -28,7 +28,7 @@ class MedianofTwoSortedArrays:
         if n == 0:
             return nums1[m // 2] if m % 2 != 0\
                 else (nums1[m // 2 - 1] + nums1[m // 2]) / 2
-        
+
         ## merging part
         ct = i = j = 0
         while ct < (m + n):
@@ -55,7 +55,7 @@ class MedianofTwoSortedArrays:
                     ansList.append(nums2[j])
                     ct += 1
                     j += 1
-            
+
         return ansList[ct // 2] if ct % 2 != 0 \
             else (
                 ansList[ct // 2 - 1] + ansList[ct // 2]
@@ -114,7 +114,7 @@ class MedianofTwoSortedArrays:
                     max(
                         nums1[l1],
                         nums2[l2]
-                    ), 
+                    ),
                     nums1[l1 + 1] if l1 + 1 < m\
                     else float('inf'),
                     nums2[l2 + 1] if l2 + 1 < n\

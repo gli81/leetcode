@@ -37,7 +37,7 @@ class SlidingWindowMaximum:
                     maxx = max(q)
             ans[i - k + 1] = maxx
         return ans
-    
+
     def maxSlidingWindow2(
         self, nums: "List[int]", k: "int"
     ) -> "List[int]":

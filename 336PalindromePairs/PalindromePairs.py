@@ -8,7 +8,7 @@ class PalindromePairs:
         words: "List[str]"
     ) -> "List[List[int]]":
         pass
-    
+
     def palindromePairs2(
         self,
         words: "List[str]"
@@ -39,7 +39,7 @@ class PalindromePairs:
                         ans.append([mvp[w[i:]], idx])
         return ans
 
-    
+
     def __isPalindrome(self, w: "str", l: "int", r: "int") -> "bool":
         while l < r:
             if w[l] != w[r]: return False

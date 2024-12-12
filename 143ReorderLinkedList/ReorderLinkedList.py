@@ -46,7 +46,7 @@ class ReorderLinkedList:
         cur.next = tmp
         ## avoid circle
         tmp.next = None
-    
+
 
 def main():
     test = ReorderLinkedList()

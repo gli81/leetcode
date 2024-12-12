@@ -11,7 +11,7 @@ class CombinationSum:
         ans = []
         self.__combSum_(ans, candidates, [], target, 0)
         return ans
-    
+
     def __combSum_(
         self,
         ans: "List[List[int]]",

@@ -18,7 +18,7 @@ class ClimbingStairs:
             n2 = self.__climb(n - 2, save)
             save.update({n - 2: n2})
         return n1 + n2
-    
+
     def climbStairs_dp(self, n: "int") -> "int":
         if n in [1, 2]: return n
         dp = [0] * n
@@ -38,4 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
+

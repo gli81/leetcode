@@ -12,7 +12,7 @@ class LongestPalindromicSubstring():
                 start = i - (length - 1)// 2
                 end = i + length // 2
         return s[start:end + 1]
-    
+
     def __palindromeCenteredAt(
         s : "str",
         leftIndex : "int",

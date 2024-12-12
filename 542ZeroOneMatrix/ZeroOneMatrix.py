@@ -55,7 +55,7 @@ class ZeroOneMatrix:
                         ans[i][j], ans[i][j + 1] + 1
                     )
         return ans
-        
+
 
 
 def main():

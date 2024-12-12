@@ -30,7 +30,7 @@ class AddTwoNumbers:
         if (up == 1):
             current.next = ListNode(1)
         return rslt.next
-    
+
     def addTwoNum2(
         self,
         l1 : "Optional[ListNode]",
@@ -40,7 +40,7 @@ class AddTwoNumbers:
         cur = ans
         one_more = 0
         while l1 and l2:
-            cur.val = (l1.val + l2.val + one_more) % 10 
+            cur.val = (l1.val + l2.val + one_more) % 10
             one_more = (l1.val + l2.val + one_more) // 10
             if l1.next or l2.next:
                 cur.next = ListNode()

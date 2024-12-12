@@ -17,7 +17,7 @@ class CountandSay:
             # print(ans)
             n -= 1
         return ans
-    
+
     '''
     returns the number of same letters at the beginning of the number
     '''

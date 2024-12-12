@@ -20,7 +20,7 @@ class GroupAnagrams():
             if not used[i]:
                 pass
         return None
-    
+
     def __equals(self, str1: "str", str2: "str") -> "bool":
         pass
 

@@ -20,7 +20,7 @@ class DiameterofBinaryTree:
         ans: "int"
     ) -> "Tuple[int, int]":
         """
-        
+
         Returns
         ----------
             Tuple[int, int] : largest depth at node, current ans
@@ -35,7 +35,7 @@ class DiameterofBinaryTree:
         #     print(f"ans: {ans}")
         ans = max(l + r + 1, ans)
         return (max(l, r) + 1, max(l + r + 1, ans))
-    
+
     def diameterOfBinaryTree1b(self, root: "Optional[TreeNode]") -> "int":
         ans = [0]
         l = self.__depth1b(root.left, ans)
@@ -48,7 +48,7 @@ class DiameterofBinaryTree:
         ans: "int"
     ) -> "int":
         """
-        
+
         Returns
         ----------
             int : largest depth at node

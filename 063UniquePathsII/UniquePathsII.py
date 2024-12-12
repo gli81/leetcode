@@ -12,7 +12,7 @@ class UniquePathsII:
         visited = {}
         return self.__get_ans(0, 0, m - 1, n - 1,
                               visited, obstacleGrid)
-    
+
     def __get_ans(self, x: "int", y: "int", m: "int", n: "int",
                   visited: "Dict[str, int]",
                   obstacleGrid: "List[List[int]]") -> "int":
@@ -34,7 +34,7 @@ class UniquePathsII:
         key = str(x) + "@" + str(y)
         visited[key] = n1+n2
         return n1 + n2
-        
+
 
 
 def main():

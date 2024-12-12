@@ -10,7 +10,7 @@ class ImplementStr:
                     break
                 if j == len(needle) - 1: return i
         return ans
-    
+
     def strStr2(self, haystack: str, needle: str) -> int:
         # if len(needle) == 0: return 0
         i = 0

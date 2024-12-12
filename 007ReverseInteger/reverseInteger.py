@@ -14,7 +14,7 @@ class ReverseInteger():
             ans = ans * 10 + diggy
         if neg:
             ans = -ans
-        if ans > 2**31 - 1 or ans < -2**31: return 0 
+        if ans > 2**31 - 1 or ans < -2**31: return 0
         return ans
 
 

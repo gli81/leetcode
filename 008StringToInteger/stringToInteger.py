@@ -39,7 +39,7 @@ class StringToInteger:
                 ans = ans * 10 + diggy
         return ans * signFlag
 
-        
+
 
 def main():
     # while(True):

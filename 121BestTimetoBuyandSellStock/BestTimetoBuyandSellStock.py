@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from typing import List
-    
+
 class BestTimetoBuyandSellStock:
     def maxProfit2(self, prices: "List[int]") -> "int":
         ans = 0

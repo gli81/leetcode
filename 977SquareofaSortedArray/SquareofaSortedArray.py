@@ -44,7 +44,7 @@ class SquaresofaSortedArray:
             else:
                 ans.append(nums[j] ** 2)
                 j += 1
-        return ans 
+        return ans
 
 
 def main():

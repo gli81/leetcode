@@ -10,7 +10,7 @@ def knapsack(
     dp = [[0 for _ in range(capacity + 1)] for _ in range(len(weights) + 1)]
     for i in range(1, len(weights) + 1):
         for j in range(len(dp[0])):
-            # use_it = 
+            # use_it =
             dp[i][j] = max(
                 dp[i - 1][j],
                 dp[i - 1][j - weights[i - 1]] + values[i - 1] \

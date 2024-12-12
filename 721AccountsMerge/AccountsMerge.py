@@ -55,7 +55,7 @@ class AccountsMerge:
             if email in email_visited:
                 continue
             email_visited.add(email)
-            ## 
+            ##
             ans[-1].append(email)
             ## check每个email的时候
             ## 要去看这个email都在哪几个id中

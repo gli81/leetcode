@@ -5,7 +5,7 @@ from typing import List
 class Permutations():
     def permute1(self, nums: "List[int]") -> "List[List[int]]":
         return self.__permute_end(nums, len(nums) - 1)
-    
+
     def __permute_end(self, nums: "List[int]", end: "int") -> "List[List[int]]":
         ## only one number
         if end == 0:
@@ -25,12 +25,12 @@ class Permutations():
         for _ in range(current_size):
             all_end.pop(0)
         return  all_end
-    
+
     def permute2(self, nums: "List[int]") -> "List[List[int]]":
         ans = []
         self.__perm2Helper(nums, ans, [])
         return ans
-    
+
     def __perm2Helper(
         self,
         nums: "List[int]",
@@ -46,7 +46,7 @@ class Permutations():
                 cur.append(nums[i])
                 self.__perm2Helper(nums, ans, cur)
                 cur.pop()
-        
+
 
 def main():
     test = Permutations()

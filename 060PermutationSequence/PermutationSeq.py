@@ -8,7 +8,7 @@ class PermutationSeq:
         nums = list(range(1, n + 1))
         return self.__get_ans(nums, n, k)
 
-    
+
     def __get_ans(self, nums: "List[int]",
                   n: "int", k: "int") -> "str":
         if n == 1: return str(nums[0])
@@ -18,7 +18,7 @@ class PermutationSeq:
         nums.pop(group)
         k = k % len_group
         return str(num) + self.__get_ans(nums, n - 1, k)
-    
+
 
 
 

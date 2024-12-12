@@ -11,7 +11,7 @@ class WallsandGates:
         Params:
         ----------
             grid (List[List[int]]) :
-        
+
         Returns:
         ----------
             None

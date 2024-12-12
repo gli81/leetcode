@@ -3,7 +3,7 @@
 # from math import factorial
 
 class UniquePaths:
-    
+
     def uniquePaths(self, m: "int", n: "int") -> "int":
         # return int(
         #     int(factorial(m+n-2)) / int(factorial(n-1)) / int(factorial(m-1))
@@ -18,7 +18,7 @@ class UniquePaths:
         for i in range(1, k+1):
             res = res * (n_ - k + i) // i
         return res
-        
+
 
 
 def main():

@@ -17,7 +17,7 @@ class SortColors:
                 nums[i] = 1
                 one_ct -= 1
             else: nums[i] = 2
-    
+
     def sortColors2(self, nums: "List[int]") -> "None":
         zero_pos = 0
         two_pos = len(nums) - 1

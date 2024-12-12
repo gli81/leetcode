@@ -20,7 +20,7 @@ class MergeKSortedLinkedList:
                 lists[i] = self.__mergeTwoLists(lists[i], lists[i + interval])
             interval *= 2
         return lists[0]
-    
+
     def __mergeTwoLists(
         self,
         l1: "Optional[ListNode]",
@@ -42,7 +42,7 @@ class MergeKSortedLinkedList:
         if l2:
             cur.next = l2
         return ans.next
-    
+
 
 def main():
     test = MergeKSortedLinkedList()

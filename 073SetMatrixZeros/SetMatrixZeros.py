@@ -15,7 +15,7 @@ class SetMatrixZeros:
                     for k in range(len(matrix)):
                         ans[k][j] = 0
         return ans
-    
+
     def setZeros2(self, matrix: "List[List[int]]") \
                 -> "None":
         r_zeros = []

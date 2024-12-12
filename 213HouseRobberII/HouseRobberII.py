@@ -8,7 +8,7 @@ class HouseRobberII:
             self.__robHelper(nums, 0, len(nums) - 1),
             self.__robHelper(nums, 1, len(nums))
         )
-    
+
     def __robHelper(
         self, nums: "List[int]", start: "int", end: "int"
     ) -> "int":

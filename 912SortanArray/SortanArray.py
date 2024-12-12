@@ -10,7 +10,7 @@ class SortanArray:
         """
         self.__quickSort(nums)
         return nums
-    
+
     def __quickSort(self, nums: "List[int]") -> "None":
         self.__quickSortHelper3(nums, 0, len(nums))
 
@@ -105,7 +105,7 @@ class SortanArray:
             ## sort two subarray
             self.__quickSortHelper3(nums, start, r)
             self.__quickSortHelper3(nums, r + 1, end)
-    
+
     def sortArray2(self, nums: "List[int]") -> "List[int]":
         """
         mergeSort

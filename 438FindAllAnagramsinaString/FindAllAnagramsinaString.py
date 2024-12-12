@@ -28,7 +28,7 @@ class FindAllAnagramsinaString:
                     break
             if shime: ans.append(i)
         return ans
-    
+
     def findAnagrams1(self,
                      s: "str",
                      p: "str") -> "List[int]":

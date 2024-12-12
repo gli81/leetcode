@@ -14,14 +14,14 @@ class GenerateParentheses:
                     i -= 1
             return count == 0
         ## generate all combinations
-        
+
     def generateParenthesis2(self, n: int) -> list[str]:
         ## num '(' <= n
         ## num ')' always <= num '('
         ans = []
         self.__backtrack(ans, 0, 0, '', n)
         return ans
-        
+
     def __backtrack(
         self, ans: "List[str]", l: "int", r: "int",
         cur: "str", n: "int"

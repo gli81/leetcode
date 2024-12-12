@@ -17,7 +17,7 @@ class MergeTwoSortedLists:
                 h.next = l1
                 h = h.next
                 l1 = l1.next
-            else: 
+            else:
                 h.next = l2
                 h = h.next
                 l2 = l2.next

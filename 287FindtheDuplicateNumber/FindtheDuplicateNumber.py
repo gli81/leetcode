@@ -11,7 +11,7 @@ class FindtheDuplicateNumber:
             else:
                 s.add(num)
         return -1
-    
+
     def findDuplicate5(self, nums: "List[int]") -> "int":
         slow = fast = 0
         slow = nums[slow]
@@ -24,7 +24,7 @@ class FindtheDuplicateNumber:
             slow = nums[slow]
             slow2 = nums[slow2]
         return slow
-    
+
 
 def main():
     test = FindtheDuplicateNumber()

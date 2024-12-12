@@ -21,7 +21,7 @@ class SearchinRotatedSortedArrayII:
                 else: end = mid - 1
             ## still don't understand
             else: start += 1
-        return False                
+        return False
 
 
 def main():

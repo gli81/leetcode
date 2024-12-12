@@ -14,11 +14,11 @@ class SubstringwithConcatenationofAllWords:
         ## put every word in words into dictionary, with their occurances
         for word in words:
             allWords[word] = allWords.get(word, 0) + 1
-        
+
         ## debug print
         print(allWords)
         print("=" * 30)
-        
+
         ## 从第一个单词的每一个字母都开始一次遍历, 每次跳字母长度
         ## 比如三个字母的词
         ##      从[0, 3, 6, 9, ...]开始子串
@@ -91,7 +91,7 @@ class SubstringwithConcatenationofAllWords:
                     wordCt -= 1
                 j += wordLen
         return ans
-    
+
     def findSubstring1(self, s: str, words: list[str]) -> list[int]:
         if len(words) == 0: return []
         ans: list[int] = []
@@ -100,7 +100,7 @@ class SubstringwithConcatenationofAllWords:
         ## put every word in words into dictionary, with their occurances
         for word in words:
             allWords[word] = allWords.get(word, 0) + 1
-        
+
         ## debug print
         # print(allWords)
         # print("=" * 30)
@@ -123,7 +123,7 @@ class SubstringwithConcatenationofAllWords:
             if wordCt == len(words):
                 ans.append(i)
         return ans
-        
+
 
 def main():
     test = SubstringwithConcatenationofAllWords()
@@ -139,7 +139,7 @@ def main():
     print(test.findSubstring1(
         "wordgoodgoodgoodbestword",["word","good","best","good"]
     ))
-                                                    
+
 
 if __name__ == "__main__":
     main()

@@ -12,7 +12,7 @@ class NextPermutation:
             ## whole array descending, reverse the list, and return
             nums.reverse()
             return
-        
+
         ## looking for the swapping index
         ## going from right to left, the first larger than to-be-swapped
         right = len(nums) - 1
@@ -31,7 +31,7 @@ class NextPermutation:
             j -= 1
         return
 
-        
+
 
 def main():
     test = NextPermutation()

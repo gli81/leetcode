@@ -46,7 +46,7 @@ class MaximumProfitinJobScheduling:
             )
         # print(dp)
         return dp[n]
-    
+
     def __binary_search(
         self,
         jobs: "List[Tuple[int, int, int]]",

@@ -13,7 +13,7 @@ class BinaryTreeInorderTraversal:
         ans = []
         self.__get_ans(root, ans)
         return ans
-    
+
     def __get_ans(
         self, node: "Optional[TreeNode]", ans: "List[int]"
     ) -> "None":

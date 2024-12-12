@@ -12,7 +12,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-    
+
     def __str__(self):
         ## TODO might want to implement with list in the future
         q = []

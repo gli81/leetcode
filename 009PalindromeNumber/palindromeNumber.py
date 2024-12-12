@@ -15,7 +15,7 @@ class PalindromeNumber:
                 ans = ans * 10 + diggy
             if neg:
                 ans = -ans
-            if ans > 2**31 - 1 or ans < -2**31: return 0 
+            if ans > 2**31 - 1 or ans < -2**31: return 0
             return ans
         return (x >= 0 and x == reverse(x))
 

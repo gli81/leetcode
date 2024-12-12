@@ -12,7 +12,7 @@ class LargestNumber:
         strs.sort(key = cmp_to_key(self.sort_rule))
         if strs[0] == '0': return '0'
         return ''.join(strs)
-    
+
     def sort_rule(
         self,
         x: "str",
@@ -22,7 +22,7 @@ class LargestNumber:
         if a < b: return 1
         elif a == b: return 0
         else: return -1
-    
+
 
 def main():
     test = LargestNumber()

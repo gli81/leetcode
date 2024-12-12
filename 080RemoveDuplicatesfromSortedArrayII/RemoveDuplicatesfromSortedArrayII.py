@@ -19,7 +19,7 @@ class RemoveDuplicatesfromSortedArrayII:
                     ct += 1
             fast += 1
         return slow + 1
-    
+
     def removeDuplicates2(self, nums: "List[int]") -> "int":
         i = 0
         for n in nums:
@@ -27,7 +27,7 @@ class RemoveDuplicatesfromSortedArrayII:
                 nums[i] = n
                 i += 1
         return i
-    
+
 
 def main():
     test = RemoveDuplicatesfromSortedArrayII()

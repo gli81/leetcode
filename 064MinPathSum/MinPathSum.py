@@ -7,7 +7,7 @@ class MinPathSum:
     def minPathSum(self, grid: "List[List[int]]") -> "int":
         return self.__get_ans(0, 0, len(grid) - 1,
                               len(grid[0]) - 1, {}, grid)
-    
+
     def __get_ans(self, x: "int", y: "int",
                   m: "int", n: "int",
                   visited: "Dict[Tuple, int]",

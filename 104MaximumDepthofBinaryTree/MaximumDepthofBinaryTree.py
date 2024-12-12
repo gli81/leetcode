@@ -16,7 +16,7 @@ class MaximumDepthofBinaryTree:
             self.maxDepth1(root.left),
             self.maxDepth1(root.right)
         ) + 1
-    
+
     def maxDepth2(
         self,
         root: "Optional[TreeNode]"

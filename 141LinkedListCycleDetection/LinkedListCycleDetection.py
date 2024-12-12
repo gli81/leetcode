@@ -16,7 +16,7 @@ class LinkedListCycleDetection:
                 s.add(cur)
             cur = cur.next
         return False
-    
+
     def hasCycle2(self, head: "ListNode") -> "bool":
         """
         two pointers

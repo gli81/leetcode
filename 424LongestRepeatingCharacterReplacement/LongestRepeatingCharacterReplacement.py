@@ -18,7 +18,7 @@ class LongestRepeatingCharacterReplacement:
                     freq[ord(char) - ord('A')] += 1
                 max_v = max(freq)
                 if max_v + k >= len(word):
-                    ans = max(len(word), ans)                
+                    ans = max(len(word), ans)
         return ans
 
     def characterReplacement(

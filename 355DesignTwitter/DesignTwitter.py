@@ -13,7 +13,7 @@ class Twitter:
     def postTweet(
         self,
         userId: "int",
-        tweetId: "int"    
+        tweetId: "int"
     ) -> "None":
         if userId not in self.tweets:
             self.tweets[userId] = []

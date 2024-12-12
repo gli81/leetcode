@@ -18,7 +18,7 @@ class SameTree:
         ## right
         if not self.isSameTree(p.right, q.right): return False
         return True
-    
+
     # def isSameTree(self, p: "Optional[TreeNode]",
     #                q: "Optional[TreeNode]") -> "bool":
     #     return self.__inorder_traversal(p, q)

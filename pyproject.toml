@@ -1,6 +1,14 @@
 [tool.ruff]
 line-length = 80
-lint.select = ['A', 'B', 'E', 'F', 'Q']
+lint.select = [
+    'A',
+    'B',
+    'E',
+    'F',
+    'I', ## isort
+    'Q',
+    'W', ## warning
+]
 # lint.extend-select=["Q004"]#,"Q005"]
 lint.ignore = [
     "A002", ## name conflict with python builtin
@@ -16,9 +24,17 @@ lint.ignore = [
     # "F401", ## module imported but unused
     # "F811", ## same function name
     "F841", ## variable assigned to but not used
+    "I001",
     "Q000", ## want double quote for string
     "Q001", ## want double quote for multiline
     "Q002", ## want double quote for docstring
+    # "W191", ## tab in indentation
+    # "W291", ## trailing space
+    # "W292", ## no new line end of file
+    # "W293", ## blank line with space
+    # "W391", ## too many newlines end of file
+    # "W505", ## doc line too long
+    "W605", ## invalid escape sequence
 ]
 #[tool.ruff.rules]
 #Q005 = {single-character = "single", multi-character = "double"}
