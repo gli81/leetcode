@@ -18,7 +18,8 @@ class EditDistance:
         return self.__helper(word1, word2)
 
     def __helper(self, word1: "str", word2: "str",
-                d: "Dict" = {}) -> "int":
+                d: "Dict" = None) -> "int":
+        if d is None: d = {}
         if len(word1) == 0 and len(word2) == 0: return 0
         if len(word1) == 0: return len(word2)
         if len(word2) == 0: return len(word1)

@@ -4,7 +4,7 @@ lint.select = ['A', 'B', 'E', 'F', 'Q']
 # lint.extend-select=["Q004"]#,"Q005"]
 lint.ignore = [
     "A002", ## name conflict with python builtin
-    "B006", ## mutable (dict, list) as default argument
+    # "B006", ## mutable (dict, list) as default argument
     # "B007", ## loop variable unused
     "E701", ## multiple statement in one line
     # "E711", ## comparison to None
