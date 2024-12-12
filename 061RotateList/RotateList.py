@@ -26,7 +26,7 @@ class RotateList:
         find_it = len_list - real_move
         # print(find_it)
         new_start = head
-        for i in range(find_it - 1):
+        for _ in range(find_it - 1):
             new_start = new_start.next
         # print(new_start)
         new_start_ = new_start.next

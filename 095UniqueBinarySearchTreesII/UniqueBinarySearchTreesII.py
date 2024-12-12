@@ -48,7 +48,7 @@ class UniqueBinarySearchTreesII:
                     root_copy = copy.deepcopy(tree)
                     ## TODO find place to insert
                     right = root_copy ## to find place to insert
-                    for k in range(j):
+                    for _ in range(j):
                         ## go to next layer by at most j times
                         if not right: break
                         right = right.right

@@ -17,7 +17,7 @@ class MinimumDepthofBinaryTree:
         q.append(root)
         while q:
             qsize = len(q)
-            for i in range(qsize):
+            for _ in range(qsize):
                 cur = q.pop(0)
                 if not cur.left and not cur.right:
                     return ans

@@ -5,7 +5,7 @@ lint.select = ['A', 'B', 'E', 'F', 'Q']
 lint.ignore = [
     "A002", ## name conflict with python builtin
     "B006", ## mutable (dict, list) as default argument
-    "B007", ## loop variable unused
+    # "B007", ## loop variable unused
     "E701", ## multiple statement in one line
     # "E711", ## comparison to None
     # "E712", ## comparison to False
@@ -22,4 +22,6 @@ lint.ignore = [
 ]
 #[tool.ruff.rules]
 #Q005 = {single-character = "single", multi-character = "double"}
-[tool.black]
+# [tool.black]
+# line-length = 80
+# include = '\.pyi?$'  # Include Python files and stubs

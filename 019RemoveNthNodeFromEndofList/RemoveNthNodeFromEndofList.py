@@ -15,7 +15,7 @@ class RemoveNthNodeFromEndofList:
         ## remove the nth element from the end
         ## need to change the n+1th element from the end
         ## the node we change is n nodes before the last node
-        for i in range(n):
+        for _ in range(n):
             right = right.next
         ## move left and right together
         if right is None:

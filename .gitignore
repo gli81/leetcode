@@ -12,3 +12,4 @@ go.sum
 .metals
 tmp/
 .scala-build
+.ruff_cache/

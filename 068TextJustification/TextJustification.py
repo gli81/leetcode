@@ -36,12 +36,12 @@ class TextJustification:
     def __insert_space(self, original: "List[str]", n: "int",
                        last: "bool") -> "List[str]":
         if last:
-            for i in range(n):
+            for _ in range(n):
                 original[-1] = original[-1] + ' '
             return original
         else:
             if len(original) == 1:
-                for i in range(n):
+                for _ in range(n):
                     original[0] = original[0] + ' '
                 return original
             while n > 0:

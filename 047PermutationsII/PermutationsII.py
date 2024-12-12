@@ -11,7 +11,7 @@ class PermutationsII():
                     if k < i and nums[i] == now[k]: continue
                     now.insert(k, nums[i])
                     ans.append(now[:])
-            for j in range(current_size):
+            for _ in range(current_size):
                 ans.pop(0)
         return self.__remove_duplicates(ans)
         # return ans

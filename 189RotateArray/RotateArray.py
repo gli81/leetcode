@@ -25,7 +25,7 @@ class RotateArray:
             start = k ## 被替换的index
             pre = nums[start] ## 暂存
             ind = 0 ## 替换别人的
-            for i in range(n - 1):
+            for _ in range(n - 1):
                 nums[start] = nums[ind]
                 start = ind
                 ind = (ind + n - k) % n
@@ -46,7 +46,7 @@ class RotateArray:
                 start = k + i
                 pre = nums[start]
                 ind = i
-                for j in range(n // k - 1):
+                for _ in range(n // k - 1):
                     nums[start] = nums[ind]
                     start = ind
                     ind = (ind + n - k) % n
@@ -61,7 +61,7 @@ class RotateArray:
         """
         n = len(nums)
         k = k % n
-        for i in range(k):
+        for _ in range(k):
             tmp = nums[n - 1]
             for j in range(n - 1):
                 nums[n - j - 1] = nums[n - j - 2]

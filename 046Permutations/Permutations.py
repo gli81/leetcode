@@ -22,7 +22,7 @@ class Permutations():
                 temp = all_end[j][:]
                 temp.insert(k, nums[end])
                 all_end.append(temp)
-        for i in range(current_size):
+        for _ in range(current_size):
             all_end.pop(0)
         return  all_end
     
