@@ -50,6 +50,6 @@ public:
                 }
             }
         }
-        return fresh != 0 ? -1 : time;
+        return fresh != 0 ? -1 : time - 1;
     }
 };
