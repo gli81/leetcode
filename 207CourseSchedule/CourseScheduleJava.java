@@ -9,7 +9,10 @@ import java.util.ArrayList;
 // import java.util.Arrays;
 
 public class CourseScheduleJava {
-    public boolean canFinish(
+    /**
+     * topological
+     */
+    public boolean canFinish1(
         int numCourses,
         int[][] prerequisites
     ) {
@@ -55,15 +58,27 @@ public class CourseScheduleJava {
         return visited == numCourses;
     }
 
+    /**
+     * DFS
+     * @param numCourses
+     * @param prerequisites
+     */
+    public boolean canFinish2(
+        int numCourses,
+        int[][] prerequisites
+    ) {
+        return false;
+    }
+
 
     public static void main(String[] args) {
         CourseScheduleJava test =
             new CourseScheduleJava();
-        System.out.println(test.canFinish(
+        System.out.println(test.canFinish1(
             2, new int[][]{{1, 0}}
         ));
         System.out.println("==================");
-        System.out.println(test.canFinish(
+        System.out.println(test.canFinish1(
             2, new int[][]{{1, 0}, {0, 1}}
         ));
     }
