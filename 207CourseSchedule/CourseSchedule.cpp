@@ -8,6 +8,8 @@ using std::map;
 using std::queue;
 using std::size_t;
 #include <iostream>
+#include <set>
+using std::set;
 
 class CouseSchedule {
 public:
@@ -44,7 +46,16 @@ public:
 
     bool canFinish2(int numCourses, vector<vector<int> >& prerequisites) {
         //dfs
+        map<int, vector<int> > m;
+        for (int i = 0; i < numCourses; ++i) {
+            m.
+        }
         return false;
+    }
+
+private:
+    bool dfs(int c, map<int, vector<int> >& map, set<int>& visit) {
+
     }
 };
 
