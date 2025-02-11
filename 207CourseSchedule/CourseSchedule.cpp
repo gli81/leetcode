@@ -48,14 +48,38 @@ public:
         //dfs
         map<int, vector<int> > m;
         for (int i = 0; i < numCourses; ++i) {
-            m.
+            m[i] = vector<int>();
         }
-        return false;
+        for (size_t i = 0; i < prerequisites.size(); ++i) {
+            m[prerequisites[i][0]].push_back(prerequisites[i][1]);
+        }
+        set<int> v;
+        for (int i = 0; i < numCourses; ++i) {
+            if (!dfs(i, m, v)) {
+                return false;
+            }
+        }
+        return true;
     }
 
 private:
-    bool dfs(int c, map<int, vector<int> >& map, set<int>& visit) {
-
+    bool dfs(int c, map<int, vector<int> >& m, set<int>& visit) {
+        if (visit.find(c) != visit.end()) {
+            return false; // cycle
+        }
+        if (m.at(c).empty()) {
+            return true;
+        }
+        visit.insert(c);
+        for (int i = 0; (size_t)i < m[c].size(); ++i) {
+            if (!dfs(m[c][i], m, visit)) {
+                return false;
+            }
+        }
+        visit.erase(c);
+        // c can be completed, assume no prereq
+        m[c] = vector<int>();
+        return true;
     }
 };
 
