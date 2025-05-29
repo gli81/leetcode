@@ -36,14 +36,48 @@ class GraphValidTree:
                     return False
         return True
 
-    def validTree2(self):
-        pass
+    def validTree3(self, n: "int", edges: "List[List[int]]") -> "bool":
+        dsu = DSU(n)
+        for [src, dst] in edges:
+            if not dsu.union(src, dst):
+                return False ## cycle detected
+        return dsu.getParts() == 1
+
+
+class DSU:
+    def __init__(self, n: "int"):
+        self.parents = [i for i in range(n)]
+        self.heights = [1 for _ in range(n)]
+        self.parts = n
+
+    def find(self, node: "int") -> "int":
+        if self.parents[node] != node:
+            self.parents[node] = self.find(self.parents[node])
+        return self.parents[node]
+
+    def union(self, a: "int", b: "int") -> "bool":
+        ra = self.find(a)
+        rb = self.find(b)
+        if ra == rb:
+            return False
+        if self.heights[ra] < self.heights[rb]:
+            self.parents[ra] = rb
+        elif self.heights[ra] > self.heights[rb]:
+            self.parents[rb] = ra
+        else:
+            self.parents[rb] = ra
+            self.heights[ra] += 1
+        self.parts -= 1
+        return True
+
+    def getParts(self) -> "int":
+        return self.parts
 
 
 def main():
     test = GraphValidTree()
-    print(test.validTree(5, [[0, 1], [0, 2], [0, 3], [1, 4]]))
-    print(test.validTree(5, [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]]))
+    print(test.validTree3(5, [[0, 1], [0, 2], [0, 3], [1, 4]]))
+    print(test.validTree3(5, [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]]))
 
 if __name__ == "__main__":
     main()
