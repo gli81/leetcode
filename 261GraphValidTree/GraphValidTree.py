@@ -36,6 +36,9 @@ class GraphValidTree:
                     return False
         return True
 
+    def validTree2(self):
+        pass
+
 
 def main():
     test = GraphValidTree()
