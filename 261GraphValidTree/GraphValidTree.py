@@ -46,32 +46,32 @@ class GraphValidTree:
 
 class DSU:
     def __init__(self, n: "int"):
-        self.parents = [i for i in range(n)]
-        self.heights = [1 for _ in range(n)]
-        self.parts = n
+        self.__parents = [i for i in range(n)]
+        self.__heights = [1 for _ in range(n)]
+        self.__parts = n
 
     def find(self, node: "int") -> "int":
-        if self.parents[node] != node:
-            self.parents[node] = self.find(self.parents[node])
-        return self.parents[node]
+        if self.__parents[node] != node:
+            self.__parents[node] = self.find(self.__parents[node])
+        return self.__parents[node]
 
     def union(self, a: "int", b: "int") -> "bool":
         ra = self.find(a)
         rb = self.find(b)
         if ra == rb:
             return False
-        if self.heights[ra] < self.heights[rb]:
-            self.parents[ra] = rb
-        elif self.heights[ra] > self.heights[rb]:
-            self.parents[rb] = ra
+        if self.__heights[ra] < self.__heights[rb]:
+            self.__parents[ra] = rb
+        elif self.__heights[ra] > self.__heights[rb]:
+            self.__parents[rb] = ra
         else:
-            self.parents[rb] = ra
-            self.heights[ra] += 1
+            self.__parents[rb] = ra
+            self.__heights[ra] += 1
         self.parts -= 1
         return True
 
     def getParts(self) -> "int":
-        return self.parts
+        return self.__parts
 
 
 def main():
