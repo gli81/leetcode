@@ -41,6 +41,6 @@ public class WordLadderJava {
                 }
             }
         }
-        return ans;
+        return 0;
     }
 }
