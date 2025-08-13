@@ -46,11 +46,11 @@ class TreeNode:
         return ans
 
     @classmethod
-    def fromList(cls, lst: "List[int]") -> "Optional[TreeNode]":
+    def fromList(cls, lst: List[Optional[int]]) -> "Optional[TreeNode]":
         if not lst: return None
         n = len(lst)
         if not n: return None
-        ans: "List[TreeNode]" = [None] * n
+        ans: "List[Optional[TreeNode]]" = [None] * n
         ans[0] = TreeNode(lst[0]) if lst[0] else None
         for i in range(1, n):
             if lst[i] is not None:

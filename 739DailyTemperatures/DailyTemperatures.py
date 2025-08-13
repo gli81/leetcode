@@ -12,8 +12,10 @@ class DailyTemperatures:
         stk.append(0)
         for i in range(1, n):
             while stk and \
-            temperatures[stk[-1]] < temperatures[i]:
+            temperatures[stk[-1]] < temperatures[i]: ## warmer day found
+                ## pop all the days that are cooler one by one
                 poped = stk.pop()
+                ## and calculate the days btwn
                 ans[poped] = i - poped
             stk.append(i)
         return ans
