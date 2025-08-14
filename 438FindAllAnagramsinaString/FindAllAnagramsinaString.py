@@ -3,9 +3,7 @@
 from typing import List
 
 class FindAllAnagramsinaString:
-    def findAnagrams0(self,
-                     s: "str",
-                     p: "str") -> "List[int]":
+    def findAnagrams0(self, s: str, p: str) -> List[int]:
         """
         先用p来创建一个dict
         然后从s中框出一个和p等长的部分
@@ -29,9 +27,7 @@ class FindAllAnagramsinaString:
             if shime: ans.append(i)
         return ans
 
-    def findAnagrams1(self,
-                     s: "str",
-                     p: "str") -> "List[int]":
+    def findAnagrams1(self, s: str, p: str) -> List[int]:
         """
         先取s中的前p个
         依次向后移动，从s_lst中去掉第一个字母，加上下一个字母
@@ -53,11 +49,43 @@ class FindAllAnagramsinaString:
             if s_lst == p_lst: ans.append(i + 1)
         return ans
 
+    def findAnagrams_(self, s: str, p: str) -> List[int]:
+        sLen = len(s)
+        pLen = len(p)
+        if pLen > sLen: return []
+        sLst = [0] * 26
+        pLst = [0] * 26
+        aNum = ord('a')
+        for c in p:
+            pLst[ord(c) - aNum] += 1
+        for i in range(pLen):
+            sLst[ord(s[i]) - aNum] += 1
+        l = 0
+        r = pLen
+        ans = []
+        while r < sLen:
+            if self.__sameListContent(sLst, pLst):
+                ans.append(l)
+            sLst[ord(s[l]) - aNum] -= 1
+            l += 1
+            sLst[ord(s[r]) - aNum] += 1
+            r += 1
+        ## one more time for the last window
+        if self.__sameListContent(sLst, pLst):
+            ans.append(l)
+        return ans
+
+    def __sameListContent(self, a: List[int], b: List[int]) -> bool:
+        assert len(a) == 26 and len(b) == 26
+        for i in range(26):
+            if a[i] != b[i]: return False
+        return True
+
 
 def main():
     test = FindAllAnagramsinaString()
-    print(test.findAnagrams1("cbaebabacd", "abc"))
-    print(test.findAnagrams1("abab", "ab"))
+    print(test.findAnagrams_("cbaebabacd", "abc"))
+    print(test.findAnagrams_("abab", "ab"))
 
 if __name__ == "__main__":
     main()
