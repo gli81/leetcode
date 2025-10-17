@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-class Solution:
+class FindFirstandLastPositionofElementinSortedArray:
     def searchRange(self, nums: list[int], target: int) -> list[int]:
         ans = [-1, -1]
         if len(nums) == 0:
@@ -35,9 +35,10 @@ class Solution:
 
 
 def main():
-    print(Solution().searchRange([5,7,7,8,8,10], 8))
-    print(Solution().searchRange([5,7,7,8,8,10], 6))
-    print(Solution().searchRange([], 0))
+    test = FindFirstandLastPositionofElementinSortedArray()
+    print(test.searchRange([5,7,7,8,8,10], 8))
+    print(test.searchRange([5,7,7,8,8,10], 6))
+    print(test.searchRange([], 0))
 
 if __name__ == "__main__":
     main()
