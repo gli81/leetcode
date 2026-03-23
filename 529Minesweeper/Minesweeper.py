@@ -29,7 +29,7 @@ class Minesweeper:
         for i in range(8):
             dx, dy = x + self.__dir_x[i], y + self.__dir_y[i]
             if 0 <= dx < lenx and 0 <= dy < leny and board[dx][dy] == 'M':
-                ## no X cuz X means game over
+                ## no X cuz X means game over and you won't get here
                 ct += 1
         if ct > 0:
             ## number, no recursion
