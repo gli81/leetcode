@@ -41,3 +41,20 @@ class Minesweeper:
                 dx, dy = x + self.__dir_x[i], y + self.__dir_y[i]
                 if 0 <= dx < lenx and 0 <= dy < leny and board[dx][dy] == 'E':
                     self.__dfs(board, dx, dy)
+
+
+def main():
+    test = Minesweeper()
+    board = [
+        ['E', 'E', 'E', 'E', 'E'],
+        ['E', 'E', 'M', 'E', 'E'],
+        ['E', 'E', 'E', 'E', 'E'],
+        ['E', 'E', 'E', 'E', 'E']
+    ]
+    click = [3, 0]
+    rslt = test.updateBoard(board, click)
+    for line in rslt:
+        print(line)
+
+if __name__ == "__main__":
+    main()
